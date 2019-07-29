@@ -22,8 +22,15 @@
 	*/
 			
 	# Website Routes -
-	route::set_route('/', 'page-special', 'home');
+	route::set_route('/', 'page', 'home');
 	route::set_route('/about/', 'page', 'about');
+	route::set_route('/circular/', 'page', 'circulars');
+	route::set_route('/institute/', 'page', 'institute');
+	route::set_route('/result/', 'page', 'result');
+	route::set_route('/online-admissions/', 'page', 'online-adm');
+	route::set_route('/downloads/', 'page', 'downloads');
+	route::set_route('/enquiry/', 'page', 'enquiry');
+	route::set_route('/contact/', 'page', 'contact');
 
 	# Error Routes
 	route::set_route('404', 'error', '404');

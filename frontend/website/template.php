@@ -8,7 +8,17 @@
     <title><?=appName;?></title>
 </head>
 <body>
+    <!-- Header -->
+
+    <!-- End Header -->
     
+    <!-- Page contents -->
+    <?php require_once appRoot."/frontend/website/pages/".$array['path']; ?>
+    <!-- End Page contents -->
+
+    <!-- Footer -->
+
+    <!-- End Footer -->
     <script src="<?=webCdn;?>/bootstrap/jquery.min.js"></script>
     <script src="<?=webCdn;?>/bootstrap/popper.min.js"></script>
     <script src="<?=webCdn;?>/bootstrap/bootstrap.bundle.min.js"></script>

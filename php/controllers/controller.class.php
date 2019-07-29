@@ -11,7 +11,6 @@
 		}
 
 		protected function loadPage($array) {
-			$pageName = $array['path'];
 			require_once appRoot.'/frontend/website/template.php';	
 		}
 

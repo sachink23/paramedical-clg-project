@@ -6,7 +6,7 @@
 
 	#basic website related information
 	define('appName', 'Clg Name');
-	define('appTagline', 'Clg Taglinr');
+	define('appTagline', 'Clg Tagline');
 	define('appDesc', 'Description');
 	define('appDev', '');
 	define('appHost', 'paraclg');
@@ -40,8 +40,7 @@
 	define('dbName', 'paraclg');
 	
 	#default cdn (not theme cdn)
-	define('webCdn', "/frontend/website/assets");
-	define('admCdn', "/frontend/admin/assets");
+	define('webCdn', "/frontend/assets");
 
 	
 

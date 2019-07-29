@@ -22,4 +22,8 @@
 	*/
 			
 	# Website Routes -
-	route::set_route('/', 'page', 'home');
+	route::set_route('/', 'page-special', 'home');
+	route::set_route('/about/', 'page', 'about');
+
+	# Error Routes
+	route::set_route('404', 'error', '404');

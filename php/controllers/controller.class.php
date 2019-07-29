@@ -11,19 +11,17 @@
 		}
 
 		protected function loadPage($array) {
-		
-			print_r($array);
-			# require_once activeThemeDir.'/landingPages/landigPage.php';
+			$pageName = $array['path'];
+			require_once appRoot.'/frontend/website/template.php';	
 		}
 
 		protected function loadPageSpecial($array) {
-			# print_r($array);
-			require_once activeThemeDir.'/landingPages/'.$array['path'].'.php';
+			require_once appRoot.'/frontend/website/'.$array['path'].'.php';
 		}
 
 		protected function loadError($array) {
 			http_response_code($array['route']);
-			require_once activeThemeDir.'/errors/'.$array['route'].'.php';
+			require_once appRoot.'/frontend/errors/'.$array['route'].'.php';
 		}
 		protected function loadAdmin($array) {
 			require_once contrDir.'/adminAuth.php';
@@ -33,10 +31,9 @@
 				header("Location: ".$url);
 				exit;
 			}
-			$adminName = ucfirst($_SESSION['admin_f_name'] . ' '. $_SESSION['admin_l_name']);
-			$adminEmail = 'kekarjawalekarsachin@gmail.com';
-			require_once contrDir.'/admin/'.$array['path'].'.php';
-			require_once activeThemeDir.'/admin/template.php';
+			
+			require_once contrDir.'/admin/'.$array['path'].'.p/frontendhp';
+			require_once appRoot.'/admin/template.php';
 		}
 
 		protected function loadAdminAPI($array) {

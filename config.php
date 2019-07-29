@@ -40,7 +40,8 @@
 	define('dbName', 'paraclg');
 	
 	#default cdn (not theme cdn)
-	define('cdn', "/assets");
+	define('webCdn', "/frontend/website/assets");
+	define('admCdn', "/frontend/admin/assets");
 
 	
 

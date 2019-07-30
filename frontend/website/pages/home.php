@@ -42,8 +42,8 @@
 <div id="home" style="background: lightgray">
   <div class="container" style="padding-top:20px; padding-bottom: 20px;">
     <div class="card-group row">
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="card ml-1 mr-1 mb-1">
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="card ml-1 mr-1 mb-4">
           <div class="card-body">
             <h4 class="card-title text-center">Announcements</h4>
             <hr />
@@ -61,8 +61,8 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="card ml-1 mr-1 mb-1">
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="card ml-1 mr-1 mb-4">
           <div class="card-body">
             <h4 class="card-title text-center">Institutes</h4>
             <hr />
@@ -70,14 +70,14 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="card ml-1 mr-1 mb-1">
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="card ml-1 mr-1 mb-4">
           <div class="card-body">
             <h4 class="card-title text-center">Useful Links</h4>
             <hr />
             <div class="row">
               <div class="col-6">
-                <a href="/results/"
+                <a class="button-a-links" href="/results/"
                   ><button
                     type="button"
                     class="btn btn-lg btn-block btn-custom-css"
@@ -87,7 +87,7 @@
                 >
               </div>
               <div class="col-6">
-                <a href="/downloads/"
+                <a class="button-a-links" href="/downloads/"
                   ><button
                     type="button"
                     class="btn btn-lg btn-block btn-custom-css"
@@ -100,7 +100,7 @@
             <br />
             <div class="row">
               <div class="col-6">
-                <a href="/institute/"
+                <a class="button-a-links" href="/institute/"
                   ><button
                     type="button"
                     class="btn btn-lg btn-block btn-custom-css"
@@ -110,7 +110,7 @@
                 >
               </div>
               <div class="col-6">
-                <a href="/circulars/"
+                <a class="button-a-links" href="/circulars/"
                   ><button
                     type="button"
                     class="btn btn-lg btn-block btn-custom-css"
@@ -122,14 +122,10 @@
             </div>
             <br />
             <div class="row">
-              <a href="/online-admissions/" style="width:100%"
+              <a class="button-a-links" href="/online-admissions/" style="width:100%"
                 ><button
                   type="button"
-                  class="btn btn-lg btn-block"
-                  style="background: #FF4E50;  /* fallback for old browsers */
-                        background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);  /* Chrome 10-25, Safari 5.1-6 */
-                        background: linear-gradient(to right, #F9D423, #FF4E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                        "
+                  class="btn btn-lg btn-block btn-custom-css-lg"
                 >
                   Online Admission
                 </button></a

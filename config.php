@@ -10,7 +10,7 @@
 	define('appDesc', 'Description');
 	define('appDev', '');
 	define('appHost', 'paraclg-stagging.herokuapp.com');
-	define('appLocalHost', '');
+	define('appLocalHost', 'paraclg-stagging.herokuapp.com');
 
 	/* Don't Change app secret once created */
 	define('appSecret', 'mpBk69KnbNbInSVYDCV');
@@ -18,7 +18,7 @@
 	#App mode controllers
 	define('mode', 'w'); # uc - under construction ++ m- maintainance ++ w - working properly
 	define('ssl', false);
-	if(ssl == false) {
+	if(ssl == true) {
 		define('appProtocol', 'http://');
 	}
 	else {
@@ -34,7 +34,7 @@
 	define('apiDir', phpDir.'/api');	
 
 	#db related information
-	define('dbHost', 'localhost');
+	define('dbHost', 'dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com');
 	define('dbUser', 'sachin');
 	define('dbPass', 'Escpk4739J');
 	define('dbName', 'paraclg');

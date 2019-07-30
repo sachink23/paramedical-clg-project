@@ -43,7 +43,7 @@
   <div class="container" style="padding-top:20px; padding-bottom: 20px;">
     <div class="card-group row">
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="card ml-1 mr-1">
+        <div class="card ml-1 mr-1 mb-1">
           <div class="card-body">
             <h4 class="card-title text-center">Announcements</h4>
             <hr />
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="card ml-1 mr-1">
+        <div class="card ml-1 mr-1 mb-1">
           <div class="card-body">
             <h4 class="card-title text-center">Institutes</h4>
             <hr />
@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <div class="card ml-1 mr-1">
+        <div class="card ml-1 mr-1 mb-1">
           <div class="card-body">
             <h4 class="card-title text-center">Useful Links</h4>
             <hr />

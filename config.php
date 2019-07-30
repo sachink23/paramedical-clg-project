@@ -39,8 +39,8 @@
 	define('dbPass', 'Escpk4739J');
 	define('dbName', 'paraclg');
 	
-	#default cdn (not theme cdn)
-	define('webCdn', "/frontend/assets");
+	#default cdn for website
+	define('webCdn', "/frontend/website/assets");
 
 	
 

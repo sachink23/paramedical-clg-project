@@ -82,7 +82,7 @@
                         <h1 class="hero-title">Some Title</h1>
                         <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
                             dapibus ac facilisis in, egestas eget quam.</p>
-                        <p><a class="btn btn-primary btn-lg hero-button" role="button" href="#">Learn more</a></p>
+                        <!--p><a class="btn btn-primary btn-lg hero-button" role="button" href="#">Learn more</a></p-->
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -90,7 +90,6 @@
                         <h1 class="hero-title">Some Title</h1>
                         <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
                             dapibus ac facilisis in, egestas eget quam.</p>
-                        <p><a class="btn btn-primary btn-lg hero-button" role="button" href="#">Learn more</a></p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -98,7 +97,6 @@
                         <h1 class="hero-title">Some Title</h1>
                         <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
                             dapibus ac facilisis in, egestas eget quam.</p>
-                        <p><a class="btn btn-primary btn-lg hero-button" role="button" href="#">Learn more</a></p>
                     </div>
                 </div>
             </div>

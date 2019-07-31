@@ -31,7 +31,6 @@
 				exit;
 			}
 			
-			require_once contrDir.'/admin/'.$array['path'].'.p/frontendhp';
 			require_once appRoot.'/admin/template.php';
 		}
 
@@ -45,17 +44,6 @@
 				$this->accessDenied();
 			}
 			$response = new stdClass;
-			require_once apiDir."/".$array['path'].".api.php";
-		}
-
-		protected function loadAPI($array) {
-			header("Content-type: application/json");
-			error_reporting(0);
-			$response = new stdClass;
-			/*
-			if(explode('/', $_SERVER['HTTP_REFERER'])[2] != appHost){
-				$this->accessDenied();
-			}*/
 			require_once apiDir."/".$array['path'].".api.php";
 		}
 		protected function badRequest($msg = "Bad Request") {

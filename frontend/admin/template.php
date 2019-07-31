@@ -22,7 +22,7 @@
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item" role="presentation" style="color: rgb(255,255,255);"><a class="nav-link" href="/admin/dashboard/" style="color: rgb(255,255,255);">Dashboard</a></li>
+                        <li class="nav-item" role="presentation" style="color: rgb(255,255,255);"><a class="nav-link" href="/admin/" style="color: rgb(255,255,255);">Dashboard</a></li>
                         <li class="dropdown nav-item" style="color: rgb(255,255,255);"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgb(255,255,255);">Menu</a>
                             <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                         </li>

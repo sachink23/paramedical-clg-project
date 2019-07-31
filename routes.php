@@ -32,7 +32,7 @@
 	route::set_route('/enquiry/', 'page', 'contact');
 	route::set_route('/contact/', 'page', 'contact');
 	route::set_route('/admin/login/', 'page-special', 'admin-login');
-	route::set_route('/admin/dashboard/', 'admin', 'dashboard');
+	route::set_route('/admin/', 'admin', 'dashboard');
 
 	# Error Routes
 	route::set_route('404', 'error', '404');

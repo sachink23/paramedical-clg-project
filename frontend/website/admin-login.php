@@ -5,7 +5,7 @@
         $auth = new adminAuth;
         $login = $auth->loginAdmin($_POST['username'], $_POST['password']);
         if($login[0] == true) {
-            header("Location: /admin/dashboard/");
+            header("Location: /admin/");
             exit;
         }
         else {

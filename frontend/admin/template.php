@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="<?=webCdn ?>/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=webCdn ?>/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="<?=webCdn ?>/css/admin.min.css">
-    <style>
-    a.nav-link:hover {
-        font-color: pink !important;
-    }
-    </style>
 </head>
 
 <body>
@@ -45,17 +40,17 @@
     <div class="features-boxed">
         <div class="container">
             <div class="row justify-content-center features">
-                <div class="col-sm-6 col-md-5 col-lg-4 item">
-                    <div class="box"><i class="fa fa-sticky-note icon" style="color: rgb(255,15,15);"></i>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" data-toggle="modal" data-target="#noticeManagementModal">
+                    <div class="box"><i class="fa fa-retweet icon" style="color: rgb(255,15,15);"></i>
                         <h3 class="name">Manage Notice Board</h3>
-                        <p class="description">In this section user can manage notice board on website.</p><a href="#"
+                        <p class="description">In this section user can manage Notice Board, Circulars, and Downloads.</p><a href="#"
                             class="learn-more">Manage Notice Board »</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box"><i class="fa fa-retweet icon" style="color: #ff0f0f;"></i>
                         <h3 class="name">Manage Circulars / Downloads</h3>
-                        <p class="description">This section is to manage circulars and downloads on the website.</p><a
+                        <p class="description">This section is to manage circulars and downloads.</p><a
                             href="#" class="learn-more">Manage Circulars / Downloads »</a>
                     </div>
                 </div>
@@ -90,8 +85,80 @@
             </div>
         </div>
     </div>
+    <!-- modals -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="noticeManagementModal" tabindex="-1" role="dialog" aria-labelledby="noticeBoardTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="noticeBoardTitle">Manage Notice / Circulars / Downloads </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 form-group">
+                                <label for="selectTypeOfNotif">Select Type <big class="text-danger">*</big></label>
+                                <select class="form-control" required name="selectTypeOfNotif" id="selectTypeOfNotif">
+                                    <option value="" selected>Select Type</option>
+                                    <option value="N">Notification</option>
+                                    <option value="C">Circular</option>
+                                    <option value="D">Download</option>
+                                </select>
+                                <small id="selectTypeOfNotifHelp"></small>
+                            </div>
+                            <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 form-group">
+                                <label for="batchForNotif">Select Label <big class="text-danger">*</big></label><br/>                               
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="batchForNotif" id="batchForNotif" value="new" checked required> <span class="badge badge-danger">New</span>&nbsp;&nbsp;
+                                        <input class="form-check-input" type="radio" name="batchForNotif" value="imp"> <span class="badge badge-secondary">Important</span>&nbsp;&nbsp;
+                                        <input class="form-check-input" type="radio" name="batchForNotif" value="na"> None&nbsp;&nbsp;
+                                    </label>
+                                </div>
+                                <small id="batchForNotifHelp"></small>
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="notifText">Enter Notification / Circular / Download Text <big class="text-danger">*</big></label>
+                                <textarea rows="3" class="form-control" id="notifText" name="notifText" required></textarea>
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="notifUrl">Notification Link (Optional)</label>
+                                <input type="url" placeholder="https://exapmle.com" class="form-control" id="notifUrl" name="notifUrl">
+                                <small id="notifUrlHelp">Here you can add the link for the Notification</small>
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="notifFileSelect">Select File (Optional)</label>
+                                <input type="file" class="form-control" style="border:none" id="notifFileSelect" name="notifFileSelect">
+                                <small id="notifFileSelectHelp">Select file if you wish to add its link to notification</small>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="<?=webCdn ?>/js/jquery.min.js"></script>
+    <script src="<?=webCdn ?>/js/admin.min.js"></script>
     <script src="<?=webCdn ?>/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        $('#noticeManagementModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            
+            // Use above variables to manipulate the DOM
+            
+        });
+    </script>
 </body>
 
 </html>

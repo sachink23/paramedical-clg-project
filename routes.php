@@ -31,6 +31,8 @@
 	route::set_route('/downloads/', 'page', 'downloads');
 	route::set_route('/enquiry/', 'page', 'contact');
 	route::set_route('/contact/', 'page', 'contact');
+	route::set_route('/admin/login/', 'page-special', 'admin-login');
+	route::set_route('/admin/dashboard/', 'admin', 'dashboard');
 
 	# Error Routes
 	route::set_route('404', 'error', '404');

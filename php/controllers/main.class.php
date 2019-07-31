@@ -46,10 +46,15 @@
 				return true;
 			}
 			else if(mode == "uc") {
+				echo "Website Under Construction, Please try again later.";
 				http_response_code(503);
+				exit;
 			}
 			else if(mode == "m") {
+				echo "Website Under Maintainance, Please try again later.";
 				http_response_code(503);
+				
+				exit;
 			}
 		}
 

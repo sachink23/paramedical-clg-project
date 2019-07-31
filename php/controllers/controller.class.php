@@ -31,7 +31,7 @@
 				exit;
 			}
 			
-			require_once appRoot.'/admin/template.php';
+			require_once appRoot.'/frontend/admin/template.php';
 		}
 
 		protected function loadAdminAPI($array) {

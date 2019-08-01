@@ -1,3 +1,38 @@
+<?php 
+    $notifTable = "notifs_circus_downlds";
+    $db = new db;
+    $data = "text,flag,link"; 
+    $whereStmt = "type = 'N'"; 
+    $res = $db->select($notifTable, $data, $whereStmt, NULL, "ORDER BY id DESC");
+    if($res[0] == true && $res[1]->num_rows > 0) {
+        $notices = "<marquee>";
+        $i = $res[1]->num_rows;
+        $j=0;
+        while($row = mysqli_fetch_assoc($res[1])) {
+            $i--;
+            $j++;
+            if($j<=5) {
+                if($row['flag'] == "new") {
+                    $notices .= "<span class='badge badge-danger'>New</span>&nbsp;&nbsp;";
+                } else if($row["flag"] == "imp") {
+                    $notices .= "<span class='badge badge-secondary'>Important</span>&nbsp;&nbsp;";
+                }
+            }
+            if($row["link"] <> "0") {
+                $notices .="<a style='color:black' href='".$row['link']."'>".$row["text"]."</a>";
+            } else {
+                $notices .=$row['text'];
+            }
+            if($i>0) { 
+                $notices .= "&nbsp | &nbsp";
+            }
+        }
+        $notices .= "</marquee>";
+    } else {
+        $notices = "<marquee>Welcome to the offiial website of ".appName."</marquee>";
+    }
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -18,10 +53,8 @@
                 class="fa fa-envelope-open text-primary"></i> &nbsp; clgemail@example.com</a>
     </div>
     <div class="navbar bg-primary">
-        <div class="">
-            <marquee>Some Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ipsa iste sequi nesciunt
-                consectetur veritatis ullam. Voluptatem, voluptas libero. Similique soluta numquam facilis! Dolores
-                voluptas, debitis rem quo nemo impedit!</marquee>
+        <div class="" style="width:100%">
+            <?= $notices; ?>
         </div>
     </div>
     <style>

@@ -12,16 +12,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row">1</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td scope="row">2</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    <?php 
+                        $notifTable = "notifs_circus_downlds";
+                        $db = new db;
+                        $data = "text,flag,link"; 
+                        $whereStmt = "type = 'D'"; 
+                        $res = $db->select($notifTable, $data, $whereStmt, NULL, "ORDER BY id DESC");
+                        if($res[0] == true && $res[1]->num_rows > 0) {
+                            echo "<tr>";
+                            $i = $res[1]->num_rows;
+                            $j=0;
+                            while($row = mysqli_fetch_assoc($res[1])) {
+                                echo "<td class='text-center'>".++$j."</td>";
+                                echo "<td>".$row['text']."</td>";
+                                echo "<td class='text-center'><a href='".$row['link']."' download><i class='fa fa-download'></i></a>";
+                            }
+                            echo "</tr>";
+                        } else {
+                            echo "<tr><td colspan='3'>No downloads available yet</td></tr>";
+                        }
+
+                    ?>
                 </tbody>
             </table>
         </div>

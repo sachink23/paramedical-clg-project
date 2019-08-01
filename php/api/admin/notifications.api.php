@@ -32,7 +32,7 @@
                     $upload = new fileUpload();
                     $res = $upload->uploadFile("file", appRoot."/assets/uploads", array("pdf", "jpeg", "jpg", "png", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "zip", "rar"), 10000000);
                     if($res[0]==true) {
-                        $url = '/'.explode(appRoot, $res[1])[1];
+                        $url = explode(appRoot, $res[1])[1];
                     }
                 }
             } else {

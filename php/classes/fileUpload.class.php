@@ -7,11 +7,11 @@
             $this->file_name = $filePostName;
             $this->max_file_size = $maxFileSize;
             $this->file_allowed_mime = $allowedMime;
-            $this->target_file = $this->target_dir . basename($_FILES[$fileName]["name"]);
+            $this->target_file = $this->target_dir . basename($_FILES[$filePostName]["name"]);
             $this->file_mime = strtolower(pathinfo($this->target_file,PATHINFO_EXTENSION));
             if($this->checkFileSize()) {
                 if($this->checkFileMIME()) {
-                    $this->target_file = $this->target_dir."/".date('d-m-Y',time())."-".rand(100000,999999)."-".basename($_FILES[$fileName]["name"]);
+                    $this->target_file = $this->target_dir."/".date('d-m-Y',time())."-".rand(100000,999999)."-".basename($_FILES[$filePostName]["name"]);
                     if($this->moveToDirectory()) {
                         return array(true, $this->target_file);
                     } else {
@@ -42,7 +42,7 @@
             return false;
         }
         private function moveToDirectory() {
-            if (move_uploaded_file($_FILES[$this->file_name]["tmp_name"], $target_file)) {
+            if (move_uploaded_file($_FILES[$this->file_name]["tmp_name"], $this->target_file)) {
                 return true;
             } else {
                 return false;

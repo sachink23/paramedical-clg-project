@@ -100,7 +100,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form name="notifiSendForm" action="javascript:void(0)" id="notifiSendForm" onsubmit="admin.submitNotifForm()" class="row">
+                        <form enctype="multipart/form-data" name="notifiSendForm" action="javascript:void(0)" id="notifiSendForm" onsubmit="admin.submitNotifForm()" class="row">
+                            <div class="col-12 form-group" id="infoNotifManage">
+                               
+                            </div>
                             <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 form-group">
                                 <label for="selectTypeOfNotif">Select Type <big class="text-danger">*</big></label>
                                 <select class="form-control" required name="selectTypeOfNotif" id="selectTypeOfNotif">

@@ -1,4 +1,5 @@
 <?php
+    $this->accessLevelRequired('access_circulars');
     if(isset($_POST['request'])) {
         $table = "notifs_circus_downlds";
         if($_POST["request"] == "new") {

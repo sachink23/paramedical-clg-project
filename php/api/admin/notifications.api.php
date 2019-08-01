@@ -29,7 +29,7 @@
                 if($_POST['isfile'] == 1) {
                     require_once classDir."/fileUpload.class.php";
                     $upload = new fileUpload();
-                    $res = $upload->uploadFile("file", "../../assets/uploads", array("pdf", "jpeg", "jpg", "png", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "zip", "rar"), 10000000);
+                    $res = $upload->uploadFile("file", appRoot."/assets/uploads", array("pdf", "jpeg", "jpg", "png", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "zip", "rar"), 10000000);
                     if($res[0]==true) {
                         $url = '/'.explode("/var/www/paraclg/", $res[1])[1];
                     }

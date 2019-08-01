@@ -9,7 +9,7 @@
 	define('appTagline', 'Clg Tagline');
 	define('appDesc', 'Description');
 	define('appDev', '');
-	define('appHost', 'paraclg-stagging.herokuapp.com');
+	define('appHost', 'paraclg.kportal.in');
 
 	/* Don't Change app secret once created */
 	define('appSecret', 'mpBk69KnbNbInSVYDCV');

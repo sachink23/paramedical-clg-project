@@ -58,6 +58,9 @@
                 $response->code = 200;
                 $response->message = "New Notification / Circular / Downloads have been successfully published to website";
                 die(json_encode($response));
+            } else {
+                $response->code = 201;
+                $response->message = "Failed to create new notification, please try again";
             }
         }
     }

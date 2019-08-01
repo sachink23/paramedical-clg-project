@@ -30,7 +30,10 @@
 	define('routeFile', appRoot.'/routes.php');
 	define('classDir', phpDir.'/classes');
 	define('contrDir', phpDir.'/controllers');	
-	define('apiDir', phpDir.'/api');	
+	define('apiDir', phpDir.'/api');
+	#default cdn for website
+	define('webCdn', "/assets");
+	define('fileUploadDir', appRoot.'/assets/uploads/');
 
 	#db related information
 	define('dbHost', 'dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com');
@@ -38,8 +41,6 @@
 	define('dbPass', 'Escpk4739J');
 	define('dbName', 'paraclg');
 	
-	#default cdn for website
-	define('webCdn', "/assets");
 
 	
 

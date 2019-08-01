@@ -1,7 +1,6 @@
 <?php
     $loginError = false;
     if(isset($_POST['username']) && isset($_POST['password'])) {
-        echo 1;
         require_once(contrDir.'/adminAuth.php');
         $auth = new adminAuth;
         $login = $auth->loginAdmin($_POST['username'], $_POST['password']);

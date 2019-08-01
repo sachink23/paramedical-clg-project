@@ -24,8 +24,14 @@
                             $i = $res[1]->num_rows;
                             $j=0;
                             while($row = mysqli_fetch_assoc($res[1])) {
+                                if($row['flag'] == "new") 
+                                    $label = '<span class="badge badge-danger">New</span>&nbsp;&nbsp;';
+                                else if($row['flag'] == "imp")
+                                    $label = '<span class="badge badge-secondary">Important</span>&nbsp;&nbsp;';
+                                else if($row['flag'] == "na")
+                                    $label ="";
                                 echo "<td class='text-center'>".++$j."</td>";
-                                echo "<td>".$row['text']."</td>";
+                                echo "<td>".$label.$row['text']."</td>";
                                 if($row['link'] == "0") 
                                     echo "<td class='text-center'>NA</td>";
                                 else

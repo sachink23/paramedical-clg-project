@@ -20,10 +20,10 @@
                         $whereStmt = "type = 'C'"; 
                         $res = $db->select($notifTable, $data, $whereStmt, NULL, "ORDER BY id DESC");
                         if($res[0] == true && $res[1]->num_rows > 0) {
-                            echo "<tr>";
                             $i = $res[1]->num_rows;
                             $j=0;
                             while($row = mysqli_fetch_assoc($res[1])) {
+                                echo "<tr>";
                                 if($row['flag'] == "new") 
                                     $label = '<span class="badge badge-danger">New</span>&nbsp;&nbsp;';
                                 else if($row['flag'] == "imp")
@@ -36,8 +36,8 @@
                                     echo "<td class='text-center'>NA</td>";
                                 else
                                     echo "<td class='text-center'><a href='".$row['link']."' download><i class='fa fa-download'></i></a></td>";
-                            }
-                            echo "</tr>";
+                                echo "</tr>";
+                                }
                         } else {
                             echo "<tr><td colspan='3'>No circulars available yet</td></tr>";
                         }

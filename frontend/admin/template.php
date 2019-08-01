@@ -100,7 +100,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form name="notifiSendForm" action="javascript:void(0)" onsubmit="admin.submitNotifForm()" class="row">
+                        <form name="notifiSendForm" action="javascript:void(0)" id="notifiSendForm" onsubmit="admin.submitNotifForm()" class="row">
                             <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 form-group">
                                 <label for="selectTypeOfNotif">Select Type <big class="text-danger">*</big></label>
                                 <select class="form-control" required name="selectTypeOfNotif" id="selectTypeOfNotif">
@@ -136,7 +136,7 @@
                                 <label for="notifUrl">Notification Link (Optional)</label>
                                 <input type="url" placeholder="https://www.exapmle.com" class="form-control" id="notifUrl"
                                     name="notifUrl">
-                                <small id="notifUrlHelp">Here you can add the link for the Notification</small>
+                                <small id="notifUrlHelp">Here you can add the link for the Notification, if you dont want to upload file</small>
                             </div>
                             <div class="col-12 form-group">
                                 <label for="notifFileSelect">Select File (Optional)</label>

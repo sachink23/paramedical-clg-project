@@ -46,9 +46,9 @@
       <div class="col-lg-4 col-md-12 col-sm-12">
         <div class="card ml-1 mr-1 mb-4">
           <div class="card-body">
-            <h4 class="card-title text-center">Institutes</h4>
+            <h4 class="card-title text-center">Courses</h4>
             <hr />
-            <p class="card-text">List of institutes</p>
+            <p class="card-text">List of Courses</p>
           </div>
         </div>
       </div>
@@ -82,12 +82,12 @@
             <br />
             <div class="row">
               <div class="col-6">
-                <a class="button-a-links" href="/institute/"
+                <a class="button-a-links" href="/courses/"
                   ><button
                     type="button"
                     class="btn btn-lg btn-block btn-custom-css"
                   >
-                    Institutes
+                    Courses
                   </button></a
                 >
               </div>

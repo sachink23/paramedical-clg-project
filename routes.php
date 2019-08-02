@@ -30,7 +30,6 @@
 	route::set_route('/results/', 'page', 'result');
 	route::set_route('/online-admissions/', 'page', 'online-adm');
 	route::set_route('/downloads/', 'page', 'downloads');
-	route::set_route('/enquiry/', 'page', 'contact');
 	route::set_route('/contact/', 'page', 'contact');
 	route::set_route('/admin/login/', 'page-special', 'admin-login');
 	route::set_route('/admin/', 'admin', 'dashboard');

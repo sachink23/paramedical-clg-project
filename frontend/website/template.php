@@ -47,7 +47,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Homepage : ClgName</title>
     <link rel="stylesheet" href="<?=webCdn ?>/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleaspis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
     <link rel="stylesheet" href="<?=webCdn ?>/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="<?=webCdn ?>/css/styles.min.css">
@@ -89,9 +88,6 @@
                     </li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="/circulars/">Circulars</a></li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="/courses/">Courses</a></li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/results/">Results</a>
@@ -101,14 +97,14 @@
                             href="/online-admissions/">Admission</a></li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="/circulars/">Circulars</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
+                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="/downloads/">Downloads</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="/legal-documents/">Legal Documents</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/enquiry/">Enquiry</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/contact/">Contact Us</a>
@@ -174,7 +170,7 @@
             <div class="row">
                 <div class="col-sm-12 col-lg-8 col-xl-8 col-md-8"><span style="word-spacing: 20px"><a href="/">Home</a>
                         <a href="/about/">About</a> <a href="/contact/">Contact</a>
-                        <a href="/results/">Results</a> <a href="/enquiry/">Enquiry</a> </span></div>
+                        <a href="/results/">Results</a> </span></div>
                 <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">Copyright &copy; <?= appName ?></div>
             </div>
         </div>

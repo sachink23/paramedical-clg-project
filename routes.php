@@ -25,7 +25,8 @@
 	route::set_route('/', 'page', 'home');
 	route::set_route('/about/', 'page', 'about');
 	route::set_route('/circulars/', 'page', 'circulars');
-	route::set_route('/institute/', 'page', 'institute');
+	route::set_route('/courses/', 'page', 'courses');
+	route::set_route('/legal-documents/', 'page', 'legal-documents');
 	route::set_route('/results/', 'page', 'result');
 	route::set_route('/online-admissions/', 'page', 'online-adm');
 	route::set_route('/downloads/', 'page', 'downloads');

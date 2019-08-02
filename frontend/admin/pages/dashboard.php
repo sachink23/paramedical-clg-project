@@ -1,4 +1,12 @@
-
+<?php
+    $db = new db;
+    $res = $db->select("website_basic_info", "*");
+    if($res[0] == true) {
+        while($row = mysqli_fetch_assoc($res[1])) {
+            $bs = $row;
+        }
+    }
+?>
 <div class="features-boxed">
     <div class="container">
 
@@ -38,7 +46,7 @@
                         or remove them.</p><a href="#" class="learn-more">Manage Users »</a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-5 col-lg-4 item">
+            <div class="col-sm-6 col-md-5 col-lg-4 item" data-toggle="modal" data-target="#settingsModal">
                 <div class="box"><i class="fa fa-gears icon" style="color: #ff0f0f;"></i>
                     <h3 class="name">Settings</h3>
                     <p class="description">In settings user can edit basic information on the website.</p><a href="#"
@@ -65,8 +73,8 @@
                 <div class="container-fluid">
 
                     <nav class="nav nav-tabs nav-stacked">
-                        <a class="nav-link active" onclick="document.getElementById('infoNotifManage').innerHTML = '';" data-toggle="tab" href="#add">Add Notification</a>
-                        <a class="nav-link" onclick="document.getElementById('infoNotifManage').innerHTML = '';" data-toggle="tab" href="#edit">Delete Notification</a>
+                        <a class="nav-link active" onclick="document.getElementById('infoNotifManage').innerHTML = '';" data-toggle="tab" href="#add">Add</a>
+                        <a class="nav-link" onclick="document.getElementById('infoNotifManage').innerHTML = '';" data-toggle="tab" href="#edit">Delete</a>
                     </nav>
                     <div class="tab-content">
                         <div class="container" id="infoNotifManage">
@@ -132,7 +140,7 @@
                         </div>
                         <div id="edit" class="tab-pane fade">
                             <div id="table-responsive">
-                                <table class="table table-striped table-inverse">
+                                <table class="table table-striped table-responsive table-inverse">
                                     <thead class="thead-inverse">
                                         <tr>
                                             <th class='text-center'>#</th>
@@ -200,3 +208,63 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal settings-->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title">Website Settings</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <nav class="nav nav-tabs nav-stacked">
+                        <a class="nav-link active" onclick="document.getElementById('infoSettingsDialog').innerHTML = '';" data-toggle="tab" href="#editAboutForm">About Us</a>
+                        <a class="nav-link" onclick="document.getElementById('infoSettingsDialog').innerHTML = '';" data-toggle="tab" href="#edit">Delete</a>
+                    </nav>
+                   
+
+                    <div class="tab-content">
+                        <div id="about-edit" class="tab-pane show fade in active">
+                            <h3>Edit About</h3>
+                            <form class="row" id="editAboutForm" onsubmit="admin.editAboutInfo()" action="javascript:void(0)">
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="aboutPara1">About Paragraph 1</label>
+                                        <textarea class="form-control" name="aboutPara1" id="aboutPara1" rows="10"><?=$bs['about_para_1'] ?></textarea>
+                                    </div>
+                                </div>  
+                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="aboutPara2">About Paragraph 2</label>
+                                        <textarea class="form-control" name="aboutPara2" id="aboutPara2" rows="10"><?=$bs['about_para_2'] ?></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-right">
+                                    <button type="button" name="editAboutBtn" id="editAboutBtn" class="btn btn-primary">Edit About</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <h3>Menu 1</h3>
+                            <p>Some content in menu 1.</p>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <h3>Menu 2</h3>
+                            <p>Some content in menu 2.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div-->
+        </div>
+    </div>
+</div>
+

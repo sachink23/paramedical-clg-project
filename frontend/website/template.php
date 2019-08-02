@@ -32,6 +32,12 @@
         $notices = "<marquee>Welcome to the offiial website of ".appName."</marquee>";
     }
 
+    $res = $db->select("website_basic_info", "*");
+    if($res[0] == true) {
+        while($row = mysqli_fetch_assoc($res[1])) {
+            $bs = $row;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +56,7 @@
 <body id="page-top">
     <div class="navbar text-right" style="background: lightgray;">
         <a class="text-right" href="mailto:clgemail@example.com" style="color: black; width: 100%"><i
-                class="fa fa-envelope-open text-primary"></i> &nbsp; clgemail@example.com</a>
+                class="fa fa-envelope-open text-primary"></i> &nbsp; <?= $bs['college_email'] ?></a>
     </div>
     <div class="navbar bg-primary">
         <div class="" style="width:100%">
@@ -86,7 +92,7 @@
                             href="/circulars/">Circulars</a></li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="/institute/">Institute</a></li>
+                            href="/courses/">Courses</a></li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/results/">Results</a>
                     </li>
@@ -96,6 +102,10 @@
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="/downloads/">Downloads</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
+                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="/legal-documents/">Legal Documents</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/enquiry/">Enquiry</a>
@@ -111,25 +121,22 @@
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <div class="jumbotron hero-nature carousel-hero">
-                        <h1 class="hero-title">Some Title</h1>
-                        <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam.</p>
+                    <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_1_url'] ?>);">
+                        <h1 class="hero-title"><?= $bs['ss_img_1_title'] ?></h1>
+                        <p class="hero-subtitle"><?= $bs['ss_img_1_info'] ?></p>
                         <!--p><a class="btn btn-primary btn-lg hero-button" role="button" href="#">Learn more</a></p-->
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="jumbotron hero-photography carousel-hero">
-                        <h1 class="hero-title">Some Title</h1>
-                        <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam.</p>
+                    <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_2_url'] ?>);">
+                        <h1 class="hero-title"><?= $bs['ss_img_2_title'] ?></h1>
+                        <p class="hero-subtitle"><?= $bs['ss_img_2_info'] ?></p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="jumbotron hero-technology carousel-hero">
-                        <h1 class="hero-title">Some Title</h1>
-                        <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam.</p>
+                    <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_3_url'] ?>);">
+                        <h1 class="hero-title"><?= $bs['ss_img_3_title'] ?></h1>
+                        <p class="hero-subtitle"><?= $bs['ss_img_3_info'] ?></p>
                     </div>
                 </div>
             </div>
@@ -153,10 +160,10 @@
 
                 <div class="col-lg-4 col-sm-12">
                     <h4 class="text-uppercase">Address</h4>
-                    <p>College Address<br>Phone, Email</p>
+                    <p><?= $bs['address_line_1'] ?><br><?= $bs['address_line_2'] ?><br><a style="color:white" href="tel:<?= $bs['college_contact_no_1'] ?>"><i class="fa fa-phone"></i> <?= $bs['college_contact_no_1'] ?></a><br><a style="color:white" href="mailto:<?= $bs['college_email']; ?>"><i class="fa fa-envelope-open"></i>&nbsp; <?= $bs['college_email']; ?></a>  </p>
                 </div>
                 <div class="col-lg-8 col-sm-12"><iframe allowfullscreen="" frameborder="0" width="100%" height="200"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCsfYDDOQ1ZZ6ktnSafPQAm5_91bK7JntU&amp;q=Parbhani&amp;zoom=11"></iframe>
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCsfYDDOQ1ZZ6ktnSafPQAm5_91bK7JntU&amp;q=<?= urlencode($bs['address_line_3'])?>&amp;zoom=11"></iframe>
                 </div>
 
             </div>
@@ -168,12 +175,12 @@
                 <div class="col-sm-12 col-lg-8 col-xl-8 col-md-8"><span style="word-spacing: 20px"><a href="/">Home</a>
                         <a href="/about/">About</a> <a href="/contact/">Contact</a>
                         <a href="/results/">Results</a> <a href="/enquiry/">Enquiry</a> </span></div>
-                <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">Copyright &copy; clgName 2019</div>
+                <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">Copyright &copy; <?= appName ?></div>
             </div>
         </div>
     </div>
-    <div class="d-lg-none scroll-to-top position-fixed rounded"><a
-            class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i
+    <div class="scroll-to-top position-fixed rounded"><a
+            class="d-block js-scroll-trigger text-center text-white bg-danger rounded" title="Back to Top" href="#page-top"><i
                 class="fa fa-chevron-up"></i></a></div>
     <script src="<?=webCdn ?>/js/jquery.min.js"></script>
     <script src="<?=webCdn ?>/bootstrap/js/bootstrap.min.js"></script>

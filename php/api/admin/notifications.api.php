@@ -2,6 +2,7 @@
     $this->accessLevelRequired('access_circulars');
     if(isset($_POST['request'])) {
         $table = "notifs_circus_downlds";
+        $db = new db; 
         if($_POST["request"] == "new") {
             if(isset($_POST['type'])) {
                 $type = $_POST['type'];
@@ -33,6 +34,10 @@
                     $res = $upload->uploadFile("file", appRoot."/assets/uploads", array("pdf", "jpeg", "jpg", "png", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "zip", "rar"), 10000000);
                     if($res[0]==true) {
                         $url = explode(appRoot, $res[1])[1];
+                    } else {
+                        $response->code = 400;
+                        $response->message = $res[1];
+                        die(json_encode($response));
                     }
                 }
             } else {
@@ -53,7 +58,6 @@
                 "last_edited_by" => $_SESSION['admin_username']
             );
             $format = ('sssss');
-            $db = new db; 
             $result = $db->insert($table, $data, $format);
             if($result[0] == true) {
                 $response->code = 200;
@@ -63,5 +67,21 @@
                 $response->code = 201;
                 $response->message = "Failed to create new notification, please try again";
             }
+        } else if($_POST['request'] == "del") {
+            if(isset($_POST['id']) && isset($_POST['consent'])) {
+                if(is_numeric($_POST['id']) && $_POST['consent'] == 1) {
+                    $dbc = $db->query("DELETE FROM ".$table." WHERE id=".$_POST['id']);
+                    if($dbc[0] == true) {
+                        $response->code = 200;
+                        $response->message = "Notification deleted successfully, refresh the page to see effects.";
+                        die(json_encode($response));
+                    } 
+                }
+            }
+        } else {
+            $response->code=201;
+            $response->message = "Something went wrong, please contact administrator, error code : NOTIF_DEL_SKIPPED_TO_END";
         }
+
     }
+    $this->badRequest("Fields Missing");

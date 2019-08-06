@@ -32,7 +32,7 @@
                         class="learn-more">Manage Admissions »</a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-5 col-lg-4 item">
+            <div class="col-sm-6 col-md-5 col-lg-4 item" data-toggle="modal" data-target="#resultManageModal">
                 <div class="box"><i class="fa fa-bar-chart-o icon" style="color: #ff0f0f;"></i>
                     <h3 class="name">Manage Results</h3>
                     <p class="description">In this section user can manage results, which can be showed on website.
@@ -58,7 +58,7 @@
 </div>
 <!-- modals -->
 
-<!-- Modal -->
+<!-- Modal notice management -->
 <div class="modal fade" id="noticeManagementModal" tabindex="-1" role="dialog" aria-labelledby="noticeBoardTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -224,18 +224,17 @@
                 <div class="container-fluid">
                     <nav class="nav nav-tabs nav-stacked">
                         <a class="nav-link active" onclick="document.getElementById('infoSettingsDialog').innerHTML = '';" data-toggle="tab" href="#editAboutForm">About Us</a>
-                        <a class="nav-link" onclick="document.getElementById('infoSettingsDialog').innerHTML = '';" data-toggle="tab" href="#edit">Delete</a>
                     </nav>
                    
-
                     <div class="tab-content">
+                        <div class="container" id="infoSettingsDialog"></div>
                         <div id="about-edit" class="tab-pane show fade in active">
                             <h3>Edit About</h3>
                             <form class="row" id="editAboutForm" onsubmit="admin.editAboutInfo()" action="javascript:void(0)">
                                 <div class="col-lg-6 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label for="aboutPara1">About Paragraph 1</label>
-                                        <textarea class="form-control" name="aboutPara1" id="aboutPara1" rows="10"><?=$bs['about_para_1'] ?></textarea>
+                                        <textarea class="form-control" required name="aboutPara1" id="aboutPara1" rows="10"><?=$bs['about_para_1'] ?></textarea>
                                     </div>
                                 </div>  
                                 <div class="col-lg-6 col-md-12 col-sm-12">
@@ -245,7 +244,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-right">
-                                    <button type="button" name="editAboutBtn" id="editAboutBtn" class="btn btn-primary">Edit About</button>
+                                    <button type="submit" name="editAboutBtn" required id="editAboutBtn" class="btn btn-primary">Edit About</button>
                                 </div>
                             </form>
                         </div>
@@ -264,7 +263,69 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save</button>
             </div-->
+       
+    </div>
+</div></div>
+
+
+<!-- Modal manage results -->
+<div class="modal fade" id="resultManageModal" tabindex="-1" role="dialog" aria-labelledby="modalTItleForResultManagement`" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="modalTItleForResultManagement`">Result Management</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                <div class="container-fluid">
+                    <nav class="nav nav-tabs nav-stacked">
+                        <a class="nav-link active" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#add-exam">Add Exam</a>
+                        <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#add-result">Add Result</a>
+                        <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#delete-result">Delete Result</a>
+                        <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#delete-exam">Delete Exam</a>
+                    </nav>
+                   
+                    <div class="tab-content">
+                        <div class="container" id="infoResultDialog"></div>
+                        <div id="add-exam" class="tab-pane show fade in active">
+                            <form class="row" id="addExamForm" onsubmit="admin.addExam()" action="javascript:void(0)">
+                                <div class="form-group col-12">
+                                  <label for="examName">Exam Name</label>
+                                  <input type="text" name="examName" id="examName" class="form-control" placeholder="For Ex - Winter 2019" aria-describedby="examNameHelp">
+                                  <small id="examNameHelp" class="text-muted">Enter the name of the exam, for which result is to be declared</small>
+                                </div>
+                                <div class="form-group col-12 text-right">
+                                    <button type="submit" id="createExamBtn" class="btn btn-primary">Create Exam</button>
+                                </div>
+                            </form>
+                            <p class="text-info">In this section user can add the exam which can be used to declare the results seperately for the examination, keep in mind that exam name is a unique parameter.</p>
+                        </div>
+                        <div id="add-result" class="tab-pane fade">
+                            <h3>Menu 1</h3>
+                            <p>Some content in menu 1.</p>
+                        </div>
+                        <div id="delete-result" class="tab-pane fade">
+                            <h3>Menu 2</h3>
+                            <p>Some content in menu 2.</p>
+                        </div>
+                        <div id="delete-exam" class="tab-pane fade">
+                            <h3>Menu 2</h3>
+                            <p>Some content in menu 2.</p>
+                            <p class="text-danger">Deleting the exam will delele all the results associated with it.</p>                        
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!--div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div-->
         </div>
     </div>
 </div>
+
 

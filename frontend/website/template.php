@@ -54,7 +54,7 @@
 
 <body id="page-top">
     <div class="navbar text-right" style="background: lightgray;">
-        <a class="text-right" href="mailto:clgemail@example.com" style="color: black; width: 100%"><i
+        <a class="text-right" href="mailto:<?= $bs['college_email'] ?>" style="color: black; width: 100%"><i
                 class="fa fa-envelope-open text-primary"></i> &nbsp; <?= $bs['college_email'] ?></a>
     </div>
     <div class="navbar bg-primary">

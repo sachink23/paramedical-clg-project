@@ -179,7 +179,7 @@
         </div>
     </div>
     <div class="scroll-to-top position-fixed rounded"><a
-            class="d-block js-scroll-trigger text-center text-white bg-danger rounded" title="Back to Top" href="#page-top"><i
+            class="d-block js-scroll-trigger text-center text-white rounded" title="Back to Top" href="#page-top"><i
                 class="fa fa-chevron-up"></i></a></div>
     <script src="<?=webCdn ?>/js/jquery.min.js"></script>
     <script src="<?=webCdn ?>/bootstrap/js/bootstrap.min.js"></script>

@@ -25,7 +25,26 @@
             die(json_encode($response));
             break;
         }
-        
+        case "getResult": {
+            if(!(isset($_POST["examId"]) && isset($_POST["rollNo"]) && isset($_POST["dob"])))
+                $this->badRequest("Parameters Missing");
+            $exId = $_POST["examId"];
+            $rn = $_POST["rollNo"];
+            $dob = $_POST["dob"];
+            $whF = "exam_id=? AND roll_no=? AND dob=?";
+            $whV = array("sss", $exId, $rn, $dob);
+            $res = $db->select("results", "result_url", $whF, $whV);  
+            if($res[0] == true && $res[1]->num_rows == 1) {
+                while($row = mysqli_fetch_assoc($res[1])) {
+                    $response->code = 200;
+                    $response->message = $row["result_url"];
+                }
+            } else {
+                $response->code = 201;
+                $response->message = "No result Found";
+            }
+            die(json_encode($response));
+        }
         default: {
             $this->badRequest("Parameters Missing");
             break;

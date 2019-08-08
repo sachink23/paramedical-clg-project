@@ -23,8 +23,12 @@
                 $response->message = "Databse Error";
             }
             die(json_encode($response));
+            break;
         }
-        default:
+        
+        default: {
             $this->badRequest("Parameters Missing");
+            break;
+        }
     }
 ?>

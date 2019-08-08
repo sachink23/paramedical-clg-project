@@ -283,9 +283,9 @@
                 <div class="container-fluid">
                     <nav class="nav nav-tabs nav-stacked">
                         <a class="nav-link active" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#add-exam">Add Exam</a>
-                        <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#delete-exam">Delete Exam</a>
+                        <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = ''; res.getExams(res.getExamsInSelect,['selectExamInDel','selectExamInDel']);"  data-toggle="tab" href="#delete-exam">Delete Exam</a>
                         <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = ''; res.getExams(res.getExamsInSelect,['selectExamInResultUpload','selectExamInResultUpload']);" data-toggle="tab" href="#add-result">Add Result</a>
-                        <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#delete-result">Delete Result</a>
+                        <!--a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#delete-result">Delete Result</a-->
                     </nav>
                    
                     <div class="tab-content">
@@ -304,42 +304,51 @@
                             <p class="text-info">In this section user can add the exam which can be used to declare the results seperately for the examination, keep in mind that exam name is a unique parameter.</p>
                         </div>
                         <div id="add-result" class="tab-pane fade">
-                            <form action="javascript:void(0)" class="row" enctype="multipart/form-data">
+                            <form action="javascript:void(0)" onsubmit="admin.addResult()" class="row" enctype="multipart/form-data">
                                 <div class="form-group col-12">
                                   <label for="selectExamInResultUpload">Select Exam</label>
-                                  <select name="selectExamInResultUpload" id="selectExamInResultUpload" class="form-control" aria-describedby="examInResHelp">
+                                  <select reqired="" name="selectExamInResultUpload" id="selectExamInResultUpload" class="form-control" aria-describedby="examInResHelp">
                                   
                                   </select>
                                   <small id="examInResHelp" class="text-muted">Select The Exam For Which Result Is To Be Uploaded</small>
                                 </div>
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12">
                                   <label for="rollNoInRes">Enter Roll Number</label>
-                                  <input type="text" name="rollNoInRes" id="rollNoInRes" class="form-control" placeholder="Enter Roll Number Of Student" aria-describedby="rollNoInResHelp">
+                                  <input required type="text" pattern="[a-zA-Z0-9]+" title="Only alphanumeric Character without space for Roll No" name="rollNoInRes" minlength="3" id="rollNoInRes" class="form-control" placeholder="Enter Roll Number Of Student" aria-describedby="rollNoInResHelp">
                                   <small id="rollNoInResHelp" class="text-muted">Enter Roll Number Of Student</small>
                                 </div>
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12">
                                   <label for="dobInRes">Enter DOB</label>
-                                  <input type="text" name="dobInRes" id="dobInRes" class="form-control" placeholder="Format should be dd/mm/yyyy" aria-describedby="dobInResHelp">
+                                  <input min="1940-01-01" max="2019-12-31" required type="date" name="dobInRes" id="dobInRes" class="form-control" placeholder="Format should be dd/mm/yyyy" aria-describedby="dobInResHelp">
                                   <small id="dobInResHelp" class="text-muted">Enter date of birth in dd/mm/yyyy</small>
                                 </div>
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                   <label for="selectResFile">Select Result File</label>
-                                  <input type="file" name="selectResFile" style="border:none" id="selectResFile" class="form-control" placeholder="" aria-describedby="selectResFileHelp">
+                                  <input  accept="image/jpg,image/png,image/jpeg,application/pdf" required type="file" name="selectResFile" style="border:none" id="selectResFile" class="form-control" placeholder="" aria-describedby="selectResFileHelp">
                                   <small id="selectResFileHelp" class="text-muted">Allowed files are JPG, JPEG, PDF, PNG</small>
                                 </div>
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 text-right">
-                                    <button type="submit" class="btn btn-primary">Add Result</button>
+                                    <button type="submit" id="addResultBtn" class="btn btn-primary">Add Result</button>
                                 </div>
                             </form>
                             <p class="text-info">In this section user have to select the exam enter roll no and date of birth of student and upload the result.</p>
                         </div>
-                        <div id="delete-result" class="tab-pane fade">
+                        <!--div id="delete-result" class="tab-pane fade">
                             <h3>Menu 2</h3>
                             <p>Some content in menu 2.</p>
-                        </div>
+                        </div-->
                         <div id="delete-exam" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Some content in menu 2.</p>
+                            <form action="javascript:void(0)" onsubmit="admin.deleteExam()" class="row"  enctype="multipart/form-data">
+                                <div class="form-group col-12">
+                                  <label for="selectExamInDel">Select Exam</label>
+                                  <select name="selectExamInDel" id="selectExamInDel" class="form-control" aria-describedby="examInDelHelp" required>
+                                  
+                                  </select>
+                                  <small id="examInDelHelp" class="text-muted">Select The Exam to be deleted with all results.</small>
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 text-right">
+                                    <button type="submit" class="btn btn-danger" id="deleteExamBtn">Delete Exam</button>
+                                </div>
                             <p class="text-danger">Deleting the exam will delele all the results associated with it.</p>                        
                         </div>
                     </div>

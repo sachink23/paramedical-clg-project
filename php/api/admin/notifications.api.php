@@ -31,7 +31,8 @@
                 if($_POST['isfile'] == 1) {
                     require_once classDir."/fileUpload.class.php";
                     $upload = new fileUpload();
-                    $res = $upload->uploadFile("file", appRoot."/assets/uploads", array("pdf", "jpeg", "jpg", "png", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "zip", "rar"), 10000000);
+                    $newFileName = date('d-m-Y',time())."-".rand(100000,999999)."-".basename($_FILES["file"]["name"]);
+                    $res = $upload->uploadFile("file", appRoot."/assets/uploads", array("pdf", "jpeg", "jpg", "png", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "zip", "rar"), 10000000, $newFileName);
                     if($res[0]==true) {
                         $url = explode(appRoot, $res[1])[1];
                     } else {

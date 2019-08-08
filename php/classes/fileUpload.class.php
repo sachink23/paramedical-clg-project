@@ -2,7 +2,7 @@
     class fileUpload {
         private $target_dir, $target_file, $file_name, $file_mime, $max_file_size, $file_allowed_mime;
         private $uplOk = array(false, "Not Processed");
-        public function uploadFile($filePostName, $dirToUpload, $allowedMime, $maxFileSize) {
+        public function uploadFile($filePostName, $dirToUpload, $allowedMime, $maxFileSize, $fileToBeNamed) {
             $this->target_dir = $dirToUpload;
             $this->file_name = $filePostName;
             $this->max_file_size = $maxFileSize;
@@ -11,7 +11,7 @@
             $this->file_mime = strtolower(pathinfo($this->target_file,PATHINFO_EXTENSION));
             if($this->checkFileSize()) {
                 if($this->checkFileMIME()) {
-                    $this->target_file = $this->target_dir."/".date('d-m-Y',time())."-".rand(100000,999999)."-".basename($_FILES[$filePostName]["name"]);
+                    $this->target_file = $this->target_dir."/".$fileToBeNamed;
                     if($this->moveToDirectory()) {
                         return array(true, $this->target_file);
                     } else {

@@ -53,6 +53,9 @@
 </head>
 
 <body id="page-top">
+
+    <div id="preloader"><i></i></div>
+
     <div class="navbar text-right" style="background: lightgray;">
         <a class="text-right" href="mailto:<?= $bs['college_email'] ?>" style="color: black; width: 100%"><i
                 class="fa fa-envelope-open text-primary"></i> &nbsp; <?= $bs['college_email'] ?></a>

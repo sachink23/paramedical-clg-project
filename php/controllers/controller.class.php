@@ -39,6 +39,11 @@
 			}
 			$this->accessDenied("You dont have access to ".$level_name.", contact your administractor to know more");
 		}
+		protected function loadApi($array) {
+			header("Content-type: application/json");
+			$response = new stdClass;
+			require_once apiDir."/".$array['path'].".api.php";
+		}
 		protected function loadAdminAPI($array) {
 			header("Content-type: application/json");
 	 		// error_reporting(0);

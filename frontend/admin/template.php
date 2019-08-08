@@ -38,11 +38,14 @@
             </div>
         </nav>
     </div>
-    <?php require_once appRoot."/frontend/admin/pages/".$array['path'].".php"; ?>
+    
+        <?php require_once appRoot."/frontend/admin/pages/".$array['path'].".php"; ?>
     
 
     <script src="<?=webCdn ?>/js/jquery.min.js"></script>
+    <script src="<?=webCdn ?>/js/xhr.min.js"></script>
     <script src="<?=webCdn ?>/js/admin.min.js"></script>
+    <script src="<?=webCdn ?>/js/results.min.js"></script>
     <script src="<?=webCdn ?>/bootstrap/js/bootstrap.min.js"></script>
     <script>
     $('#noticeManagementModal').on('show.bs.modal', event => {

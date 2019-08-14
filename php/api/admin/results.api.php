@@ -102,11 +102,20 @@
             $target_file = $resDir.basename($_FILES["file"]["name"]);
             $fileExt = pathinfo($target_file,PATHINFO_EXTENSION);
             $fileName = strtolower($rn."_".$dob.".".$fileExt);
-            if(file_exists($resDir.$fileName)) {
-                $response->code = 201;
-                $response->message = "Result Already Uploaded";
+            
+            $exId = $_POST["examId"];
+            $rn = $_POST["rollNo"];
+            $dob = $_POST["dob"];
+            $whF = "exam_id=? AND roll_no=? AND dob=?";
+            $whV = array("sss", $exId, $rn, $dob);
+            $res = $db->select("results", "result_url", $whF, $whV);  
+            if($res[0] == true && $res[1]->num_rows == 1) {
+                $response->code=201;
+                $response->message="Result already uploaded.";
                 die(json_encode($response));
             }
+
+
             $res = $upload->uploadFile("file", $resDir, array("pdf", "jpeg", "jpg", "png"), 100000000, $fileName);
             if($res[0]==true) {
                 $url = explode(appRoot, $res[1])[1];

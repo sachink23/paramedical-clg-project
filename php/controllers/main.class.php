@@ -9,7 +9,8 @@
 			$this->initializeApp();
 		}
 		function initializeApp() {
-			$this->redirectToHost();
+			if(hostCheck == 1)
+				$this->redirectToHost();
 			$this->checkSSL();
 			$this->checkMode();
 		}

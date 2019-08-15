@@ -9,7 +9,11 @@
 	define('appTagline', 'Clg Tagline');
 	define('appDesc', 'Description');
 	define('appDev', '');
-	define('appHost', 'paraclg.kportal.in');
+	define('hostCheck', 0);
+	if(hostCheck == 1)
+		define('appHost', $_SERVER['HTTP_HOST']);
+	else 
+		define('appHost', "paraclg.kportal.in");
 
 	/* Don't Change app secret once created */
 	define('appSecret', 'mpBk69KnbNbInSVYDCV');

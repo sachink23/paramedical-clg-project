@@ -223,7 +223,8 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <nav class="nav nav-tabs nav-stacked">
-                        <a class="nav-link active" onclick="document.getElementById('infoSettingsDialog').innerHTML = '';" data-toggle="tab" href="#editAboutForm">About Us</a>
+                        <a class="nav-link active" onclick="document.getElementById('infoSettingsDialog').innerHTML = '';" data-toggle="tab" href="#about-edit">About Us</a>
+                        <a class="nav-link" onclick="document.getElementById('infoSettingsDialog').innerHTML = '';" data-toggle="tab" href="#slideshow-edit">Edit Slides</a>
                     </nav>
                    
                     <div class="tab-content">
@@ -248,13 +249,53 @@
                                 </div>
                             </form>
                         </div>
-                        <div id="menu1" class="tab-pane fade">
-                            <h3>Menu 1</h3>
-                            <p>Some content in menu 1.</p>
-                        </div>
-                        <div id="menu2" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Some content in menu 2.</p>
+                        <div id="slideshow-edit" class="tab-pane fade">
+                            <h3>Edit Slide Show on the website</h3>
+                            <form class="row" action="javascript:void(0)" onsubmit="admin.editSlideShow()">
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xl-6">
+                                  <label for="slide1Url">Slide 1 Url</label>
+                                  <input type="url"
+                                    class="form-control" name="slide1Url" id="slide1Url" aria-describedby="slide1UrlHelp" value='<?=$bs["ss_img_1_url"];?>'>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xl-6">
+                                  <label for="slide1Title">Slide 1 title</label>
+                                  <input type="text" name="slide1Title" id="slide1Title" value='<?=$bs["ss_img_1_title"];?>' class="form-control" aria-describedby="slide1TitleHelp">
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                  <label for="slide1Desc">Slide 1 description</label>
+                                  <textarea name="slide1Desc" id="slide1Desc" class="form-control" aria-describedby="slide1DescHelp"><?=$bs["ss_img_1_info"];?></textarea>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xl-6">
+                                  <label for="slide2Url">Slide 2 Url</label>
+                                  <input type="text"
+                                    class="form-control" name="slide2Url" id="slide2Url" aria-describedby="slide2UrlHelp" value='<?=$bs["ss_img_2_url"];?>'>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xl-6">
+                                  <label for="slide2Title">Slide 2 title</label>
+                                  <input type="text" name="slide2Title" id="slide2Title" class="form-control" value='<?=$bs["ss_img_2_title"];?>' aria-describedby="slide2TitleHelp">
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                  <label for="slide2Desc">Slide 2 description</label>
+                                  <textarea name="slide2Desc" id="slide2Desc" class="form-control" aria-describedby="slide2DescHelp"><?=$bs["ss_img_2_info"];?></textarea>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xl-6">
+                                  <label for="slide3Url">Slide 3 Url</label>
+                                  <input type="text"
+                                    class="form-control" name="slide3Url" id="slide3Url" aria-describedby="slide3UrlHelp" value='<?=$bs["ss_img_3_url"];?>'>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xl-6">
+                                  <label for="slide3Title">Slide 3 title</label>
+                                  <input type="text" name="slide3Title" id="slide3Title" class="form-control" value='<?=$bs["ss_img_3_title"];?>' aria-describedby="slide3TitleHelp">
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                  <label for="slide3Desc">Slide 2 description</label>
+                                  <textarea name="slide3Desc" id="slide3Desc" class="form-control" aria-describedby="slide3DescHelp"><?=$bs["ss_img_3_info"];?></textarea>
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xl-12 text-right">
+                                    <button type="submit" class="btn btn-primary" id="editSlidesBtn">Save Changes</button>
+                                </div>
+                                
+                            </form>        
                         </div>
                     </div>
                 </div>

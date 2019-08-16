@@ -39,14 +39,15 @@
         </div>
     </div>
 </section>
-
-<script>
-$(document).ready(function() {
-    $('#coursesTable').DataTable();
-} );
-</script>
+<?php if($res[0] == true && $res[1]->num_rows > 0)
+echo '
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#coursesTable").DataTable();
+} );
+</script>'; ?>
 
 
 

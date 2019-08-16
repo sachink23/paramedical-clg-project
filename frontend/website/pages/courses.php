@@ -1,5 +1,5 @@
 <div class="container table-responsive">
-    <table id="coursesTable" class="table table-bordered table-responsive table-inverse">
+    <table id="coursesTable" class="table table-bordered table-inverse">
         <thead class="thead-inverse">
             <tr>
                 <th>Sr No</th>

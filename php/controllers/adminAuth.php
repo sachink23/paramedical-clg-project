@@ -69,6 +69,7 @@
                         $_SESSION['admin_access_circulars'] = $row['access_circulars'];
                         $_SESSION['admin_access_admissions'] = $row['access_admissions'];
                         $_SESSION['admin_access_results'] = $row['access_results'];
+                        $_SESSION['admin_access_courses'] = $row['access_courses'];
                         $_SESSION['admin_access_admin_creation'] = $row['access_admin_creation'];
 					}
 					else {

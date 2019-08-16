@@ -18,10 +18,10 @@
                     </p><a href="#" class="learn-more">Manage Notice Board »</a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-5 col-lg-4 item">
+            <div class="col-sm-6 col-md-5 col-lg-4 item" data-toggle="modal" data-target="#courseManageModal">
                 <div class="box"><i class="fa fa-book icon" style="color: #ff0f0f;"></i>
                     <h3 class="name">Manage Courses</h3>
-                    <p class="description">From here user can add or delete cources.</p><a href="#"
+                    <p class="description">From here user can add or delete courses.</p><a href="#"
                         class="learn-more">Manage Courses »</a>
                 </div>
             </div>
@@ -307,7 +307,108 @@
        
     </div>
 </div></div>
-
+<!-- Modal Manage Courses -->
+<div class="modal fade" id="courseManageModal" tabindex="-1" role="dialog" aria-labelledby="modalTItleForCourseManagement`" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="modalTItleForCourseManagement`">Result Management</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                <div class="container-fluid">
+                    <nav class="nav nav-tabs nav-stacked">
+                        <a class="nav-link active" onclick="document.getElementById('infoCourseDialog').innerHTML = '';" data-toggle="tab" href="#add-course">Add Course</a>
+                        <a class="nav-link" onclick="document.getElementById('infoCourseDialog').innerHTML = ''; res.getCourses(res.getCoursesInSelect,['courseListInEditCourses','courseListInEditCourses']); admin.resetSelectedCourse();"  data-toggle="tab" href="#edit-course">Edit Course</a>
+                    </nav>
+                   
+                    <div class="tab-content">
+                        <div class="container" id="infoCourseDialog"></div>
+                        <div id="add-course" class="tab-pane show fade in active">
+                            <form action="javascript:void(0)" class="row" onsubmit="admin.addCourse()">
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="addCourseName">Course Name</label>
+                                  <input type="text"
+                                    class="form-control" name="addCourseName" id="addCourseName" aria-describedby="addCourseNameHelp" placeholder="Ex : M.Sc (Zoology)" required="">
+                                  <small id="addCourseNameHelp" class="form-text text-muted">Every Course has a unique name.</small>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="addCourseEligibility">Course Eligibility</label>
+                                  <input type="text"
+                                    class="form-control" name="addCourseEligibility" id="addCourseEligibility" aria-describedby="addCourseEligibilityHelp" placeholder="Ex : SSC" required="">
+                                  <small id="addCourseEligibilityHelp" class="form-text text-muted">Eligibility required to take admission.</small>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="addCourseDuration">Course Duration (In Months)</label>
+                                  <input type="number"
+                                    class="form-control" name="addCourseDuration" id="addCourseDuration" aria-describedby="addCourseDurationHelp" placeholder="Ex : 12" required="">
+                                  <small id="addCourseDurationHelp" class="form-text text-muted">Duration of course in months.</small>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="addExamFees">Exam Fees</label>
+                                  <input type="number"
+                                    class="form-control" name="addExamFees" id="addExamFees" aria-describedby="addExamFeesHelp" placeholder="Ex : 1200" required="">
+                                  <small id="addExamFeesHelp" class="form-text text-muted">Exam fees should be an integer.</small>
+                                </div>
+                                <div class="form-group col-12 text-right">
+                                    <button type="submit" id="addCourseBtn" class="btn btn-primary">Add Course</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="edit-course" class="tab-pane fade">
+                            <form class="row" action="javascript:void(0)" onsubmit="admin.editCourse()">
+                                <div class="form-group col-12">
+                                  <label for="courseListInEditCourses">Select Course</label>
+                                  <select class="form-control" onchange="admin.courseSelected(this.value)" name="courseListInEditCourses" id="courseListInEditCourses">
+                                    
+                                  </select>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="editCourseName">Course Name</label>
+                                  <input type="text"
+                                    class="form-control" name="editCourseName" id="editCourseName" aria-describedby="editCourseNameHelp" placeholder="Ex : M.Sc (Zoology)" required="" disabled>
+                                  <small id="editCourseNameHelp" class="form-text text-muted">Every Course has a unique name.</small>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="editCourseEligibility">Course Eligibility</label>
+                                  <input type="text"
+                                    class="form-control" name="editCourseEligibility" id="editCourseEligibility" aria-describedby="editCourseEligibilityHelp" placeholder="Ex : SSC" required="" disabled>
+                                  <small id="editCourseEligibilityHelp" class="form-text text-muted">Eligibility required to take admission.</small>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="editCourseDuration">Course Duration (In Months)</label>
+                                  <input type="number"
+                                    class="form-control" name="editCourseDuration" id="editCourseDuration" aria-describedby="editCourseDurationHelp" placeholder="Ex : 12" required="" disabled>
+                                  <small id="editCourseDurationHelp" class="form-text text-muted">Duration of course in months.</small>
+                                </div>
+                                <div class="form-group col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                  <label for="editExamFees">Exam Fees</label>
+                                  <input type="number"
+                                    class="form-control" name="editExamFees" id="editExamFees" aria-describedby="editExamFeesHelp" placeholder="Ex : 1200" required="" disabled>
+                                  <small id="editExamFeesHelp" class="form-text text-muted">Exam fees should be an integer.</small>
+                                </div>
+                                <div class="form-group col-6 text-left">
+                                    <button type="button" disabled id="deleteCourseBtn" onclick="admin.deleteCourse()" class="btn btn-danger">Delete Course</button>
+                                </div>
+                                <div class="form-group col-6 text-right">
+                                    <button type="submit" disabled class="btn btn-primary" id="editCourseBtn">Edit Course</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!--div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div-->
+        </div>
+    </div>
+</div>
 
 <!-- Modal manage results -->
 <div class="modal fade" id="resultManageModal" tabindex="-1" role="dialog" aria-labelledby="modalTItleForResultManagement`" aria-hidden="true">

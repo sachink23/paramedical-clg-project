@@ -48,24 +48,26 @@
     <script src="<?=webCdn ?>/js/results.min.js"></script>
     <script src="<?=webCdn ?>/bootstrap/js/bootstrap.min.js"></script>
     <script>
-    $('#noticeManagementModal').on('show.bs.modal', event => {
-        var button = $(event.relatedTarget);
-        var modal = $(this);
+        $('#noticeManagementModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
 
-        // Use above variables to manipulate the DOM
+            // Use above variables to manipulate the DOM
 
-    });
-    </script>
-    <script>
+        });
         $('#settingsModal').on('show.bs.modal', event => {
             var button = $(event.relatedTarget);
             var modal = $(this);
             // Use above variables to manipulate the DOM
             
         });
-    </script>
-    <script>
         $('#resultManageModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+            
+        });
+        $('#courseManageModal').on('show.bs.modal', event => {
             var button = $(event.relatedTarget);
             var modal = $(this);
             // Use above variables to manipulate the DOM

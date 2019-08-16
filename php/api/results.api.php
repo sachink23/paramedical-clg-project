@@ -45,6 +45,28 @@
             }
             die(json_encode($response));
         }
+        case "getCourses": {
+            $res = $db->select("courses", "course_id, course_name, eligibility, duration, exam_fees");
+            if($res[0] == true) {
+                $i=0;
+                $response->data = Array();   
+                while($row = mysqli_fetch_assoc($res[1])) {
+                    $i++;
+                    $response->data[] = $row;  
+                }
+                if($i == 0) {
+                    $response->code = 201;
+                    $response->message = "Database Error";
+                } else {
+                    $response->code = 200;
+                }
+            } else {
+                $response->code = 201;
+                $response->message = "Databse Error";
+            }
+            die(json_encode($response));
+            break;
+        }
         default: {
             $this->badRequest("Parameters Missing");
             break;

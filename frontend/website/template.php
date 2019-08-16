@@ -50,6 +50,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
     <link rel="stylesheet" href="<?=webCdn ?>/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="<?=webCdn ?>/css/styles.min.css">
+    <script src="<?=webCdn ?>/js/jquery.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -181,7 +183,6 @@
     <div class="scroll-to-top position-fixed rounded"><a
             class="d-block js-scroll-trigger text-center text-white rounded" title="Back to Top" href="#page-top"><i
                 class="fa fa-chevron-up"></i></a></div>
-    <script src="<?=webCdn ?>/js/jquery.min.js"></script>
     <script src="<?=webCdn ?>/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="<?=webCdn ?>/js/script.min.js"></script>

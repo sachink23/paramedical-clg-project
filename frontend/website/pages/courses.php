@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container table-responsive">
     <table id="coursesTable" class="table table-bordered table-responsive table-inverse">
         <thead class="thead-inverse">
             <tr>

@@ -7,60 +7,135 @@
 			session_start();
 		}
 
-		function createAdmin($array) {
+		function createAdmin($array, $type) {
+			
 			$array['first_name'] = trim($array['first_name']);
 			$array['last_name'] = trim($array['last_name']);
-            $array['username'] = trim($array['username']);
-            $array['email'] = trim($array['email']);
+			if($type[0] == "new")
+            	$array['username'] = trim($array['username']);
+			
+			$array['email'] = trim($array['email']);
             $array['created_by'] = trim($array['created_by']);
              
 			if(!(preg_match('/^[a-zA-Z ]*$/', $array['first_name']) && preg_match('/^[a-zA-Z ]*$/', $array['last_name'])) && !(isset($array['first_name']) && isset($array['last_name']))) {
-				return array(false, 'Invalid Name');
+				return array(false, 'Invalid First Name or Last Name');
             }
-            
-			if(!$this->validateUsername($array['username'])) {
-				return array(false, 'Invalid Username');
+			if($type[0] == "new"){
+				if(!$this->validateUsername($array['username'])) {
+					return array(false, 'Invalid Username');
+				}
 			}
+			if($type[0] == "edit" && strlen($array['password']) < 8)
+				goto skip_pass_validation;
 			if(strlen($array['password']) < 8) {
 				return array(false, 'Short Password');
             }
             $array['password'] = $this->hashAdminPass($array['password']);
-            if (!filter_var($array['email'], FILTER_VALIDATE_EMAIL)) {
+			skip_pass_validation:
+			if (!filter_var($array['email'], FILTER_VALIDATE_EMAIL)) {
                 return array(false, 'Invalid Email Format');
-            }
-            if(!(((is_bool($array['access_website_basic']) && is_bool($array['access_circulars'])) && (is_bool($array['access_admissions']) && is_bool($array['access_results']))) && is_bool($array['access_admin_creation']))) {
-                return array(false, 'Admin Access Is Not Properly Defined');
+			}
+			
+			if(!
+				(
+					($array['access_courses']==1 || $array['access_courses']==0) && 
+					($array['access_website_basic'] == 1 || $array['access_website_basic'] == 0) && 
+					($array['access_circulars'] == 1 || $array['access_circulars'] == 0) && 
+					($array['access_admissions'] == 1 || $array['access_admissions'] == 0) && 
+					($array['access_results'] == 1 || $array['access_results'] == 0) && 
+					($array['access_admin_creation'] == 1 || $array['access_admin_creation'] == 0)
+				)
+			) {
+				return array(false, 'Admin Access Is Not Properly Defined');
             }
             
             
 
 			$db = new db;
-			
-			$format = 'ssssssiiiii';
-			$result = $db->insert($this->table, $array, $format);
-			if($result[0] == true) {
-				return true;
+			if($type[0] == "new") { 
+				$format = 'ssssiiiiiiss';
+				$result = $db->insert($this->table, $array, $format);
+				if($result[0] == true) {
+					return true;
+				}
+				else {
+					return $result;
+				}
 			}
-			else {
-				return $result;
+			else if($type[0] == "edit") {
+				if($array["password"] == "") {
+					unset($array["password"]);
+					$format = 'sssiiiiiis';
+				}
+				else
+					$format = 'ssssiiiiiis';
+				$result = $db->update($this->table, $array, $format, "admin_id=".$type[1]);
+					if($result[0] == true) {
+						return true;
+					}
+					else {
+						return $result;
+					}
 			}
 		}
+		function deactivateAdmin($adminId, $by) {
+			if(!is_numeric($adminId))
+				return Array(0, "Invalid Admin Id");
+			$db = new db;
+			if($adminId == 1) 
+				return Array(0, "Cannot Deactivate Superadmin");
+			$res = $db->query("UPDATE admin SET admin_state = 0, created_by=".$by." WHERE admin_id=".$adminId);
+			if($res[0] == true) {
+				return Array(1, "Successfully Deactivatied Admin");
+			}
+			else 
+				return Array(0, "Failed To Deactivate Admin");
 
-		function loginAdmin($username, $password) {
-			if($this->isLoginAdmin())
-				$this->logOutAdmin();
+		}
+		function selectAdmin($adminId = 0) {
+			if(!is_numeric($adminId))
+				return Array(0, "Invalid Admin Id");
+			$db = new db;
+			if($adminId <> 0) {
+				$res = $db->select($this->table, "*", "admin_state=1 and admin_id=".$adminId);
+				if($res[0] == true && $res[1]->num_rows == 1) {
+					while($row = mysqli_fetch_assoc($res[1])) {
+						$row["password"] = "";
+						return Array(1, $row);
+					}
+				}
+			}
+			else {
+				$res = $db->select($this->table, "*", "admin_state=1");
+				$data = Array();
+				if($res[0] == true && $res[1]->num_rows > 0) {
+					while($row = mysqli_fetch_assoc($res[1])) {
+						$row["password"] = "";
+						$data [] = $row;
+					}
+					return Array(1, $data);
+				}
+			}
+			return Array(0, "Failed To Select Admin");
+		}
+		function loginAdmin($username, $password, $verify = false) {
+			if($verify == false)
+				if($this->isLoginAdmin())
+					$this->logOutAdmin();
 			
 			$username = trim($username);
 			if(empty($username) || empty($password))
 				return array(false, "username or password is empty");
 			$password = $this->hashAdminPass($password);
 			$db = new db;
-			$whereStatement = "username = ? and password = ?";
+			$whereStatement = "username = ? and password = ? and admin_state=1";
 			$format = array('ss', $username, $password);
 			$result = $db->select($this->table, '*', $whereStatement, $format);
 			if($result[0] == true && $result[1]->num_rows == 1) {
 				while ($row = $result[1]->fetch_assoc()) {
 					if($username == $row['username'] && $password == $row['password']) {
+						if($verify == true)
+							return array(true);
 						$_SESSION['admin_username'] = $row['username'];
 						$_SESSION['admin_id'] = $row['admin_id'];
 						$_SESSION['admin_f_name'] = $row['first_name'];
@@ -73,7 +148,8 @@
                         $_SESSION['admin_access_admin_creation'] = $row['access_admin_creation'];
 					}
 					else {
-						$this->logOutAdmin();
+						if($verify == false)
+							$this->logOutAdmin();
 						return array(false, 'Invalid username or password');
 					}
 				}
@@ -119,7 +195,8 @@
             $_SESSION['admin_access_circulars'] = NULL;
             $_SESSION['admin_access_admissions'] = NULL;
             $_SESSION['admin_access_results'] = NULL;
-            $_SESSION['admin_access_admin_creation'] = NULL;
+            $_SESSION['admin_access_courses'] = NULL;
+			$_SESSION['admin_access_admin_creation'] = NULL;
             session_unset();
             session_destroy();
 			return true;
@@ -137,3 +214,16 @@
 				return false;
 		}
 	}
+
+
+
+
+
+	// function is_boool is defined to by pass some errors
+	function is_boool($val) {
+		if($val == true || $val == "true" || $val == 1)
+			return true;
+		if($val === false || $val == "false" || $val == 0)
+			return true;
+		return false;
+		}

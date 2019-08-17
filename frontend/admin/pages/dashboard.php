@@ -39,7 +39,7 @@
                     </p><a href="#" class="learn-more">Manage Results »</a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-5 col-lg-4 item">
+            <div class="col-sm-6 col-md-5 col-lg-4 item" data-toggle="modal" data-target="#userManageModal">
                 <div class="box"><i class="fa fa-users icon" style="color: #ff0f0f;"></i>
                     <h3 class="name">Manage Users</h3>
                     <p class="description">In this section admin can manage users, add users, reset their passwords
@@ -489,6 +489,7 @@
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 text-right">
                                     <button type="submit" class="btn btn-danger" id="deleteExamBtn">Delete Exam</button>
                                 </div>
+                            </form>
                             <p class="text-danger">Deleting the exam will delele all the results associated with it.</p>                        
                         </div>
                     </div>
@@ -498,5 +499,115 @@
         </div>
     </div>
 </div>
+
+<!-- user management modal -->
+<div class="modal fade" id="userManageModal" tabindex="-1" role="dialog" aria-labelledby="modalTItleForUserManagement`" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="modalTItleForUserManagement`">User Management</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                <div class="container-fluid">
+                    <nav class="nav nav-tabs nav-stacked">
+                        <a class="nav-link active" onclick="document.getElementById('infoUserMgmDialog').innerHTML = '';" data-toggle="tab" href="#add-edit-remove-admin">User Management</a>
+                    </nav>
+                   
+                    <div class="tab-content">
+                        <div class="container" id="infoUserMgmDialog"></div>
+                        <div id="add-edit-remove-admin" class="tab-pane show fade in active">
+                            
+                            <form action="javascript:void(0)" autocomplete="off" class="row">
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                   <label for="selectAdmin">Select Action</label>
+                                  <select class="form-control" onchange="if(this.value == '') {admin.resetAddAdminUi()} else if(this.value == 0) {admin.addNewAdminUi()} else {admin.editAdminUi(this.value)}" name="selectAdmin" id="selectAdmin">
+                                        
+                                  </select>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                  <label for="adminFirstName">First Name</label>
+                                  <input type="text"
+                                    class="form-control" name="adminFirstName" id="adminFirstName" aria-describedby="adminFirstNamehelp" placeholder="" disabled>
+                                  <small id="adminFirstNamehelp" class="form-text text-muted">First Name</small>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                  <label for="adminLastName">Last Name</label>
+                                  <input type="text"
+                                    class="form-control" name="adminLastName" id="adminLastName" aria-describedby="adminLastNamehelp" placeholder="" disabled>
+                                  <small id="adminLastNamehelp" class="form-text text-muted">Last Name</small>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                    <label for="adminEmail">Email</label>
+                                    <input type="email"
+                                        class="form-control" name="adminEmail" id="adminEmail" aria-describedby="adminEmailhelp" placeholder="" disabled>
+                                    <small id="adminEmailhelp" class="form-text text-muted">Email Id For User</small>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                    <label for="adminUsername">Username</label>
+                                    <input type="text" pattern="/^[a-zA-Z0-9._]+$/" title="Username Can Only Have Numbers, Letters and Underscores (_)"
+                                        class="form-control" name="adminUsername" id="adminUsername" aria-describedby="adminUsernamehelp" placeholder="" disabled>
+                                    <small id="adminUsernamehelp" class="form-text text-muted">Username Can Only Have Numbers, Letters and Underscores (_)</small>
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                    <label for="adminPassword">Password</label>
+                                    <input type="Password" class="form-control" name="Password" id="Password" aria-describedby="adminPasswordhelp" placeholder="" disabled>
+                                    <small id="adminPasswordhelp" class="form-text text-muted">Password</small>
+                                </div>
+                                <div class="col-12">
+                                   <table class="table">
+                                       <thead>
+                                           <tr>
+                                               <th>Access Name</th>
+                                               <th>#</th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>
+                                           <tr>
+                                               <td>Basic Website Details</td>
+                                                <td><input type="checkbox" id="a1" disabled></td>
+                                            </tr>
+                                            <tr>
+                                               <td>Result Management</td>
+                                                <td><input type="checkbox" id="a2" disabled></td>
+                                           </tr>
+                                            <tr>
+                                               <td>Admissions Management</td>
+                                               <td><input type="checkbox" id="a3" disabled></td>
+                                            </tr>
+                                            <tr>
+                                               <td>Courses Management</td>
+                                               <td><input type="checkbox" id="a4" disabled></td>
+                                            </tr>
+                                            <tr>
+                                               <td>User Management</td>
+                                               <td><input type="checkbox" id="a5" disabled></td>
+                                            </tr>
+                                            <tr>
+                                               <td>Circulars / Downloads / Notifications</td>
+                                               <td><input type="checkbox" id="a6" disabled></td>
+                                           </tr>
+                                       </tbody>
+                                       
+                                   </table>
+                                   <div id="userMgmBtn" class="form-group col-12 text-right">
+                                            
+                                    </div>   
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 

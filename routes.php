@@ -38,6 +38,7 @@
 	route::set_route('/api/admin/site-basics/', 'admin-api', 'admin/site-basics');
 	route::set_route('/api/admin/results/', 'admin-api', 'admin/results');
 	route::set_route('/api/admin/courses/', 'admin-api', 'admin/courses');
+	route::set_route('/api/admin/users/', 'admin-api', 'admin/users');
 	route::set_route('/api/results/', 'api', 'results');
 	
 	# Error Routes

@@ -427,7 +427,6 @@
                         <a class="nav-link active" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#add-exam">Add Exam</a>
                         <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = ''; res.getExams(res.getExamsInSelect,['selectExamInDel','selectExamInDel']);"  data-toggle="tab" href="#delete-exam">Delete Exam</a>
                         <a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = ''; res.getExams(res.getExamsInSelect,['selectExamInResultUpload','selectExamInResultUpload']);" data-toggle="tab" href="#add-result">Add Result</a>
-                        <!--a class="nav-link" onclick="document.getElementById('infoResultDialog').innerHTML = '';" data-toggle="tab" href="#delete-result">Delete Result</a-->
                     </nav>
                    
                     <div class="tab-content">
@@ -469,16 +468,15 @@
                                   <input  accept="image/jpg,image/png,image/jpeg,application/pdf" required type="file" name="selectResFile" style="border:none" id="selectResFile" class="form-control" placeholder="" aria-describedby="selectResFileHelp">
                                   <small id="selectResFileHelp" class="text-muted">Allowed files are JPG, JPEG, PDF, PNG</small>
                                 </div>
-                                <div class="form-group col-lg-12 col-md-12 col-sm-12 text-right">
+                                <div class="form-group col-6 text-left">
+                                    <button type="button" onclick="admin.deleteResult()" id="delResultBtn" class="btn btn-danger">Delete Result</button>
+                                </div>
+                                <div class="form-group col-6 text-right">
                                     <button type="submit" id="addResultBtn" class="btn btn-primary">Add Result</button>
                                 </div>
                             </form>
-                            <p class="text-info">In this section user have to select the exam enter roll no and date of birth of student and upload the result.</p>
+                            <p class="text-info">In this section user have to select the exam enter roll no and date of birth of student and upload the result, to delete the result select exam and enter roll number and click on delete result</p>
                         </div>
-                        <!--div id="delete-result" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Some content in menu 2.</p>
-                        </div-->
                         <div id="delete-exam" class="tab-pane fade">
                             <form action="javascript:void(0)" onsubmit="admin.deleteExam()" class="row"  enctype="multipart/form-data">
                                 <div class="form-group col-12">
@@ -497,10 +495,6 @@
                 </div>
                 </div>
             </div>
-            <!--div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
-            </div-->
         </div>
     </div>
 </div>

@@ -48,7 +48,7 @@
             die(json_encode($response));
             break;
         }
-
+        
         case "deleteExam": {
             if(isset($_POST['examId'])) {
                 if(!is_numeric($_POST['examId']))
@@ -106,8 +106,8 @@
             $exId = $_POST["examId"];
             $rn = $_POST["rollNo"];
             $dob = $_POST["dob"];
-            $whF = "exam_id=? AND roll_no=? AND dob=?";
-            $whV = array("sss", $exId, $rn, $dob);
+            $whF = "exam_id=? AND roll_no=?";
+            $whV = array("ss", $exId, $rn);
             $res = $db->select("results", "result_url", $whF, $whV);  
             if($res[0] == true && $res[1]->num_rows == 1) {
                 $response->code=201;
@@ -136,6 +136,36 @@
                 $response->message = $res[1];
             }
             die(json_encode($response));
+        
         }
+        case "deleteResult": {
+            if(!(isset($_POST["examId"]) && isset($_POST["rollNo"]))) {
+                $this->badRequest("All fields are compulsory");
+            }
+            $exId = $_POST['examId'];
+            $rn = $_POST['rollNo'];
+            $resDir = appRoot."/assets/uploads/results/".$exId."/";
+            if(!is_dir($resDir)) {
+                $this->badRequest("Exam Not Found");
+            }
+            $whF = "exam_id=? AND roll_no=?";
+            $whV = array("ss", $exId, $rn);
+            $res = $db->select("results", "result_url, id", $whF, $whV);  
+            if($res[0] == true && $res[1]->num_rows == 1) {
+                while($row = mysqli_fetch_assoc($res[1])) {
+                    $resU = $row["result_url"];
+                    $resId = $row["id"];
+                }
+                if(unlink(appRoot.$resU)) {
+                    $response->code = 200;
+                    $response->message = "Result Deleted Successfully by ".$_SESSION["admin_username"];
+                }
+                $q = $db->query("DELETE FROM results WHERE id=".$resId);
+                die(json_encode($response));     
+            } else {
+                $this->badReqeust("No Result Found To Delete");
+            }
+        }
+    
     }
     $this->badRequest();

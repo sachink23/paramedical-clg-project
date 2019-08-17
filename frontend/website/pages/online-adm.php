@@ -2,6 +2,9 @@
   <div class="container">
     <h2 class="text-uppercase text-center">Online Admissions</h2>
     <hr />
-    Admission form goes here
+    <form class="row" action="javascript:void(0)" onsubmit="">
+
+    </form>
+    
   </div>
 </section>

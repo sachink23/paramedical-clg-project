@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com
--- Generation Time: Aug 08, 2019 at 09:41 PM
+-- Generation Time: Aug 17, 2019 at 11:07 PM
 -- Server version: 5.6.41
 -- PHP Version: 7.2.19-0ubuntu0.18.04.1
 
@@ -30,17 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `admin_id` int(11) NOT NULL,
+  `admin_state` tinyint(1) NOT NULL DEFAULT '1',
   `first_name` varchar(100) NOT NULL,
   `last_name` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(32) NOT NULL,
   `email` varchar(100) NOT NULL,
   `created_by` varchar(100) NOT NULL,
-  `deletable` tinyint(1) NOT NULL DEFAULT '1',
   `access_website_basic` tinyint(1) NOT NULL DEFAULT '0',
   `access_circulars` tinyint(1) NOT NULL DEFAULT '0',
   `access_admissions` tinyint(1) NOT NULL DEFAULT '0',
   `access_results` tinyint(1) NOT NULL DEFAULT '0',
+  `access_courses` tinyint(1) NOT NULL DEFAULT '0',
   `access_admin_creation` tinyint(1) NOT NULL DEFAULT '0',
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -49,8 +50,79 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `first_name`, `last_name`, `username`, `password`, `email`, `created_by`, `deletable`, `access_website_basic`, `access_circulars`, `access_admissions`, `access_results`, `access_admin_creation`, `last_update`) VALUES
-(1, 'Default', 'Admin', 'superadmin', 'b0301b9faf4d5909f4f3eeddaf91acc2', 'email@example.com', 'AppDeveloper', 0, 1, 1, 1, 1, 1, '2019-07-31 14:34:57');
+INSERT INTO `admin` (`admin_id`, `admin_state`, `first_name`, `last_name`, `username`, `password`, `email`, `created_by`, `access_website_basic`, `access_circulars`, `access_admissions`, `access_results`, `access_courses`, `access_admin_creation`, `last_update`) VALUES
+(1, 1, 'Default', 'Admin', 'superadmin', 'b0301b9faf4d5909f4f3eeddaf91acc2', 'sachin@gmail.com', 'superadmin', 1, 1, 1, 1, 1, 1, '2019-08-17 17:03:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admissions`
+--
+
+CREATE TABLE `admissions` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `course_id` int(10) UNSIGNED NOT NULL,
+  `institute_details` text NOT NULL,
+  `candidate_name` varchar(128) NOT NULL,
+  `father_name` varchar(128) NOT NULL,
+  `mother_name` varchar(128) NOT NULL,
+  `dob` varchar(10) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `edu_qual` varchar(50) NOT NULL,
+  `perm_add` text NOT NULL,
+  `local_add` text NOT NULL,
+  `father_occupation` varchar(50) NOT NULL,
+  `mother_occupation` varchar(50) NOT NULL,
+  `phone_no` varchar(20) NOT NULL,
+  `ext_mob_1` varchar(10) NOT NULL,
+  `ext_mob_2` varchar(10) NOT NULL,
+  `ext_mob_3` varchar(10) NOT NULL,
+  `email_id` varchar(100) NOT NULL,
+  `any_other_contact` varchar(20) NOT NULL,
+  `ssc` tinyint(1) NOT NULL,
+  `ssc_passed_status` tinyint(1) NOT NULL DEFAULT '0',
+  `ssc_year` year(4) NOT NULL,
+  `ssc_school` varchar(100) NOT NULL,
+  `ssc_board` varchar(100) NOT NULL,
+  `ssc_per` float UNSIGNED NOT NULL,
+  `ssc_div` varchar(50) NOT NULL,
+  `hsc` tinyint(1) NOT NULL DEFAULT '0',
+  `hsc_passed_status` tinyint(1) NOT NULL,
+  `hsc_college` varchar(100) NOT NULL,
+  `hsc_board` varchar(100) NOT NULL,
+  `hsc_per` float UNSIGNED NOT NULL,
+  `hsc_div` varchar(50) NOT NULL,
+  `grad` tinyint(1) NOT NULL DEFAULT '0',
+  `grad_passed_status` tinyint(1) NOT NULL,
+  `grad_college` varchar(100) NOT NULL,
+  `grad_uni` varchar(100) NOT NULL,
+  `grad_per` float UNSIGNED NOT NULL,
+  `grad_div` varchar(50) NOT NULL,
+  `other_edu` tinyint(1) NOT NULL DEFAULT '0',
+  `other_pass_status` tinyint(1) NOT NULL,
+  `other_college` varchar(100) NOT NULL,
+  `other_uni` varchar(100) NOT NULL,
+  `other_per` float UNSIGNED NOT NULL,
+  `other_div` varchar(50) NOT NULL,
+  `photo_url` varchar(256) NOT NULL,
+  `creation_ip` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+CREATE TABLE `courses` (
+  `course_id` int(11) NOT NULL,
+  `course_name` varchar(128) NOT NULL,
+  `eligibility` varchar(30) NOT NULL,
+  `duration` varchar(30) NOT NULL,
+  `exam_fees` float NOT NULL,
+  `last_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `last_edited_by` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -144,6 +216,19 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `email_unq` (`email`);
 
 --
+-- Indexes for table `admissions`
+--
+ALTER TABLE `admissions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`course_id`),
+  ADD UNIQUE KEY `course_name` (`course_name`);
+
+--
 -- Indexes for table `exams`
 --
 ALTER TABLE `exams`
@@ -177,25 +262,37 @@ ALTER TABLE `website_basic_info`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `admissions`
+--
+ALTER TABLE `admissions`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `exam_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `exam_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `notifs_circus_downlds`
 --
 ALTER TABLE `notifs_circus_downlds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `website_basic_info`

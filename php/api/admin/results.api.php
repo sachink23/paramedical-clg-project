@@ -75,6 +75,7 @@
                     $response->message = "Exam Deleted Successfully by ".$_SESSION['admin_username'];
                 }
                 $response->code = 200;
+                $response->func = "course.getExams(course.getExamsInSelect,['selectExamInDel','selectExamInDel'])";
             }
             else {
                 $response->code = 201;

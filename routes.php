@@ -40,6 +40,7 @@
 	route::set_route('/api/admin/courses/', 'admin-api', 'admin/courses');
 	route::set_route('/api/admin/users/', 'admin-api', 'admin/users');
 	route::set_route('/api/results/', 'api', 'results');
+	route::set_route('/api/admission/new/', 'api', 'admission/new');
 	
 	# Error Routes
 	route::set_route('404', 'error', '404');

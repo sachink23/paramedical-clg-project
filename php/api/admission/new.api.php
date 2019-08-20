@@ -79,15 +79,12 @@
         $dob = $_POST["dob"];
         $dobs = explode("-", $dob);
         if(!($dobs[0] < 2019 && $dobs[0] > 1950)) {
-            echo 1;
             goto dob;
         }
         if(!($dobs[1] < 13 && $dobs[1] > 0)) {
-            echo 2;
             goto dob;
         }
         if(!($dobs[2] < 32 && $dobs[2] > 0)) {
-            echo 3;
             goto dob;
         }
 
@@ -262,6 +259,7 @@
     }
     $photoUrl = explode("/var/www/paraclg", $uplUrl)[1];
     $data = array(
+        "application_date" => date("Y-m-d"),
         "course_name" => $courseName,
         "perm_add" => $perAdd,
         "photo_url"=>$photoUrl,
@@ -280,7 +278,7 @@
         "mob_2" => $_POST["mob2"],
         "email_id" => $_POST["email"]
     );
-    $format = "sssssssssssssssss";
+    $format = "ssssssssssssssssss";
 
     if($otherEdu == 1) {
         $data["other"] = 1;

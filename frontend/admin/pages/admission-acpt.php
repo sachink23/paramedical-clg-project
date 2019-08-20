@@ -1,5 +1,5 @@
 <?php
-    if($this->accessLevelRequired("access_admissions") == false) {
+    if($this->accessLevelRequired("access_admissions", 2) == false) {
         echo' 
         <div class="container mt-2 text-center">
             <a href="/admin/" ><i class="fa fa-home" ></i> Back to Dashboard</a>
@@ -10,4 +10,4 @@
         require_once("admission_acpt_spl.php");
     }
 
-?>
+?> 

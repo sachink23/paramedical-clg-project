@@ -168,6 +168,7 @@
 		function isLoginAdmin() {
 			if(!isset($_SESSION['admin_username'])) {
 				return false;
+				
 			}
 			if(!$this->validateUsername($_SESSION['admin_username'])) {
 				return false;
@@ -175,11 +176,22 @@
 			$db = new db;
 
 			$whereStatement = "admin_id = ".$_SESSION['admin_id'];
-			$result = $db->select($this->table, "username", $whereStatement);
+			$result = $db->select($this->table, "*", $whereStatement);
 			if($result[0] == true && $result[1]->num_rows == 1) {
 				while ($row = $result[1]->fetch_assoc()) {
-					if($row['username'] == $_SESSION['admin_username']) 
+					if($row['username'] == $_SESSION['admin_username']) {
+						$_SESSION['admin_username'] = $row['username'];
+						$_SESSION['admin_id'] = $row['admin_id'];
+						$_SESSION['admin_f_name'] = $row['first_name'];
+                        $_SESSION['admin_l_name'] = $row['last_name'];
+                        $_SESSION['admin_access_website_basic'] = $row['access_website_basic'];
+                        $_SESSION['admin_access_circulars'] = $row['access_circulars'];
+                        $_SESSION['admin_access_admissions'] = $row['access_admissions'];
+                        $_SESSION['admin_access_results'] = $row['access_results'];
+                        $_SESSION['admin_access_courses'] = $row['access_courses'];
+                        $_SESSION['admin_access_admin_creation'] = $row['access_admin_creation'];
 						return true;
+					}
 				}
 			}
 			$this->logOutAdmin();

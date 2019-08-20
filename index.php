@@ -7,6 +7,9 @@
 	require_once routeFile;
 	$initiate = new mainClass;
 	$route = new route;
+	if(!isset($_SERVER['REQUEST_URI'])) {
+		die("Invalid Request");
+	}
 	$uri = explode('?', $_SERVER['REQUEST_URI']);
 	$route->routeTo($uri[0]);
 

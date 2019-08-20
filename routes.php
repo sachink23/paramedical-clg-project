@@ -29,6 +29,7 @@
 	route::set_route('/legal-documents/', 'page', 'legal-documents');
 	route::set_route('/results/', 'page', 'result');
 	route::set_route('/online-admissions/', 'page', 'online-adm');
+	route::set_route('/online-admissions/download/', 'page-special', 'online-adm-view');
 	route::set_route('/downloads/', 'page', 'downloads');
 	route::set_route('/contact/', 'page', 'contact');
 	route::set_route('/admin/login/', 'page-special', 'admin-login');

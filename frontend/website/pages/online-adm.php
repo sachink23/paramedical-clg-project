@@ -1,13 +1,12 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<!--script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script-->
 
 
-<section id="results">
+<section id="online-admission-section">
   <div class="container">
     <h2 class="text-uppercase text-center">Online Admission Form</h2><br/>
-    <div style="width:100%" data-backdrop="static" data-keyboard="false" class="text-center"><button type="button" data-toggle="modal" data-target="#info_admission" class="btn btn-lg btn-info" >Read Instructions</button></div>
+    <div style="width:100%" class="text-center"><button data-backdrop="static" data-keyboard="false"  type="button" data-toggle="modal" data-target="#info_admission" class="btn btn-lg btn-info" >Read Instructions</button></div>
     <hr />
-    <form class="" action="javascript:void(0)" onsubmit="submitAdmissionForm()" enctype="multipart/form-data">
+    <form id="adm_form_id" class="" action="javascript:void(0)" onsubmit="submitAdmissionForm()" enctype="multipart/form-data">
         <fieldset class="container the-fieldset">
           <legend class="the-legend">Admission Details</legend>
           <div class="row">

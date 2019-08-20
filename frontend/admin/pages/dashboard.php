@@ -14,7 +14,7 @@
             <div class="col-sm-6 col-md-5 col-lg-4 item" data-toggle="modal" data-target="#noticeManagementModal">
                 <div class="box"><i class="fa fa-retweet icon" style="color: rgb(255,15,15);"></i>
                     <h3 class="name">Manage Notice Board</h3>
-                    <p class="description">In this section user can manage Notice Board, Circulars, and Downloads.
+                    <p class="description">In this section user can manage Notice Board, Circulars, and Downloads and legal documents section on website.
                     </p><a href="#" class="learn-more">Manage Notice Board »</a>
                 </div>
             </div>
@@ -91,6 +91,7 @@
                                         <option value="N">Notification</option>
                                         <option value="C">Circular</option>
                                         <option value="D">Download</option>
+                                        <option value="L">Legal Document</option>
                                     </select>
                                     <small id="selectTypeOfNotifHelp"></small>
                                 </div>
@@ -113,14 +114,14 @@
                                     <small id="batchForNotifHelp"></small>
                                 </div>
                                 <div class="col-12 form-group">
-                                    <label for="notifText">Enter Notification / Circular / Download Text <big
+                                    <label for="notifText">Enter Notification / Circular / Download / Legal Document Text <big
                                             class="text-danger">*</big></label>
                                     <textarea rows="3" class="form-control" id="notifText" name="notifText"
                                         required></textarea>
                                 </div>
                                 <div class="col-12 form-group">
                                     <label for="notifUrl">Notification Link (Optional)</label>
-                                    <input type="url" placeholder="https://www.exapmle.com" class="form-control"
+                                    <input type="url" placeholder="https://www.example.com" class="form-control"
                                         id="notifUrl" name="notifUrl">
                                     <small id="notifUrlHelp">Here you can add the link for the Notification, if you dont
                                         want to upload file</small>
@@ -176,6 +177,9 @@
                                                             $type = "Download";
                                                         } else if($row['type'] == "C") {
                                                             $type = "Circular";
+                                                        }
+                                                        else if($row['type'] == "L") {
+                                                            $type = "Legal Doc";
                                                         }
                                                         echo "<td>".$label.$row['text']."</td>";
                                                         if($row['link'] == "0") {

@@ -6,7 +6,7 @@
         if($_POST["request"] == "new") {
             if(isset($_POST['type'])) {
                 $type = $_POST['type'];
-                if(!(($type == "D" || $type == "C") || $type == "N")) 
+                if(!(($type == "D" || $type == "C") || $type == "N" || $type == "L")) 
                     $this->badRequest("Invalid Type Selected");
             } else {
                 $this->badRequest("Please Select Notification Type");
@@ -22,7 +22,7 @@
                 $text = $_POST['text'];
                 if(strlen(trim($text)) < 7) {
                     $this->badRequest("Text too short for notifications");
-                }
+              }
                 $text = htmlentities($text);
             } else {
                 $this->badRequest("Text is required for notifications.");
@@ -62,7 +62,7 @@
             $result = $db->insert($table, $data, $format);
             if($result[0] == true) {
                 $response->code = 200;
-                $response->message = "New Notification / Circular / Downloads have been successfully published to website";
+                $response->message = "New Notification / Circular / Downloads / Legal Document have been successfully published to website";
                 die(json_encode($response));
             } else {
                 $response->code = 201;

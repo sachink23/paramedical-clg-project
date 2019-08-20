@@ -16,7 +16,7 @@
         <small id="rollNoHelp" class="text-muted"></small>
       </div>
       <div class="form-group col-lg-4 col-md-4 col-sm-12 ">
-        <label for="date">Roll Number</label>
+        <label for="date">Date of Birth</label>
         <input type="date" name="date" id="date" class="form-control" placeholder="Enter DOB" aria-describedby="dateHelp" required> 
         <small id="dateHelp" class="text-muted"></small>
       </div>

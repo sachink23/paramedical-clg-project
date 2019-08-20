@@ -1,12 +1,5 @@
 <?php
-    $btn = "";
-    require_once contrDir.'/adminAuth.php';
-			$auth = new adminAuth;
-			if($auth->isLoginAdmin()) {
-                $btn = '&nbsp;&nbsp;&nbsp;<button onclick="acceptAdm(1)" type="button" class="btn btn-lg" style="color:white; background:green" >Accept</button>
-                &nbsp;&nbsp;<button type="button" onclick="acceptAdm(0)" class="btn btn-lg" style="color:white; background:red" >Reject</button>
-            ';
-            }
+    
     function abortIt() {
         http_response_code(400);
         echo "No Admission Request Found With Given Details";
@@ -81,7 +74,7 @@
                     <th>HSC</th>
                     <td>".$result."</td>
                     <td>".$d["hsc_year"]."</td>
-                    <td>".$d["hsc_col"]."</td>
+                    <td>".$d["hsc_college"]."</td>
                     <td>".$d["hsc_board"]."</td>
                     <td>".$d["hsc_per"]." %</td>
                     <td>".$d["hsc_div"]."</td>
@@ -100,7 +93,7 @@
                     <td>".$result."</td>
                     <td>".$d["grad_year"]."</td>
                     <td>".$d["grad_uni"]."</td>
-                    <td>".$d["grad_board"]."</td>
+                    <td>".$d["grad_college"]."</td>
                     <td>".$d["grad_per"]." %</td>
                     <td>".$d["grad_div"]."</td>
                     
@@ -114,7 +107,7 @@
         else 
             $result = "FAIL";
         $table .="<tr>
-                    <th>OTHER</th>
+                    <th>".ucfirst($d['other_course_name'])."</th>
                     <td>".$result."</td>
                     <td>".$d["other_year"]."</td>
                     <td>".$d["other_college"]."</td>
@@ -125,6 +118,30 @@
                 </tr>";
         
     }
+    $btn = "";
+    require_once contrDir.'/adminAuth.php';
+			$auth = new adminAuth;
+			if($auth->isLoginAdmin()) { if($d['is_accepted'] == 0){
+                $btn = '&nbsp;&nbsp;&nbsp;<button onclick="acceptAdm(1)" type="button" class="btn btn-lg" style="color:white; background:green" >Accept</button>
+                &nbsp;&nbsp;<button type="button" onclick="acceptAdm(0)" class="btn btn-lg" style="color:white; background:red" >Reject</button>
+            ';
+            echo "
+                <script>
+                    function acceptAdm(acpt) {
+                        if(acpt == 1)
+                            url = '/admin/admissions/accept/?ac=yes&id=".$d['id']."';
+                        else if(acpt == 0)
+                            url = '/admin/admissions/accept/?ac=no&id=".$d['id']."';
+                        window.location.href=url;
+                    }
+                </script>
+            ";
+        
+        }
+            else {
+                $btn = "<br>Admission Accepted by ".$d['accepted_by']."</br>";
+            }
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,6 +154,12 @@
     <style>
         body {
            background: rgb(204,204,204); 
+        }
+        table.table {
+            font-size: 12.5px;
+        }
+        .small-font-size {
+            font-size: 12.5px;
         }
         page {
             background: white;
@@ -214,7 +237,7 @@
     <div class="container text-center">
         <br/>
         <button type="button" onclick="print()" class="btn btn-lg" style="color:white; background:black" >Print</button>
-        &nbsp;&nbsp;<button type="button" onclick="downloadPDF()" class="btn btn-lg" style="color:white; background:black" >Download</button>
+        &nbsp;&nbsp;<!--button type="button" onclick="downloadPDF()" class="btn btn-lg" style="color:white; background:black" >Download</button-->
         <?= $btn ?>
     </div>
     <br />
@@ -275,26 +298,26 @@
                                 <th colspan="2">Father's Name</th>
                                 <td ><?=ucfirst($d["father_name"]) ?></td>
                                 <th width="10%">Occupation</th>
-                                <td><?=$d["father_occupation"] ?></td>
+                                <td><?=ucfirst($d["father_occupation"]) ?></td>
                             </tr>
 
                             <tr>
                                 <th colspan="2">Mother's Name</th>
                                 <td ><?=ucfirst($d["mother_name"]) ?></td>
                                 <th>Occupation</th>
-                                <td><?=$d["mother_occupation"] ?></td>
+                                <td><?=ucfirst($d["mother_occupation"]) ?></td>
                             </tr>
                         </table>
                     </div>
                     <div class="col-3">
-                        <img src="<?=$d['photo_url']?>" height="200px" width="160px"/>
+                        <img src="<?=$d['photo_url']?>" height="160px" width="130px"/>
                     </div>
                     <div class="col-12">
                         <table class="table table-bordered">
                             <tr>
                                 <td width="25%"><strong>Mobile : </strong><?=$d["mob_1"] ?></td>
                                 <td width="33%"><strong>Parent's Mobile : </strong><?= $d["mob_2"]?></td>
-                                <td width="42%"><strong>Email : </strong><?=$d["email_id"] ?></td>
+                                <td width="42%"><strong>Email : </strong><?=strtolower($d["email_id"]) ?></td>
                             </tr>
                         </table>
                     </div>
@@ -302,14 +325,14 @@
                         <table class="table table-bordered">
                             <tr>
                                 <th width="12%"><strong>Local Address</strong></td>
-                                <td width="38%"><?=$d["local_add"] ?></td>
+                                <td width="38%"><?=ucfirst($d["local_add"]) ?></td>
                                 <td width="12%"><strong>Permanent Address</strong></td>
-                                <td width="38%"><?=$d["perm_add"] ?></td>
+                                <td width="38%"><?=ucfirst($d["perm_add"]) ?></td>
                             </tr>
                         </table>   
                     </div>
                     <div class="col-12">
-                        <p><strong>Highest Education Qualification :</strong> <?php if($d["edu_qual"] == "7") echo "7<sup>th</sup>"; else echo $d["edu_qual"];?></p>
+                        <p class="small-font-size"><strong>Highest Education Qualification :</strong> <?php if($d["edu_qual"] == "7") echo "7<sup>th</sup>"; else echo $d["edu_qual"];?></p>
                         <table class="table table-bordered">
                             <tr>
                                 <th>Exam</th>
@@ -323,6 +346,18 @@
                             <?= $table ?>
 
                         </table>
+                    </div>
+                    <div class="col-12" class="small-font-size">
+                        I agree that I have read all the instructions and provided the true and correct information as per my knowledge, I am aware that providing the incorrect information will be responsible for cancellation of my admission.
+                    </div>
+                    <div class="col-8"><br/></div>
+                    <div class="col-4">
+                        <div class="container border text-center">
+                            <br/>
+                            <br/>
+                            <br/>
+                            <p class="small-font-size">Candidates Signature</p>
+                        </div>
                     </div>
             </div>
     </page>

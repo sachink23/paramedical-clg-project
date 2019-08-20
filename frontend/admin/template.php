@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?=webCdn ?>/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=webCdn ?>/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="<?=webCdn ?>/css/admin.min.css">
+    <script src="<?=webCdn ?>/js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,6 @@
         <?php require_once appRoot."/frontend/admin/pages/".$array['path'].".php"; ?>
     
 
-    <script src="<?=webCdn ?>/js/jquery.min.js"></script>
     <script src="<?=webCdn ?>/js/xhr.min.js"></script>
     <script src="<?=webCdn ?>/js/admin.min.js"></script>
     <script src="<?=webCdn ?>/js/results.min.js"></script>

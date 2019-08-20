@@ -33,11 +33,15 @@
 			
 			require_once appRoot.'/frontend/admin/template.php';
 		}
-		protected function accessLevelRequired($level_name) {
+		protected function accessLevelRequired($level_name, $a = 1) {
 			if($_SESSION['admin_'.$level_name] == 1) {
 				return true;
 			}
-			$this->accessDenied("You dont have access to ".$level_name.", contact your administractor to know more");
+			if($a == 1) {
+				$this->accessDenied("You dont have access to ".$level_name.", contact your administractor to know more");
+			}
+			return false;
+
 		}
 		protected function loadApi($array) {
 			header("Content-type: application/json");

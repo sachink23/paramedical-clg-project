@@ -25,7 +25,7 @@
                         class="learn-more">Manage Courses »</a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-5 col-lg-4 item">
+            <div onclick="window.location.href='/admin/admissions/'" class="col-sm-6 col-md-5 col-lg-4 item">
                 <div class="box"><i class="fa fa-graduation-cap icon" style="color: #ff0f0f;"></i>
                     <h3 class="name">Manage Admissions</h3>
                     <p class="description">This section is to manage admissions received through website.</p><a href="#"

@@ -35,6 +35,8 @@
 	route::set_route('/admin/login/', 'page-special', 'admin-login');
 	route::set_route('/admin/', 'admin', 'dashboard');
 	route::set_route('/admin/admissions/', 'admin', 'admission');
+	route::set_route('/admin/admissions/accepted/', 'admin', 'admission');
+	route::set_route('/admin/admissions/accept/', 'admin', 'admission-acpt');
 
 	route::set_route('/api/admin/notifications/', 'admin-api', 'admin/notifications');
 	route::set_route('/api/admin/site-basics/', 'admin-api', 'admin/site-basics');

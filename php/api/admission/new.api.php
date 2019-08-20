@@ -147,7 +147,7 @@
 
     // validate educational details
     $otherEdu = 0; 
-    $sscEdu = 0; 
+    $sscEdu = 0;
     $hscEdu = 0; 
     $gradEdu = 0; 
     if(isset($_POST["eduQual"])) {
@@ -264,16 +264,16 @@
         "perm_add" => $perAdd,
         "photo_url"=>$photoUrl,
         "creation_ip"=>$_SERVER["REMOTE_ADDR"],
-        "institute_details" => $_POST["instituteDetails"],
-        "candidate_name" => $_POST["fullname"],
-        "father_name" => $_POST["fathersname"],
-        "mother_name" => $_POST["mothersname"],
+        "institute_details" => htmlentities($_POST["instituteDetails"]),
+        "candidate_name" => htmlentities($_POST["fullname"]),
+        "father_name" => htmlentities($_POST["fathersname"]),
+        "mother_name" => htmlentities($_POST["mothersname"]),
         "dob" => $_POST["dob"],
-        "gender" => $_POST["gender"],
+        "gender" => htmlentities($_POST["gender"]),
         "edu_qual" => $_POST["eduQual"],
-        "local_add" => $_POST["localAdd"],
-        "father_occupation" => $_POST["fathersoccup"],
-        "mother_occupation" => $_POST["mothersoccup"],
+        "local_add" => htmlentities($_POST["localAdd"]),
+        "father_occupation" => htmlentities($_POST["fathersoccup"]),
+        "mother_occupation" => htmlentities($_POST["mothersoccup"]),
         "mob_1" => $_POST["mob1"],
         "mob_2" => $_POST["mob2"],
         "email_id" => $_POST["email"]
@@ -282,43 +282,43 @@
 
     if($otherEdu == 1) {
         $data["other"] = 1;
-        $data["other_course_name"] = $_POST["otherCourseName"];
+        $data["other_course_name"] = htmlentities($_POST["otherCourseName"]);
         $data["other_pass_status"] = $_POST["isPass_OTHER"];
         $data["other_year"] = $_POST["month_OTHER"];
-        $data["other_college"] = $_POST["col_OTHER"];
-        $data["other_div"] = $_POST["div_OTHER"];
+        $data["other_college"] = htmlentities($_POST["col_OTHER"]);
+        $data["other_div"] = htmlentities($_POST["div_OTHER"]);
         $data["other_per"] = $_POST["per_OTHER"];
-        $data["other_uni"] = $_POST["board_OTHER"];;
+        $data["other_uni"] = htmlentities($_POST["board_OTHER"]);
         $format.="isisssds";
     }
     if($gradEdu == 1) {
         $data["grad"] = 1;
         $data["grad_passed_status"] = $_POST["isPass_GRADUATE"];
         $data["grad_year"] = $_POST["month_GRADUATE"];
-        $data["grad_college"] = $_POST["col_GRADUATE"];
-        $data["grad_div"] = $_POST["div_GRADUATE"];
+        $data["grad_college"] = htmlentities($_POST["col_GRADUATE"]);
+        $data["grad_div"] = htmlentities($_POST["div_GRADUATE"]);
         $data["grad_per"] = $_POST["per_GRADUATE"];
-        $data["grad_uni"] = $_POST["board_GRADUATE"];;
+        $data["grad_uni"] = htmlentities($_POST["board_GRADUATE"]);
         $format.="iisssds";
     }
     if($sscEdu == 1) {
         $data["ssc"] = 1;
         $data["ssc_passed_status"] = $_POST["isPass_SSC"];
         $data["ssc_year"] = $_POST["month_SSC"];
-        $data["ssc_school"] = $_POST["col_SSC"];
-        $data["ssc_div"] = $_POST["div_SSC"];
+        $data["ssc_school"] = htmlentities($_POST["col_SSC"]);
+        $data["ssc_div"] = htmlentities($_POST["div_SSC"]);
         $data["ssc_per"] = $_POST["per_SSC"];
-        $data["ssc_board"] = $_POST["board_SSC"];;
+        $data["ssc_board"] = htmlentities($_POST["board_SSC"]);
         $format.="iisssds";
     }
     if($hscEdu == 1) {
         $data["hsc"] = 1;
         $data["hsc_passed_status"] = $_POST["isPass_HSC"];
         $data["hsc_year"] = $_POST["month_HSC"];
-        $data["hsc_college"] = $_POST["col_HSC"];
-        $data["hsc_div"] = $_POST["div_HSC"];
+        $data["hsc_college"] = htmlentities($_POST["col_HSC"]);
+        $data["hsc_div"] = htmlentities($_POST["div_HSC"]);
         $data["hsc_per"] = $_POST["per_HSC"];
-        $data["hsc_board"] = $_POST["board_HSC"];;
+        $data["hsc_board"] = htmlentities($_POST["board_HSC"]);
         $format.="iisssds";
     }
     $db = new db;

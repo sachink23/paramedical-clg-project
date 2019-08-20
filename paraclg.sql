@@ -1,10 +1,9 @@
-
 -- phpMyAdmin SQL Dump
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com
--- Generation Time: Aug 17, 2019 at 11:07 PM
+-- Generation Time: Aug 20, 2019 at 08:44 PM
 -- Server version: 5.6.41
 -- PHP Version: 7.2.19-0ubuntu0.18.04.1
 
@@ -62,51 +61,56 @@ INSERT INTO `admin` (`admin_id`, `admin_state`, `first_name`, `last_name`, `user
 
 CREATE TABLE `admissions` (
   `id` int(10) UNSIGNED NOT NULL,
-  `course_id` int(10) UNSIGNED NOT NULL,
-  `institute_details` text NOT NULL,
+  `course_name` varchar(100) NOT NULL,
+  `application_date` varchar(10) NOT NULL,
+  `institute_details` varchar(256) NOT NULL,
   `candidate_name` varchar(128) NOT NULL,
   `father_name` varchar(128) NOT NULL,
   `mother_name` varchar(128) NOT NULL,
   `dob` varchar(10) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `edu_qual` varchar(50) NOT NULL,
-  `perm_add` text NOT NULL,
-  `local_add` text NOT NULL,
+  `perm_add` varchar(256) NOT NULL,
+  `local_add` varchar(256) NOT NULL,
   `father_occupation` varchar(50) NOT NULL,
   `mother_occupation` varchar(50) NOT NULL,
-  `phone_no` varchar(20) NOT NULL,
-  `ext_mob_1` varchar(10) NOT NULL,
-  `ext_mob_2` varchar(10) NOT NULL,
-  `ext_mob_3` varchar(10) NOT NULL,
+  `mob_1` varchar(10) NOT NULL,
+  `mob_2` varchar(10) NOT NULL,
   `email_id` varchar(100) NOT NULL,
-  `any_other_contact` varchar(20) NOT NULL,
   `ssc` tinyint(1) NOT NULL,
   `ssc_passed_status` tinyint(1) NOT NULL DEFAULT '0',
-  `ssc_year` year(4) NOT NULL,
+  `ssc_year` varchar(7) NOT NULL,
   `ssc_school` varchar(100) NOT NULL,
   `ssc_board` varchar(100) NOT NULL,
   `ssc_per` float UNSIGNED NOT NULL,
   `ssc_div` varchar(50) NOT NULL,
   `hsc` tinyint(1) NOT NULL DEFAULT '0',
   `hsc_passed_status` tinyint(1) NOT NULL,
+  `hsc_year` varchar(7) NOT NULL,
   `hsc_college` varchar(100) NOT NULL,
   `hsc_board` varchar(100) NOT NULL,
   `hsc_per` float UNSIGNED NOT NULL,
   `hsc_div` varchar(50) NOT NULL,
   `grad` tinyint(1) NOT NULL DEFAULT '0',
   `grad_passed_status` tinyint(1) NOT NULL,
+  `grad_year` varchar(7) NOT NULL,
   `grad_college` varchar(100) NOT NULL,
   `grad_uni` varchar(100) NOT NULL,
   `grad_per` float UNSIGNED NOT NULL,
   `grad_div` varchar(50) NOT NULL,
-  `other_edu` tinyint(1) NOT NULL DEFAULT '0',
+  `other` tinyint(1) NOT NULL DEFAULT '0',
+  `other_course_name` varchar(100) NOT NULL,
   `other_pass_status` tinyint(1) NOT NULL,
+  `other_year` varchar(7) NOT NULL,
   `other_college` varchar(100) NOT NULL,
   `other_uni` varchar(100) NOT NULL,
   `other_per` float UNSIGNED NOT NULL,
   `other_div` varchar(50) NOT NULL,
   `photo_url` varchar(256) NOT NULL,
-  `creation_ip` varchar(20) NOT NULL
+  `creation_ip` varchar(50) NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `is_accepted` tinyint(1) NOT NULL DEFAULT '0',
+  `accepted_by` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -275,7 +279,7 @@ ALTER TABLE `admissions`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `exams`
@@ -287,7 +291,7 @@ ALTER TABLE `exams`
 -- AUTO_INCREMENT for table `notifs_circus_downlds`
 --
 ALTER TABLE `notifs_circus_downlds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `results`

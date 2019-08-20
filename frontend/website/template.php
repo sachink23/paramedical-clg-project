@@ -1,4 +1,50 @@
 <?php 
+    switch($array["path"]) {
+        case "home": {
+            $page_name = "Homepage";
+            break;
+        }
+        case "about": {
+            $page_name = "About Us";
+            break;
+        }
+        case "circulars": {
+            $page_name = "Circulars";
+            break;
+        }
+        case "courses": {
+            $page_name = "Courses";
+            break;
+        }
+        case "legal-documents": {
+            $page_name = "Legal Documents";
+            break;
+        }
+        case "result": {
+            $page_name = "Online Results";
+            break;
+        }
+        
+        case "online-adm": {
+            $page_name = "Online Admissions";
+            break;
+        }
+        
+        case "downloads": {
+            $page_name = "Downloads";
+            break;
+        }
+        
+        case "contact": {
+            $page_name = "Contact Us";
+            break;
+        }
+        
+        case "default": {
+            $page_name = "Website";
+            break;
+        }
+    }
     $notifTable = "notifs_circus_downlds";
     $db = new db;
     $data = "text,flag,link"; 
@@ -29,7 +75,7 @@
         }
         $notices .= "</marquee>";
     } else {
-        $notices = "<marquee>Welcome to the offiial website of ".appName."</marquee>";
+        $notices = "<marquee>Welcome to the offiial website of ".ucfirst(strtolower(appName))."</marquee>";
     }
 
     $res = $db->select("website_basic_info", "*");
@@ -45,7 +91,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Homepage : ClgName</title>
+    <title><?=$page_name?> : <?= ucfirst(strtolower(appName)) ?></title>
     <link rel="stylesheet" href="<?=webCdn ?>/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
     <link rel="stylesheet" href="<?=webCdn ?>/fonts/font-awesome.min.css">
@@ -77,7 +123,7 @@
     }
     </style>
 
-    <img src="https://via.placeholder.com/1366x120?text=clgBanner" width="100%" height="70px">
+    <img src="https://via.placeholder.com/1366x500?text=clgBanner" width="100%" height="90px">
     <nav class="navbar navbar-light navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#"></a>

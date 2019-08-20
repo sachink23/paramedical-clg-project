@@ -5,7 +5,7 @@
 	error_reporting(E_ALL);
 	
 	#basic website related information
-	define('appName', 'Clg Name');
+	define('appName', 'ARYAWART PARA MEDICAL EDUCATION, VOCATIONAL & SELF EMPLOYMENT EDUCATION, BOARD');
 	define('appTagline', 'Clg Tagline');
 	define('appDesc', 'Description');
 	define('appDev', '');

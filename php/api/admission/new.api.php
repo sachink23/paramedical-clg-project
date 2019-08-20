@@ -257,7 +257,7 @@
         $response->text = $upl[1];
         die(json_encode($response));
     }
-    $photoUrl = explode("/var/www/paraclg", $uplUrl)[1];
+    $photoUrl = explode(appRoot, $uplUrl)[1];
     $data = array(
         "application_date" => date("Y-m-d"),
         "course_name" => $courseName,

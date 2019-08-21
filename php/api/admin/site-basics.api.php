@@ -44,8 +44,8 @@
         $s3_info = trim($_POST['slide_3_info']);
         if(!(filter_var($s1_url, FILTER_VALIDATE_URL) && filter_var($s2_url, FILTER_VALIDATE_URL) && filter_var($s3_url, FILTER_VALIDATE_URL)))
             $this->badRequest("Url format invalid");
-        if(!((strlen($s1_title) > 4 && strlen($s1_title) < 21) && (strlen($s2_title) > 4 && strlen($s2_title) < 21) && (strlen($s3_title) > 4 && strlen($s3_title) < 21)))
-            $this->badRequest("Title Length should be between 5 to 20 Characters");
+        if(!((strlen($s1_title) > 4 && strlen($s1_title) < 31) && (strlen($s2_title) > 4 && strlen($s2_title) < 31) && (strlen($s3_title) > 4 && strlen($s3_title) < 31)))
+            $this->badRequest("Title Length should be between 5 to 30 Characters");
       #  if(!((strlen($s1_info) > 39 && strlen($s1_info) < 101) && (strlen($s2_info) > 39 && strlen($s2_info) < 101) && (strlen($s3_info) > 39 && strlen($s3_info) < 101)))
      #       $this->badRequest("Description should be between 40 to 100 Characters");   
         $db = new db;

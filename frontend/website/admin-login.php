@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="<?=webCdn ?>/css/login.min.css">
     <script>
         function forgot_pass() {
-
+            window.location.href = "/";
         }
     </script>
 </head>
@@ -64,7 +64,7 @@
             
             <div class="form-group"><button class="btn btn-primary btn-block" title="Click to Login" type="submit"
                     style="background-color: rgb(130,44,62);">Log In</button></div>
-            <a href="javascript:void(0)" onclick="forgot_pass()"class="forgot">Forgot your email or password?</a>
+            <a href="javascript:void(0)" onclick="forgot_pass()"class="forgot">Return to homepage</a>
         </form>
     </div>
     <script src="<?=webCdn ?>/js/jquery.min.js"></script>

@@ -75,7 +75,7 @@
         }
         $notices .= "</marquee>";
     } else {
-        $notices = "<marquee>Welcome to the offiial website of ".ucfirst(strtolower(appName))."</marquee>";
+        $notices = "<marquee>Welcome to the offiial website of ".ucfirst(strtolower(appName)).". Best board of Mharashtra.</marquee>";
     }
 
     $res = $db->select("website_basic_info", "*");
@@ -164,26 +164,53 @@
             </div>
         </div>
     </nav>
+    <style>
+        .glow {
+            color: red;
+            text-align: center;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+        }
+        .slide-title {
+
+        }
+        .slide-info {
+            font-size: 15px;            
+        }
+    </style>
     <header class="bg-primary text-white text-center">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_1_url'] ?>);">
-                        <h1 class="hero-title"><?= $bs['ss_img_1_title'] ?></h1>
-                        <p class="hero-subtitle"><?= $bs['ss_img_1_info'] ?></p>
+                        <h1 class="hero-title slide-title glow"><?= $bs['ss_img_1_title'] ?></h1>
+                        <p class="hero-subtitle slide-info glow"><?= $bs['ss_img_1_info'] ?></p>
                         <!--p><a class="btn btn-primary btn-lg hero-button" role="button" href="#">Learn more</a></p-->
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_2_url'] ?>);">
-                        <h1 class="hero-title"><?= $bs['ss_img_2_title'] ?></h1>
-                        <p class="hero-subtitle"><?= $bs['ss_img_2_info'] ?></p>
+                        <h1 class="hero-title glow"><?= $bs['ss_img_2_title'] ?></h1>
+                        <p class="hero-subtitle glow"><?= $bs['ss_img_2_info'] ?></p>
+                        <p><a class="btn btn-warning btn-lg hero-button" role="button" href="/about/">About Us</a></p>
+
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_3_url'] ?>);">
-                        <h1 class="hero-title"><?= $bs['ss_img_3_title'] ?></h1>
+                        <h1 class="hero-title glow"><?= $bs['ss_img_3_title'] ?></h1>
                         <p class="hero-subtitle"><?= $bs['ss_img_3_info'] ?></p>
+                        <p><a class="btn btn-warning btn-lg hero-button" role="button" href="/courses/">View Courses</a></p>
                     </div>
                 </div>
             </div>
@@ -219,10 +246,13 @@
     <div class="copyright py-4 text-center text-white">
         <div class="container">
             <div class="row">
+                <div class="col-12">
+
+                </div>
                 <div class="col-sm-12 col-lg-8 col-xl-8 col-md-8"><span style="word-spacing: 20px"><a href="/">Home</a>
                         <a href="/about/">About</a> <a href="/contact/">Contact</a>
                         <a href="/results/">Results</a> </span></div>
-                <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">Copyright &copy; <?= appName ?></div>
+                <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">Copyright &copy; <?= ucfirst(strtolower(appName)) ?></div>
             </div>
         </div>
     </div>

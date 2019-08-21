@@ -24,31 +24,18 @@
 <div id="home" style="background: lightgray">
   <div class="container" style="padding-top:20px; padding-bottom: 20px;">
     <div class="card-group row">
-      <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="col-lg-8 col-md-12 col-sm-12">
         <div class="card ml-1 mr-1 mb-4">
-          <div class="card-body">
-            <h4 class="card-title text-center">Announcements</h4>
+          <style>
+            .img-div img {
+            height: 100%;
+            width: 100%;
+          }
+          </style>
+          <div class="card-body img-div">
+            <h4 class="card-title text-center">News</h4>
             <hr />
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-action">
-                Announcement 1
-              </li>
-              <li class="list-group-item list-group-item-action">
-                Announcement 2
-              </li>
-              <li class="list-group-item list-group-item-action">
-                Announcement 3
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 col-sm-12">
-        <div class="card ml-1 mr-1 mb-4">
-          <div class="card-body">
-            <h4 class="card-title text-center">Courses</h4>
-            <hr />
-            <p class="card-text">List of Courses</p>
+            <img src="<?=webCdn ?>/img/news-img.jpg">
           </div>
         </div>
       </div>

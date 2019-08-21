@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com
--- Generation Time: Aug 20, 2019 at 08:44 PM
+-- Generation Time: Aug 22, 2019 at 12:27 AM
 -- Server version: 5.6.41
 -- PHP Version: 7.2.19-0ubuntu0.18.04.1
 
@@ -51,7 +51,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_state`, `first_name`, `last_name`, `username`, `password`, `email`, `created_by`, `access_website_basic`, `access_circulars`, `access_admissions`, `access_results`, `access_courses`, `access_admin_creation`, `last_update`) VALUES
-(1, 1, 'Default', 'Admin', 'superadmin', 'b0301b9faf4d5909f4f3eeddaf91acc2', 'sachin@gmail.com', 'superadmin', 1, 1, 1, 1, 1, 1, '2019-08-17 17:03:31');
+(1, 1, 'Default', 'Admin', 'superadmin', 'b0301b9faf4d5909f4f3eeddaf91acc2', 'example@example.com', 'superadmin', 1, 1, 1, 1, 1, 1, '2019-08-21 04:33:00');
 
 -- --------------------------------------------------------
 
@@ -206,7 +206,7 @@ CREATE TABLE `website_basic_info` (
 --
 
 INSERT INTO `website_basic_info` (`id`, `about_para_1`, `about_para_2`, `address_line_1`, `address_line_2`, `address_line_3`, `college_contact_no_1`, `college_contact_no_2`, `college_email`, `ss_img_1_url`, `ss_img_1_title`, `ss_img_1_info`, `ss_img_2_url`, `ss_img_2_title`, `ss_img_2_info`, `ss_img_3_url`, `ss_img_3_title`, `ss_img_3_info`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Shivneri Building, Akola Naka,', 'Washim, Dist Washim - 444505', 'Washim Maharashtra', '9423639355', '', 'dr.madhavhivale2568@gmail.com', 'https://via.placeholder.com/2000x1020?text=Slide1', 'Some Title', 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, ege', 'https://via.placeholder.com/2000x1020?text=Slide2', 'Some Title', 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.', 'https://via.placeholder.com/2000x1020?text=Slide3', 'Some TItle', 'Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.');
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Shivneri Building, Akola Naka,', 'Washim, Dist Washim - 444505', 'Washim Maharashtra', '9423639355', '', 'aryawrateducation@reddiffmail.com', '/assets/img/slides/1.jpg', 'Paramedical Board', '<big>Aryawart para medical education, vocational & self employment education, board<br/>Best Board of Maharashtra</big>', '/assets/img/slides/2.jpg', 'ISO Certified Board', '', '/assets/img/slides/3.jpg', 'Paramedical Courses', 'Get to know to our paramedical courses.');
 
 --
 -- Indexes for dumped tables
@@ -267,7 +267,7 @@ ALTER TABLE `website_basic_info`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `admissions`
@@ -285,19 +285,19 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `exam_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `exam_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `notifs_circus_downlds`
 --
 ALTER TABLE `notifs_circus_downlds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `website_basic_info`

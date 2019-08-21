@@ -75,7 +75,7 @@
         }
         $notices .= "</marquee>";
     } else {
-        $notices = "<marquee>Welcome to the offiial website of ".ucfirst(strtolower(appName)).". Best board of Mharashtra.</marquee>";
+        $notices = "<marquee>Welcome to the offiial website of ".ucfirst(strtolower(appName)).". Best Board of Maharashtra.</marquee>";
     }
 
     $res = $db->select("website_basic_info", "*");
@@ -123,7 +123,7 @@
     }
     </style>
 
-    <img src="https://via.placeholder.com/1366x500?text=clgBanner" width="100%" height="90px">
+    <img src="<?=webCdn ?>/img/header.jpg" width="100%">
     <nav class="navbar navbar-light navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#"></a>
@@ -164,30 +164,6 @@
             </div>
         </div>
     </nav>
-    <style>
-        .glow {
-            color: red;
-            text-align: center;
-            -webkit-animation: glow 1s ease-in-out infinite alternate;
-            -moz-animation: glow 1s ease-in-out infinite alternate;
-            animation: glow 1s ease-in-out infinite alternate;
-        }
-
-        @-webkit-keyframes glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-            }
-        }
-        .slide-title {
-
-        }
-        .slide-info {
-            font-size: 15px;            
-        }
-    </style>
     <header class="bg-primary text-white text-center">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">

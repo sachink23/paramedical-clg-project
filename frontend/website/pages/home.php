@@ -26,12 +26,6 @@
     <div class="card-group row">
       <div class="col-lg-8 col-md-12 col-sm-12">
         <div class="card ml-1 mr-1 mb-4">
-          <style>
-            .img-div img {
-            height: 100%;
-            width: 100%;
-          }
-          </style>
           <div class="card-body img-div">
             <h4 class="card-title text-center">News</h4>
             <hr />

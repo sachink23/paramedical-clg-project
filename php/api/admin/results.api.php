@@ -137,7 +137,7 @@
                 $response->message = $res[1];
             }
             die(json_encode($response));
-        
+            break;
         }
         case "deleteResult": {
             if(!(isset($_POST["examId"]) && isset($_POST["rollNo"]))) {
@@ -164,7 +164,7 @@
                 $q = $db->query("DELETE FROM results WHERE id=".$resId);
                 die(json_encode($response));     
             } else {
-                $this->badReqeust("No Result Found To Delete");
+                $this->badRequest("No Result Found To Delete");
             }
         }
     

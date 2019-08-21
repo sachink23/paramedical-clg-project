@@ -222,13 +222,15 @@
     <div class="copyright py-4 text-center text-white">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-
+                <div class="col-12 mb-3">
+                <img src="https://counter7.wheredoyoucomefrom.ovh/private/freecounterstat.php?c=qec154dyjjk63yytctleghdttghqhs16" border="0" title="web hit counter" alt="web hit counter"><br/>
                 </div>
-                <div class="col-sm-12 col-lg-8 col-xl-8 col-md-8"><span style="word-spacing: 20px"><a href="/">Home</a>
+                <div class="col-sm-12 col-lg-6 col-xl-6 col-md-6"><span style="word-spacing: 20px"><a href="/">Home</a>
                         <a href="/about/">About</a> <a href="/contact/">Contact</a>
                         <a href="/results/">Results</a> </span></div>
-                <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">Copyright &copy; <?= ucfirst(strtolower(appName)) ?></div>
+                <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">Copyright &copy; <?= ucfirst(strtolower(appName)) ?></div>
+                <div class="col-12">
+                </div>
             </div>
         </div>
     </div>

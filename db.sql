@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com
--- Generation Time: Aug 22, 2019 at 12:27 AM
+-- Generation Time: Aug 22, 2019 at 12:31 PM
 -- Server version: 5.6.41
 -- PHP Version: 7.2.19-0ubuntu0.18.04.1
 

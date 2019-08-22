@@ -169,23 +169,23 @@
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_1_url'] ?>);">
-                        <h1 class="hero-title slide-title glow"><?= $bs['ss_img_1_title'] ?></h1>
-                        <p class="hero-subtitle slide-info glow"><?= $bs['ss_img_1_info'] ?></p>
+                        <h1 class="hero-title slide-title "><?= $bs['ss_img_1_title'] ?></h1>
+                        <p class="hero-subtitle slide-info "><?= $bs['ss_img_1_info'] ?></p>
                         <!--p><a class="btn btn-primary btn-lg hero-button" role="button" href="#">Learn more</a></p-->
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_2_url'] ?>);">
-                        <h1 class="hero-title glow"><?= $bs['ss_img_2_title'] ?></h1>
-                        <p class="hero-subtitle glow"><?= $bs['ss_img_2_info'] ?></p>
+                        <h1 class="hero-title slide-title"><?= $bs['ss_img_2_title'] ?></h1>
+                        <p class="hero-subtitle slide-info"><?= $bs['ss_img_2_info'] ?></p>
                         <p><a class="btn btn-warning btn-lg hero-button" role="button" href="/about/">About Us</a></p>
 
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="jumbotron carousel-hero" style="background-image: url(<?= $bs['ss_img_3_url'] ?>);">
-                        <h1 class="hero-title glow"><?= $bs['ss_img_3_title'] ?></h1>
-                        <p class="hero-subtitle"><?= $bs['ss_img_3_info'] ?></p>
+                        <h1 class="hero-title slide-title"><?= $bs['ss_img_3_title'] ?></h1>
+                        <p class="hero-subtitle slide-info"><?= $bs['ss_img_3_info'] ?></p>
                         <p><a class="btn btn-warning btn-lg hero-button" role="button" href="/courses/">View Courses</a></p>
                     </div>
                 </div>

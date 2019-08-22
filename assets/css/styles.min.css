@@ -7,10 +7,14 @@
 }
 
 .slide-title {
+  -webkit-text-stroke: 1px red;
 
 }
 .slide-info {
-  font-size: 15px;            
+  font-size: 15px;          
+  color: red !important;
+  font-weight: bolder;
+
 }
 
 div.jumbotron.carousel-hero {

@@ -24,7 +24,24 @@
 <div id="home" style="background: lightgray">
   <div class="container" style="padding-top:20px; padding-bottom: 20px;">
     <div class="card-group row">
-      <div class="col-lg-8 col-md-12 col-sm-12">
+      <div class="col-lg-6 col-md-12 col-sm-12" onclick="window.open('<?=webCdn ?>/img/about-us-img.jpg', '_blank');">
+        <div class="card ml-1 mr-1 mb-4">
+          <div class="card-body img-div">
+            <img src="<?=webCdn ?>/img/about-us-img.jpg">
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-6 col-md-12 col-sm-12" onclick="window.open('<?=webCdn ?>/img/banner.jpg', '_blank');">
+        <div class="card ml-1 mr-1 mb-4">
+          <div class="card-body img-div">
+            <img src="<?=webCdn ?>/img/banner.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-group row">
+      <div class="col-lg-8 col-md-12 col-sm-12" onclick="window.open('<?=webCdn ?>/img/news-img.jpg', '_blank');">
         <div class="card ml-1 mr-1 mb-4">
           <div class="card-body img-div">
             <h4 class="card-title text-center">News</h4>

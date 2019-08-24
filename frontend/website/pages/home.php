@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-lg-4 ml-auto">
         <p class="lead">
-          <?= $bs['about_para_2']; ?>        
+          <?= $bs['about_para_1']; ?>        
         </p>
       </div>
       <div class="col-lg-4 mr-auto">

@@ -1,10 +1,10 @@
 <?php
 	# comment below three lines when you move to production
-	/*
+	
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
-	*/
+	
 	#basic website related information
 	define('appName', 'ARYAWART PARA MEDICAL EDUCATION, VOCATIONAL & SELF EMPLOYMENT EDUCATION, BOARD');
 	define('appTagline', 'Clg Tagline');
@@ -41,7 +41,7 @@
 	define('fileUploadDir', appRoot.'/assets/uploads/');
 
 	#db related information
-	define('dbHost', 'dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com');
+	define('dbHost', 'localhost');
 	define('dbUser', 'sachin');
 	define('dbPass', 'Escpk4739J');
 	define('dbName', 'paraclg');

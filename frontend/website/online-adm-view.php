@@ -121,7 +121,7 @@
     $btn = "";
     require_once contrDir.'/adminAuth.php';
 			$auth = new adminAuth;
-			if($auth->isLoginAdmin()) { if($d['is_accepted'] == 0){
+			if($auth->isLoginAdmin()) { if($d['is_accepted'] == 0 && $_SESSION["admin_access_admissions"] == 1){
                 $btn = '&nbsp;&nbsp;&nbsp;<button onclick="acceptAdm(1)" type="button" class="btn btn-lg" style="color:white; background:green" >Accept</button>
                 &nbsp;&nbsp;<button type="button" onclick="acceptAdm(0)" class="btn btn-lg" style="color:white; background:red" >Reject</button>
             ';
@@ -234,35 +234,25 @@
     </style>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container text-center" id="buttons">
         <br/>
         <button type="button" onclick="print()" class="btn btn-lg" style="color:white; background:black" >Print</button>
-        &nbsp;&nbsp;<!--button type="button" onclick="downloadPDF()" class="btn btn-lg" style="color:white; background:black" >Download</button-->
+        &nbsp;&nbsp;<button type="button" onclick="downloadPDF()" class="btn btn-lg" style="color:white; background:black" >Download</button>
         <?= $btn ?>
     </div>
     <br />
-    <page class="section-to-print" size="A4">
+    <page class="section-to-print" id="form-pg-1" size="A4">
         
-            <div class="container pt-2">
-                <img src="https://via.placeholder.com/1366x150?text=clgBanner" width="100%">
+            <div class="container">
+                <img src="<?=webCdn ?>/img/header.jpg" width="100%">
             </div>
 
-            <div class="container pt-2" >
+            <div class="container pt-0" >
                 <h3 style="font-family: arial; " class="text-center">Admission Form</h3>
-                <div class="row mx-auto border-me">
-                    <div class="col-4">
-                       <strong> Application Id :</strong> <?=$d["id"] ?>
-                    </div>
-                    <div class="col-4">
-                       <strong> Application Status : </strong><?php if($d["is_accepted"] == 1) echo "Accepted"; else echo "Pending"; ?>
-                    </div>
-                    <div class="col-4">
-                       <strong> Application Date : </strong><?=$d["application_date"] ?>
-                    </div>
-                </div>
+                
             </div>
-            <hr />
-            <div class="container ">
+            
+            <div class="container pt-1">
                 <table class="table table-bordered">
                     <tr>
                         <th width="16.66%">Application Id</th>
@@ -361,5 +351,8 @@
                     </div>
             </div>
     </page>
+    <script src="<?=webCdn?>/js/jquery.min.js"></script>
+
+
 </body>
 </html>

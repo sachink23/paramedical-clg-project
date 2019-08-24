@@ -332,6 +332,7 @@
     }
     else {
         $response->code = 201;
+        $response->res = $res[1];
         $response->message = "Server Error";
         $response->text = "Failed to submit admission form due to server error, please contact administrator";
         die(json_encode($response));

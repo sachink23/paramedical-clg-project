@@ -39,7 +39,10 @@
             $page_name = "Contact Us";
             break;
         }
-        
+        case "study-center-form": {
+            $page_name = "Study Center Affiliation Form";
+            break;
+        }
         case "default": {
             $page_name = "Website";
             break;

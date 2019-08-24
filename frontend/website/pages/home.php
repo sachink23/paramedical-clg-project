@@ -4,13 +4,9 @@
     <hr class="star-light mb-5" />
     <div class="row">
       <div class="col-lg-4 ml-auto">
-        <p class="lead">
-          <?= $bs['about_para_1']; ?>        
-        </p>
-      </div>
-      <div class="col-lg-4 mr-auto">
-        <p class="lead">
-          <?= $bs['about_para_2']; ?>
+        <p class="lead">          
+            <?= $bs['about_para_1']; ?>        <br />
+            <?= $bs['about_para_2']; ?>        
         </p>
       </div>
     </div>

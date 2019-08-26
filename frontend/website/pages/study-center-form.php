@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <section id="study-center-section">
     <div class="container">
         <h2 class="text-uppercase text-center">नवीन स्टडी सेंटर करिता संलग्नता फॉर्म</h2><br/>
@@ -7,32 +8,32 @@
             <div id="" class="row">
                 <div class="form-group col-lg-6 col-md-6 col-sm-12">
                   <label for="nameOfIns">संस्थेचे नाव</label>
-                  <input type="text" id="language" placeholder="संस्थेचे नाव" class="form-control" name="nameOfIns" id="nameOfIns">
+                  <input type="text" placeholder="संस्थेचे नाव" class="form-control" name="nameOfIns" id="nameOfIns" required="">
                 </div>
                 <div class="form-group col-lg-6 col-md-6 col-sm-12">
                   <label for="nameOfPres">संस्थेचे अध्यक्ष</label>
-                  <input type="text" placeholder="संस्थेचे अध्यक्ष" class="form-control" name="nameOfPres" id="nameOfPres">
+                  <input type="text" placeholder="संस्थेचे अध्यक्ष" class="form-control" name="nameOfPres" id="nameOfPres" required="">
                 </div>
                 <div class="form-group col-lg-4 col-md-6 col-sm-12">
                   <label for="regNo">संस्था नोंदणी क्रमांक</label>
-                  <input type="text" placeholder="संस्था नोंदणी क्रमांक" class="form-control" name="regNo" id="regNo">
+                  <input type="text" placeholder="संस्था नोंदणी क्रमांक" class="form-control" name="regNo" id="regNo" required="">
                 </div>
                 
                 <div class="form-group col-lg-4 col-md-6 col-sm-12">
                   <label for="regDate">नोंदणीची तारीख</label>
-                  <input type="date" placeholder="नोंदणीची तारीख" class="form-control" name="regDate" id="regDate">
+                  <input type="date" placeholder="नोंदणीची तारीख" class="form-control" name="regDate" id="regDate" required="">
                 </div>
                 <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                  <label for="mob1">दरूध्वनी क्रमांक 1</label>
-                  <input type="number" placeholder="दरूध्वनी क्रमांक 1" class="form-control" name="mob1" id="mob1">
+                  <label for="mob1">दूरध्वनी क्रमांक 1</label>
+                  <input type="number" placeholder="दूरध्वनी क्रमांक 1" class="form-control" name="mob1" id="mob1" required="">
                 </div>
                 <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                  <label for="mob2">दरूध्वनी क्रमांक 2</label>
-                  <input type="number" placeholder="दरूध्वनी क्रमांक 2" class="form-control" name="mob2" id="mob2">
+                  <label for="mob2">दूरध्वनी क्रमांक 2</label>
+                  <input type="number" placeholder="दूरध्वनी क्रमांक 2" class="form-control" name="mob2" id="mob2" required="">
                 </div>
                 <div class="form-group col-lg-4 col-md-6 col-sm-12">
                   <label for="email">ईमेल आयडी</label>
-                  <input type="email" placeholder="ईमेल आयडी" class="form-control" name="email" id="email">
+                  <input type="email" placeholder="ईमेल आयडी" class="form-control" name="email" id="email" required="">
                 </div>
                 <div class="form-group col-lg-4 col-md-6 col-sm-12">
                   <label for="website">वेबसाईट पत्ता(असल्यास)</label>
@@ -40,7 +41,7 @@
                 </div>
                 <div class="form-group col-lg-12 col-md-12 col-sm-12">
                   <label for="address">संस्थेचा पूर्ण पत्ता</label>
-                  <textarea placeholder="संस्थेचा पूर्ण पत्ता" class="form-control" name="address" id="address"></textarea>
+                  <textarea placeholder="संस्थेचा पूर्ण पत्ता" class="form-control" name="address" id="address" required=""></textarea>
                 </div>
                 <div class="form-group col-lg-3 col-md-4 col-sm-12">
                   <label for="">संस्थेकडील इमारत</label>
@@ -66,7 +67,7 @@
                 </div>
                 <div class="form-group col-lg-3 col-md-5 col-sm-12">
                   <label for="nosOfEmployees">संस्थेकडे उपलब्ध कर्मचारी संख्या</label>
-                  <input type="number" placeholder="उपलब्ध कर्मचारी संख्या" class="form-control" name="nosOfEmployees" id="nosOfEmployees">
+                  <input type="number" placeholder="उपलब्ध कर्मचारी संख्या" class="form-control" required="" name="nosOfEmployees" id="nosOfEmployees">
                 </div>
                 <div class="form-group col-lg-3 col-md-4 col-sm-12">
                   <label for="">संस्थेकडे संगणक आणि इंटरनेट सुविधा</label>
@@ -112,7 +113,7 @@
                 <div class="form-group col-8 col-xl-10 col-md-10 col-lg-10">
                     <label for="name1">नाव</label>
                     <input type="text"
-                      class="form-control" name="name1" id="name1" placeholder="नाव">
+                      class="form-control" name="name1" id="name1" placeholder="नाव" required="">
                 </div>
                 <div class="form-group col-4 col-xl-2 col-md-2 col-lg-2">
                   <label for="salutation2">2)</label>
@@ -125,54 +126,66 @@
                 <div class="form-group col-8 col-xl-10 col-md-10 col-lg-10">
                     <label for="name2">नाव</label>
                     <input type="text"
-                      class="form-control" name="name2" id="name2" placeholder="नाव">
+                      class="form-control" name="name2" id="name2" placeholder="नाव" required="">
                 </div>
                 <div class="form-group col-12">
-                  <label>संस्थेने सलंग्नता अर्ज सादर करताना खालील कागदपत्रांच्या छायांकित प्रती जोडणे आवश्यक आहे. जी कागदपत्रे जोडली आहेत त्यासमोरील होय वर क्लीक / टच करा. </label>
+                  <label>संस्थेने सलंग्नता अर्ज सादर करताना खालील कागदपत्रांच्या छायांकित प्रती जोडणे आवश्यक आहे. जी कागदपत्रे जोडली आहेत त्यासमोरील आहे / नाही वर क्लीक / टच करा. </label>
                   <ul class="list-group">
                     <li class="list-group-item d-flex align-items-center">
                       1) संस्थेचे नोंदणी प्रमाणपत्र
                       <span class="ml-3">
-                        <input type="radio" id="regedCertY">&nbsp;आहे &nbsp;&nbsp;  
-                        <input type="radio" id="regedCertN">&nbsp;नाही  &nbsp;&nbsp;
+                        <input type="radio" name="regedCert" id="regedCertY">&nbsp;आहे &nbsp;&nbsp;  
+                        <input type="radio" name="regedCert" id="regedCertN" required="">&nbsp;नाही  &nbsp;&nbsp;
                       </span>
                     </li>
                     <li class="list-group-item d-flex align-items-center">
                       2) संस्थचे पॅन कार्ड / टॅन कार्ड
                       <span class="ml-3">
-                        <input type="radio" id="panY">&nbsp;आहे &nbsp;&nbsp;  
-                        <input type="radio" id="panN">&nbsp;नाही  &nbsp;&nbsp;
+                        <input type="radio" name="pan" id="panY">&nbsp;आहे &nbsp;&nbsp;  
+                        <input type="radio" name="pan" id="panN" required="">&nbsp;नाही  &nbsp;&nbsp;
                       </span>
                     </li>
                     <li class="list-group-item d-flex align-items-center">
                       3) अध्यक्ष / सचिव यांची ओळखपत्रे आधार कार्ड / पॅन कार्ड  
                       <span class="ml-3">
-                        <input type="radio" id="OpanY">&nbsp;आहे &nbsp;&nbsp;  
-                        <input type="radio" id="OpanN">&nbsp;नाही  &nbsp;&nbsp;
+                        <input type="radio" name="Opan" id="OpanY">&nbsp;आहे &nbsp;&nbsp;  
+                        <input type="radio" name="Opan" id="OpanN" required="">&nbsp;नाही  &nbsp;&nbsp;
                       </span>
                     </li>
                     <li class="list-group-item d-flex align-items-center">
                       4) इमारत असल्याबाबत चे प्रमाणपत्र ८ अ / घरपट्टी पावती 
                       <span class="ml-3">
-                        <input type="radio" id="buildingProofY">&nbsp;आहे &nbsp;&nbsp;  
-                        <input type="radio" id="buildingProofN">&nbsp;नाही  &nbsp;&nbsp;
+                        <input type="radio" name="buildingProof" id="buildingProofY">&nbsp;आहे &nbsp;&nbsp;  
+                        <input type="radio" name="buildingProof" id="buildingProofN" required="">&nbsp;नाही  &nbsp;&nbsp;
                       </span>
                     </li>
                     <li class="list-group-item d-flex align-items-center">
                       5) 24 तास वीजपुरवठा आहे काय ? वीजबिल प्रत ?
                       <span class="ml-3">
-                        <input type="radio" id="electY">&nbsp;आहे &nbsp;&nbsp;  
-                        <input type="radio" id="electN">&nbsp;नाही  &nbsp;&nbsp;
+                        <input type="radio" name="elect" id="electY">&nbsp;आहे &nbsp;&nbsp;  
+                        <input type="radio" name="elect" id="electN" required="">&nbsp;नाही  &nbsp;&nbsp;
                       </span>
                     </li>
                     <li class="list-group-item d-flex align-items-center">
                       6) संस्थेचे नियमित लेखापरीक्षण रिपोर्ट ? 
                       <span class="ml-3">
-                        <input type="radio" id="reportY">&nbsp;आहे &nbsp;&nbsp;  
-                        <input type="radio" id="reportN">&nbsp;नाही  &nbsp;&nbsp;
+                        <input type="radio" name="report" id="reportY">&nbsp;आहे &nbsp;&nbsp;  
+                        <input type="radio" name="report" id="reportN" required="">&nbsp;नाही  &nbsp;&nbsp;
                       </span>
                     </li>
                   </ul>
+                </div>
+                <div class="form-group col-12">
+                  <label>
+                  1) अर्जामधील माहिती पूर्णपणे सत्य भरणे आवश्यक आहे, यामध्ये काही असत्य आढळून आल्यास स्टडी सेंटर ची मान्यता कोणत्याही पूर्वसूचनेशिवाय रद्द करण्याचे सर्व अधिकार आर्यवर्त पॅरामेडिकल, व्यावसायिक, स्वयंरोजगार शिक्षण मंडळ यांच्याकडे राखीव आहेत. 
+                  <br /><br/>
+                  2) तसेच कोणत्याही कारणाशिवाय स्टडी सेंटर नाकारण्याचे अथवा नामंजूर करण्याचे सर्व अधिकार आर्यवर्त पॅरामेडिकल, व्यावसायिक, स्वयंरोजगार शिक्षण मंडळ यांच्याकडे राखीव आहेत.
+                  </label>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="" id="tosCheck" required=""> मला वरील अटी मान्य आहेत
+                    </label>
+                  </div>
                 </div>
                 <div class="col-12 text-right">
                   <button type="reset" class="btn btn-danger">Reset</button>&nbsp;
@@ -189,10 +202,8 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"> अर्ज भरण्या आधी खालील सूचना / नियम / अटी काळजीपूर्वक वाचा</h5>
-          <!--button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button-->
+        <h5 class="modal-title"> अर्ज भरण्याआधी खालील सूचना / नियम / अटी काळजीपूर्वक वाचा</h5>
+       
       </div>
       <div class="modal-body">
         <ol class="list-group">
@@ -200,10 +211,10 @@
           अर्जामधील सर्व माहिती भरणे आवश्यक आहे
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-          अर्जामधील माहिती पूर्णपणे सत्य भरणे आवश्यक आहे, यामध्ये काही असत्य आढळून आल्यास स्टडी सेंटर ची मान्यता कोणत्याही पूर्वसूचनेशिवाय रद्द करण्याचे सर्व अधिकार आर्यावर्त पॅरामेडिकल, व्यावसायिक, स्वयंरोजगार शिक्षण मंडळ यांच्याकडे राखीव आहेत. 
+          अर्जामधील माहिती पूर्णपणे सत्य भरणे आवश्यक आहे, यामध्ये काही असत्य आढळून आल्यास स्टडी सेंटर ची मान्यता कोणत्याही पूर्वसूचनेशिवाय रद्द करण्याचे सर्व अधिकार आर्यवर्त पॅरामेडिकल, व्यावसायिक, स्वयंरोजगार शिक्षण मंडळ यांच्याकडे राखीव आहेत. 
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-          तसेच कोणत्याही कारणाशिवाय स्टडी सेंटर नाकारण्याचे अथवा नामंजूर करण्याचे सर्व अधिकार आर्यावर्त पॅरामेडिकल, व्यावसायिक, स्वयंरोजगार शिक्षण मंडळ यांच्याकडे राखीव आहेत. 
+          तसेच कोणत्याही कारणाशिवाय स्टडी सेंटर नाकारण्याचे अथवा नामंजूर करण्याचे सर्व अधिकार आर्यवर्त पॅरामेडिकल, व्यावसायिक, स्वयंरोजगार शिक्षण मंडळ यांच्याकडे राखीव आहेत. 
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
           आम्ही वेबसाईटच्या सुरक्षेकरीता तुमच्या IP address ची नोंद ठेवतो.   

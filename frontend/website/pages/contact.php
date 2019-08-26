@@ -2,7 +2,7 @@
     if(isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["phone"]) && isset($_POST["message"])) {
         $msg="";
         $subject = "New query on website by ".$_POST["name"];
-        $to = "dr.madhavhivale2568@gmail.com";
+        $to = $bs["college_email"];
         $message = "Name : ".$_POST["name"]. "<br>Email : ".$_POST["email"]."<br>Message : ".$_POST["message"];
         
         $header = "From: mail@".appHost . "\r\n". 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/html;' . "\r\n";

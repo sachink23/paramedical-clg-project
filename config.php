@@ -11,7 +11,7 @@
 	define('appDesc', 'Description');
 	define('appDev', '');
 	define('hostCheck', 0);
-	if(hostCheck == 1)
+	if(hostCheck == 0)
 		define('appHost', $_SERVER['HTTP_HOST']);
 	else 
 		define('appHost', "paramedicalboard.com");

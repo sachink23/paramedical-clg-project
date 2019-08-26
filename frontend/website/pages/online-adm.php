@@ -299,8 +299,8 @@
       </div>
       <div class="modal-body">
         <ol class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Fileds Marked with <big class="text-danger">* </big> Are Required.    
+          <li class="list-group-item d-flex align-items-center">
+            Fileds Marked with <big class="text-danger">&nbsp;*&nbsp;</big> Are Required.    
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Please fill the form correctly, and check each field before hitting submit button, once you submit the form you can't edit it.
@@ -330,9 +330,9 @@
     </div>
   </div>
 </div>
-<script src="<?=webCdn ?>/js/admissions.min.js"></script>
 <script src="<?=webCdn ?>/js/xhr.min.js"></script>
 <script src="<?=webCdn ?>/js/results.min.js"></script>
+<script src="<?=webCdn ?>/js/admissions.min.js"></script>
 <script>
    res.getCourses(res.getCoursesInSelect,['selectCourse','selectCourse']);
 </script>

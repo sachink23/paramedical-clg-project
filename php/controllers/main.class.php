@@ -24,7 +24,7 @@
 				}
  				http_response_code(301);
 
-				header("Location: ".$pref.appHost."/".$_SERVER["REQUEST_URI"]);
+				header("Location: ".$pref.appHost.$_SERVER["REQUEST_URI"]);
 				exit;
 			}
 			return true;

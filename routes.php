@@ -23,6 +23,7 @@
 			
 	# Website Routes -
 	route::set_route('/', 'page', 'home');
+	route::set_route('/study-center-form/', 'page', 'study-center-form');
 	route::set_route('/about/', 'page', 'about');
 	route::set_route('/circulars/', 'page', 'circulars');
 	route::set_route('/courses/', 'page', 'courses');

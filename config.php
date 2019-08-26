@@ -1,10 +1,10 @@
 <?php
 	# comment below three lines when you move to production
-	/*
+	
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
-	*/
+	
 	#basic website related information
 	define('appName', 'ARYAWART PARA MEDICAL EDUCATION, VOCATIONAL & SELF EMPLOYMENT EDUCATION, BOARD');
 	define('appTagline', 'Clg Tagline');

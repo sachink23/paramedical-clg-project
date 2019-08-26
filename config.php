@@ -21,7 +21,7 @@
 
 	#App mode controllers
 	define('mode', 'w'); # uc - under construction ++ m- maintainance ++ w - working properly
-	define('ssl', true);
+	define('ssl', false);
 	if(ssl == false) {
 		define('appProtocol', 'http://');
 	}

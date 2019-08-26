@@ -14,14 +14,14 @@
 	if(hostCheck == 1)
 		define('appHost', $_SERVER['HTTP_HOST']);
 	else 
-		define('appHost', "paraclg.kportal.in");
+		define('appHost', "paramedicalboard.com");
 
 	/* Don't Change app secret once created */
 	define('appSecret', 'mpBk69KnbNbInSVYDCV');
 
 	#App mode controllers
 	define('mode', 'w'); # uc - under construction ++ m- maintainance ++ w - working properly
-	define('ssl', false);
+	define('ssl', true);
 	if(ssl == false) {
 		define('appProtocol', 'http://');
 	}

@@ -215,6 +215,10 @@
         @media print {
             body * {
                 visibility: hidden;
+                background: white;
+            }
+            .print-candidate-signature {
+                width: 30% !important;
             }
             .section-to-print, .section-to-print * {
                 visibility: visible;
@@ -340,8 +344,9 @@
                     <div class="col-12" class="small-font-size">
                         I agree that I have read all the instructions and provided the true and correct information as per my knowledge, I am aware that providing the incorrect information will be responsible for cancellation of my admission.
                     </div>
-                    <div class="col-8"><br/></div>
-                    <div class="col-4">
+            </div>
+
+            <div class="m-2" class="print-candidate-signature" style="width: 30%">
                         <div class="container border text-center">
                             <br/>
                             <br/>
@@ -349,7 +354,6 @@
                             <p class="small-font-size">Candidates Signature</p>
                         </div>
                     </div>
-            </div>
     </page>
     <script src="<?=webCdn?>/js/jquery.min.js"></script>
 

@@ -24,17 +24,27 @@
 	# Website Routes -
 	route::set_route('/', 'page', 'home');
 	route::set_route('/study-center-form/', 'page', 'study-center-form');
+	route::set_route('/study-center-form', 301, '/study-center-form/');
 	route::set_route('/about/', 'page', 'about');
+	route::set_route('/about', 301, '/about/');
 	route::set_route('/circulars/', 'page', 'circulars');
+	route::set_route('/circulars', 301, '/circulars/');
 	route::set_route('/courses/', 'page', 'courses');
+	route::set_route('/courses', 301, '/courses/');
 	route::set_route('/legal-documents/', 'page', 'legal-documents');
+	route::set_route('/legal-documents', 301, '/legal-documents/');
 	route::set_route('/results/', 'page', 'result');
+	route::set_route('/results', 301, '/results/');
 	route::set_route('/online-admissions/', 'page', 'online-adm');
+	route::set_route('/online-admissions', '301', '/online-admissions/');
 	route::set_route('/online-admissions/download/', 'page-special', 'online-adm-view');
 	route::set_route('/downloads/', 'page', 'downloads');
+	route::set_route('/downloads', 301, '/downloads/');
 	route::set_route('/contact/', 'page', 'contact');
+	route::set_route('/contact', 301, '/contact/');
 	route::set_route('/admin/login/', 'page-special', 'admin-login');
 	route::set_route('/admin/', 'admin', 'dashboard');
+	route::set_route('/admin', 301, '/admin/');
 	route::set_route('/admin/admissions/', 'admin', 'admission');
 	route::set_route('/admin/admissions/accepted/', 'admin', 'admission');
 	route::set_route('/admin/admissions/accept/', 'admin', 'admission-acpt');

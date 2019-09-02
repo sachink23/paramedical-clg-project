@@ -1,3 +1,9 @@
+<style>
+.btn {
+    white-space:normal !important;
+    word-wrap: break-word; 
+}
+</style>
 <section id="about" class="bg-primary text-white mb-0">
   <div class="container">
     <h2 class="text-uppercase text-center text-white">About</h2>

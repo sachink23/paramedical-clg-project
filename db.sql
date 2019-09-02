@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com
+<<<<<<< HEAD
 -- Generation Time: Sep 02, 2019 at 01:27 PM
 -- Server version: 5.6.44
 -- PHP Version: 7.2.19-0ubuntu0.18.04.2
+=======
+-- Generation Time: Aug 24, 2019 at 08:55 PM
+-- Server version: 5.6.41
+-- PHP Version: 7.2.19-0ubuntu0.18.04.1
+>>>>>>> 7dfd35efa10f934bdf29486ca14d71ecb5280f57
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;

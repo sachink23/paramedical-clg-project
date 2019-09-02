@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group col-lg-4 col-md-6 col-sm-12">
                   <label for="website">वेबसाईट पत्ता(असल्यास)</label>
-                  <input type="email" placeholder="वेबसाईट पत्ता(असल्यास)" class="form-control" name="website" id="website">
+                  <input type="text" placeholder="वेबसाईट पत्ता(असल्यास)" class="form-control" name="website" id="website">
                 </div>
                 <div class="form-group col-lg-12 col-md-12 col-sm-12">
                   <label for="address">संस्थेचा पूर्ण पत्ता</label>

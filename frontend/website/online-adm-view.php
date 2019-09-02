@@ -3,6 +3,7 @@
     function abortIt() {
         http_response_code(400);
         echo "No Admission Request Found With Given Details";
+        echo "<br><a href='/'>Return to homepage</a>";
         exit;
     }
     if(!(isset($_GET['id']) && isset($_GET["dob"]) && isset($_GET["mob"]))) {

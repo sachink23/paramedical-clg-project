@@ -43,6 +43,10 @@
             $page_name = "Study Center Affiliation Form";
             break;
         }
+        case "admission-form-download-form": {
+            $page_name = "Download Admission Form";
+            break;
+        }
         case "default": {
             $page_name = "Website";
             break;
@@ -146,9 +150,18 @@
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/results/">Results</a>
                     </li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="/online-admissions/">Admission</a></li>
+                    <li class="nav-item mx-0 mx-lg-1 dropdown" role="presentation">
+                        <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Apply Online
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/online-admissions/">Online Admission</a>
+                        <a class="dropdown-item" href="/online-admissions/download-form/">Download Online Admission Form</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/study-center-form/">New Study Center Registration Form</a>
+                        <a class="dropdown-item" href="/download-study-center-form/">Download Study Center Registration Form</a>
+                        </div>
+                    </li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="/circulars/">Circulars</a></li>

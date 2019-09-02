@@ -14,13 +14,13 @@
               <small id="dobHelp" class="form-text text-muted">Enter date of birth filled in admission form</small>
             </div>
             <div class="col-sm-12 col-md-4 form-group">
-              <label for="mob">Date of birth</label>
+              <label for="mob">Mobile Number</label>
               <input type="number" min="7000000000" max="9999999999" placeholder="Enter Mobile Number" required=""
                 class="form-control" name="mob" id="mob" aria-describedby="mobHelp">
               <small id="mobHelp" class="form-text text-muted">Enter parent's or students mobile number filled in application form</small>
             </div>
             <div class="form-group col-12 text-right">
-                <button type="submit" class="btn btn-outline-primary">Download Form</button>
+                <button type="submit" class="btn btn-primary">Download Form</button>
             </div>
         </form>
     </div>

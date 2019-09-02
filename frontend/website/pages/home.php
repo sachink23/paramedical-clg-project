@@ -6,7 +6,7 @@
       <div class="col-lg-8 mx-auto">
         <p class="lead">        
               
-            <?= substr($bs['about_para_1'], 300); ?>....<br />
+            <?= substr($bs['about_para_1'], 100); ?>....<br />
             <!--<?= $bs['about_para_2']; ?>-->        
         </p>
       </div>

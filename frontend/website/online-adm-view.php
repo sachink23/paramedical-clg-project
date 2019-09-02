@@ -242,7 +242,7 @@
     <div class="container text-center" id="buttons">
         <br/>
         <button type="button" onclick="print()" class="btn btn-lg" style="color:white; background:black" >Print</button>
-        &nbsp;&nbsp;<button type="button" onclick="downloadPDF()" class="btn btn-lg" style="color:white; background:black" >Download</button>
+        &nbsp;&nbsp;<!--button type="button" onclick="downloadPDF()" class="btn btn-lg" style="color:white; background:black" >Download</button-->
         <?= $btn ?>
     </div>
     <br />

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com
--- Generation Time: Aug 22, 2019 at 12:31 PM
--- Server version: 5.6.41
--- PHP Version: 7.2.19-0ubuntu0.18.04.1
+-- Generation Time: Sep 02, 2019 at 01:27 PM
+-- Server version: 5.6.44
+-- PHP Version: 7.2.19-0ubuntu0.18.04.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -113,6 +113,13 @@ CREATE TABLE `admissions` (
   `accepted_by` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `admissions`
+--
+
+INSERT INTO `admissions` (`id`, `course_name`, `application_date`, `institute_details`, `candidate_name`, `father_name`, `mother_name`, `dob`, `gender`, `edu_qual`, `perm_add`, `local_add`, `father_occupation`, `mother_occupation`, `mob_1`, `mob_2`, `email_id`, `ssc`, `ssc_passed_status`, `ssc_year`, `ssc_school`, `ssc_board`, `ssc_per`, `ssc_div`, `hsc`, `hsc_passed_status`, `hsc_year`, `hsc_college`, `hsc_board`, `hsc_per`, `hsc_div`, `grad`, `grad_passed_status`, `grad_year`, `grad_college`, `grad_uni`, `grad_per`, `grad_div`, `other`, `other_course_name`, `other_pass_status`, `other_year`, `other_college`, `other_uni`, `other_per`, `other_div`, `photo_url`, `creation_ip`, `last_update`, `is_accepted`, `accepted_by`) VALUES
+(1, 'BAMS AM', '2019-08-26', 'DSM IITM', 'SHaikh Mukhim', 'Md Sarwar', 'Farida', '1991-04-13', 'male', 'GRADUATE', 'Parbhani', 'Parbhani', 'Service', 'Teacher', '7709663959', '7709663959', 'shaikhmdmukhim@gmail.com', 1, 1, '2007-08', 'BVM', 'Aurangabad', 66, 'Distinction', 1, 1, '2010-08', 'Queens J CLG', 'Aurangabad', 55, 'Distinction', 1, 1, '2015-02', 'DSM', 'Nanded', 66, 'Distinction', 1, 'CCC', 1, '2019-08', 'Parbhani', 'Delhi', 55, 'Distinction', '/assets/uploads/admission_photos/2019/1566813336_5555680.jpg', '106.220.65.52', '2019-09-02 07:53:33', 0, '');
+
 -- --------------------------------------------------------
 
 --
@@ -129,6 +136,35 @@ CREATE TABLE `courses` (
   `last_edited_by` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`course_id`, `course_name`, `eligibility`, `duration`, `exam_fees`, `last_update`, `last_edited_by`) VALUES
+(4, 'BAMS AM', 'HSC', '36', 5000, '2019-08-23 12:20:14', 'superadmin'),
+(5, 'BEMS EH', 'HSC', '36', 5000, '2019-08-23 12:20:31', 'superadmin'),
+(6, 'BNYS', 'HSC', '36', 5000, '2019-08-23 12:20:42', 'superadmin'),
+(8, 'DAMS AM', 'HSC', '36', 5000, '2019-08-23 12:21:15', 'superadmin'),
+(9, 'M.D.A.M.', 'ANY DR.DEGREE,', '18', 10000, '2019-08-23 12:46:55', 'superadmin'),
+(10, 'M.D.E.H.', 'ANY DR.DEGREE,', '18', 10000, '2019-08-23 12:47:32', 'superadmin'),
+(11, 'M.D.NATUROPATHY', 'ANY DR.DEGREE,', '18', 10000, '2019-08-23 12:47:57', 'superadmin'),
+(12, 'D.E.H.M,', 'SSC', '18', 5000, '2019-08-23 12:48:49', 'superadmin'),
+(13, 'D.N.Y.S,', 'SSC', '24', 5000, '2019-08-23 12:49:20', 'superadmin'),
+(14, 'D.B.M.S,', 'SSC', '24', 5000, '2019-08-23 12:49:42', 'superadmin'),
+(15, 'D.S.I,', 'HSC', '24', 5000, '2019-08-23 12:51:47', 'superadmin'),
+(16, 'C.M.S&amp;E.D.,', 'HSC', '18', 10000, '2019-08-23 12:52:27', 'superadmin'),
+(17, 'D.M.L.T,', 'HSC', '18', 5000, '2019-08-23 12:54:04', 'superadmin'),
+(18, 'P.G.D.M.L.T.,', 'HSC', '24', 10000, '2019-08-23 12:55:43', 'superadmin'),
+(19, 'C.M.L.T.,', 'HSC', '18', 5000, '2019-08-23 12:56:34', 'superadmin'),
+(20, 'D.X.R.T,', 'HSC', '18', 5000, '2019-08-23 12:57:52', 'superadmin'),
+(21, 'D.E.C.G,', 'HSC', '18', 5000, '2019-08-23 12:58:13', 'superadmin'),
+(22, 'P.M.W.', 'HSC', '18', 5000, '2019-08-23 12:58:35', 'superadmin'),
+(23, 'D.Asc.', 'HSC', '18', 5000, '2019-08-23 13:00:47', 'superadmin'),
+(24, 'D.Ysc.', 'HSC', '18', 5000, '2019-08-23 13:00:59', 'superadmin'),
+(26, 'D.G.O.A.M.', 'ANY DR.DEGREE', '18', 5000, '2019-08-23 13:05:53', 'superadmin'),
+(27, 'D.C.H.A.M.', 'ANY DR.DEGREE', '18', 5000, '2019-08-23 13:06:08', 'superadmin'),
+(29, 'D.V.D. A.M.', 'ANY DR.DEGREE', '18', 5000, '2019-08-23 13:07:44', 'superadmin');
+
 -- --------------------------------------------------------
 
 --
@@ -141,6 +177,19 @@ CREATE TABLE `exams` (
   `created_by` varchar(256) NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`exam_id`, `exam_name`, `created_by`, `last_update`) VALUES
+(1, '2013', 'superadmin', '2019-08-23 12:22:59'),
+(2, '2014', 'superadmin', '2019-08-23 12:23:08'),
+(3, '2015', 'superadmin', '2019-08-23 12:23:15'),
+(4, '2016', 'superadmin', '2019-08-23 12:23:21'),
+(5, '2017', 'superadmin', '2019-08-23 12:23:26'),
+(6, '2018', 'superadmin', '2019-08-23 12:23:31'),
+(7, '2019', 'superadmin', '2019-08-23 12:23:38');
 
 -- --------------------------------------------------------
 
@@ -158,6 +207,13 @@ CREATE TABLE `notifs_circus_downlds` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `notifs_circus_downlds`
+--
+
+INSERT INTO `notifs_circus_downlds` (`id`, `text`, `type`, `link`, `flag`, `last_edited_by`, `last_update`) VALUES
+(1, 'Registration Certificate', 'L', '/assets/uploads/24-08-2019-353103-A.jpg', 'new', 'superadmin', '2019-08-24 11:36:52');
+
 -- --------------------------------------------------------
 
 --
@@ -172,6 +228,46 @@ CREATE TABLE `results` (
   `result_url` varchar(256) NOT NULL,
   `created_by` varchar(50) NOT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `study_center_aff_req`
+--
+
+CREATE TABLE `study_center_aff_req` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `application_date` varchar(10) DEFAULT NULL,
+  `name` varchar(256) NOT NULL,
+  `pres_name` varchar(256) NOT NULL,
+  `reg_no` varchar(128) NOT NULL,
+  `reg_date` varchar(10) NOT NULL,
+  `mob_1` varchar(20) NOT NULL,
+  `mob_2` varchar(20) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `website` varchar(256) DEFAULT NULL,
+  `address` text NOT NULL,
+  `is_building_owned` tinyint(4) NOT NULL DEFAULT '0',
+  `are_workers_permanent` tinyint(4) NOT NULL DEFAULT '0',
+  `nos_of_workers` int(10) UNSIGNED NOT NULL,
+  `is_comp_available` tinyint(4) NOT NULL DEFAULT '0',
+  `is_library_available` tinyint(4) NOT NULL DEFAULT '0',
+  `nos_of_books_in_lib` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `other_activities` text,
+  `sal_1_officer` varchar(10) NOT NULL,
+  `name_1_officer` varchar(256) NOT NULL,
+  `sal_2_officer` varchar(10) NOT NULL,
+  `name_2_officer` varchar(256) NOT NULL,
+  `is_reg_certification_attached` tinyint(4) NOT NULL DEFAULT '0',
+  `is_pan_attached` tinyint(4) NOT NULL DEFAULT '0',
+  `is_id_attached` tinyint(4) NOT NULL DEFAULT '0',
+  `is_build_proof_attached` tinyint(4) NOT NULL DEFAULT '0',
+  `is_elect_bill_attached` tinyint(4) NOT NULL DEFAULT '0',
+  `is_report_attached` tinyint(4) NOT NULL DEFAULT '0',
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_by` varchar(50) NOT NULL,
+  `is_accepted` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -206,7 +302,7 @@ CREATE TABLE `website_basic_info` (
 --
 
 INSERT INTO `website_basic_info` (`id`, `about_para_1`, `about_para_2`, `address_line_1`, `address_line_2`, `address_line_3`, `college_contact_no_1`, `college_contact_no_2`, `college_email`, `ss_img_1_url`, `ss_img_1_title`, `ss_img_1_info`, `ss_img_2_url`, `ss_img_2_title`, `ss_img_2_info`, `ss_img_3_url`, `ss_img_3_title`, `ss_img_3_info`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Shivneri Building, Akola Naka,', 'Washim, Dist Washim - 444505', 'Washim Maharashtra', '9423639355', '', 'aryawrateducation@reddiffmail.com', '/assets/img/slides/1.jpg', 'Paramedical Board', '<big>Aryawart para medical education, vocational & self employment education, board<br/>Best Board of Maharashtra</big>', '/assets/img/slides/2.jpg', 'ISO Certified Board', '', '/assets/img/slides/3.jpg', 'Paramedical Courses', 'Get to know to our paramedical courses.');
+(1, 'AN ISO CERTIFIED EDUCATION BOARD\nARYAWART PARA MEDICAL EDUCATION, VOCATIONAL  &amp; SELF EMPLOYMENT EDUCATION BOARD\nAll Courses will be Registerd Under Self -Employment Exchange Deparnment Goverment of Maharashtra \nAryawart Para medical Education,Vocational &amp; Self Employment Education Board was Legally established under the guidance of Jurist,Eminent educationists &amp; Social workers for the Development of education in wide areas.Government of Maharashtra registered the board for propagation &amp; devolopment of vocational &amp; Self Employment Education. Traing Registered under Employment &amp; self Employment  self Employment Exchange Govt.of Maharashtra (Vide No.RSRUS/VMN/ K6/3111-12-2011.) The Board under Govt of India act XXI of 1860 is legal Autonomous &amp; Voluntary Institutaion and has legal right of teaching &amp; Training under the provisions of constitution copies of bylaw prospects etc are sent to the various authorities and Departments of the Govt of India,Govt. of Maharashtra &amp; Union Territories by the board from time to time. APVSEEB is an Autonomous body conducting various education Programmes to inspire youth to take to self-Employment in thir chosen  profession. The idelogy at APVSEEB is to create quality man power and instill in them a feeling of self Esteem to be able to complete in the progressive Markets and achive success APVSEEB is engaged in offering certification in various vocational, paramedical,Alternative,Vetarnary, Computer field.   Above said board is a division regulity and governed.The Norms and Objects of APVSEEB is a registered organization under SR Act XXI of 1860 ( Working under act XXI of 1854,17,18,Vict-C-112,S,20,et.seq.) Literary and sintific institution Act with the head office at Washim (Maharashtra) is Generally Colled Central board being central office to supervise the affiliated  Instititution/ colleges all Maharashtra and India bases.                        All Diplomas / certificates are awarded Autonomously by The Board for Effective Health services now there is need that Entire Programme should be at National Level to be Reviewed to move with new Medical Development. The  respolsibilities of community in Health have more importance which should have trained Health specialist along with  workers and techonologists and should be well Equipped to give specified remedies for day today illness. so to achieve  this purpose APVSEEB of Maharashtra has Founded. We have to infrom that Our Institutions stands in therefore front of  similar Institute in Maharashrta and India as on our Quality Knowledge &amp; Training as well as Students in Medical Paramedical Vocational education.                           \n', '                           \nAll Courses will be Registerd Under Self -Employment Exchange Deparnment Goverment of Maharashtra ', 'Shivneri Building, Akola Naka,', 'Washim, Dist Washim - 444505', 'Washim Maharashtra', '9423639355', '', 'aryawrateducation@reddiffmail.com', '/assets/img/slides/1.jpg', 'Paramedical Board', '<big>Aryawart para medical education, vocational & self employment education, board<br/>Best Board of Maharashtra</big>', '/assets/img/slides/2.jpg', 'ISO Certified Board', '', '/assets/img/slides/3.jpg', 'Paramedical Courses', 'Get to know to our paramedical courses.');
 
 --
 -- Indexes for dumped tables
@@ -254,6 +350,12 @@ ALTER TABLE `results`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `study_center_aff_req`
+--
+ALTER TABLE `study_center_aff_req`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `website_basic_info`
 --
 ALTER TABLE `website_basic_info`
@@ -273,31 +375,37 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `admissions`
 --
 ALTER TABLE `admissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `exam_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `exam_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `notifs_circus_downlds`
 --
 ALTER TABLE `notifs_circus_downlds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `study_center_aff_req`
+--
+ALTER TABLE `study_center_aff_req`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `website_basic_info`

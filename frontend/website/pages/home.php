@@ -6,7 +6,7 @@
       <div class="col-lg-8 mx-auto">
         <p class="lead">        
               
-            <?= substr($bs['about_para_1'], 100); ?>....<br />
+            <?= substr($bs['about_para_1'], 0, 438); ?>.... <a style='color:white; font-weight:bolder; text-decoration: underline' href='/about/'>Read More</a><br />
             <!--<?= $bs['about_para_2']; ?>-->        
         </p>
       </div>
@@ -105,6 +105,16 @@
                   class="btn btn-lg btn-block btn-custom-css-lg"
                 >
                   Online Admission
+                </button></a
+              >
+            </div>
+            <div class="row mt-3">
+              <a class="button-a-links" href="/study-center-form/" style="width:100%"
+                ><button
+                  type="button"
+                  class="btn btn-lg btn-block btn-custom-css-lg"
+                >
+                  Online Affiliation For Study Center
                 </button></a
               >
             </div>

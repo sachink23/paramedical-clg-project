@@ -4,9 +4,10 @@
     <hr class="star-light mb-5" />
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <p class="lead">          
-            <?= $bs['about_para_1']; ?>        <br /><br />
-            <?= $bs['about_para_2']; ?>        
+        <p class="lead">        
+              
+            <?= substr($bs['about_para_1'], 300); ?>....<br />
+            <!--<?= $bs['about_para_2']; ?>-->        
         </p>
       </div>
     </div>

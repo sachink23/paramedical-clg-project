@@ -44,7 +44,7 @@
 	define('dbHost', 'dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com');
 	define('dbUser', 'sachin');
 	define('dbPass', 'Escpk4739J');
-	define('dbName', 'paraclg');
+	define('dbName', 'paraclg_prod');
 	
 
 	

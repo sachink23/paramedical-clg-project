@@ -20,7 +20,7 @@
               <small id="mobHelp" class="form-text text-muted">Enter parent's or students mobile number filled in application form</small>
             </div>
             <div class="form-group col-12 text-right">
-                <button type="submit" class="btn btn-primary-outline">Download Form</button>
+                <button type="submit" class="btn btn-outline-primary">Download Form</button>
             </div>
         </form>
     </div>

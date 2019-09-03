@@ -265,8 +265,9 @@
     $res = $db->insert("study_center_aff_req", $data, $format);
     if($res[0] == true) {
         $response->code = 200;
-        $response->message = "";
-        $response->text = "";
+        $response->message = "Affiliation Request Submitted Successfully With Id ".$res[2];
+        $response->text="Your affiliation request Id is : ".$res[2]. ". <br><a href='/online-affiliation/download/?id=".$res[2]."&reg_date=".$_POST["reg_date"]."&mob=".$_POST["mob1"]."'>Click here to download your prefilled form.</a>";
+        $response->func = "document.getElementById('adm_form_id').reset();";    
     } else {
         $response->code = 201;
         $response->message = "Server is unable to handle your response";

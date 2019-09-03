@@ -1,5 +1,4 @@
 <?php
-    
     function abortIt() {
         http_response_code(400);
         echo "No Affiliation Request Found With Given Details";
@@ -186,8 +185,6 @@
                     </tr>
                 </table>
             </div>
-           
-           
     </page>
     <script src="<?=webCdn?>/js/jquery.min.js"></script>
 

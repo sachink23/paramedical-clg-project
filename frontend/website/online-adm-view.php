@@ -246,6 +246,11 @@
         <?= $btn ?>
     </div>
     <br />
+    <?php
+        foreach($d as $key => $value) {
+            $d[$key] = ucfirst(strtolower(trim(strip_tags($value))));
+        }
+    ?>
     <page class="section-to-print" id="form-pg-1" size="A4">
         
             <div class="container">

@@ -2,3 +2,24 @@ Options -MultiViews
    RewriteEngine On
    RewriteCond %{REQUEST_FILENAME} !-f
    RewriteRule ^ index.php [QSA,L]
+<Files .htaccess>
+   Deny from all
+</Files>
+<Files web.config>
+   Deny from all
+</Files>
+<Files config.php>
+   Deny from all
+</Files>
+<Files db.sql>
+   Deny from all
+</Files>
+<Files README.md>
+   Deny from all
+</Files>
+<Files routes.php>
+   Deny from all
+</Files>
+<Files .gitattributes>
+   Deny from all
+</Files>

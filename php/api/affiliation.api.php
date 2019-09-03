@@ -45,7 +45,7 @@
     }
     $dob = $_POST["reg_date"];
     $dobs = explode("-", $dob);
-    if(!($dobs[0] < 2019 && $dobs[0] > 1850)) {
+    if(!($dobs[0] <= 2029 && $dobs[0] > 1850)) {
         goto reg_date;
     }
     if(!($dobs[1] < 13 && $dobs[1] > 0)) {
@@ -266,8 +266,8 @@
     if($res[0] == true) {
         $response->code = 200;
         $response->message = "Affiliation Request Submitted Successfully With Id ".$res[2];
-        $response->text="Your affiliation request Id is : ".$res[2]. ". <br><a href='/online-affiliation/download/?id=".$res[2]."&reg_date=".$_POST["reg_date"]."&mob=".$_POST["mob1"]."'>Click here to download your prefilled form.</a>";
-        $response->func = "document.getElementById('adm_form_id').reset();";    
+        $response->text="Your affiliation request Id is : ".$res[2]. ". <br><a href='/online-affiliation/download/?id=".$res[2]."&mob=".$_POST["mob1"]."'>Click here to download your prefilled form.</a>";
+        $response->func = "document.getElementById('aff_form_id').reset();";    
     } else {
         $response->code = 201;
         $response->message = "Server is unable to handle your response";

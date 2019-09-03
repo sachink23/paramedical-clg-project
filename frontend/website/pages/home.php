@@ -115,7 +115,7 @@
               >
             </div>
             <div class="row mt-3">
-              <a class="button-a-links" href="/study-center-form/" style="width:100%"
+              <a class="button-a-links" href="/online-affiliation/" style="width:100%"
                 ><button
                   type="button"
                   class="btn btn-lg btn-block btn-custom-css-lg"

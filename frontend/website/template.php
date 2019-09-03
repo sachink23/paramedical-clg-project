@@ -103,12 +103,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title><?=$page_name?> : <?= ucfirst(strtolower(appName)) ?></title>
+    <meta property="og:image" content="<?=webCdn ?>/img/logo.jpg" />
     <link rel="stylesheet" href="<?=webCdn ?>/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
     <link rel="stylesheet" href="<?=webCdn ?>/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="<?=webCdn ?>/css/styles.min.css">
     <script src="<?=webCdn ?>/js/jquery.min.js"></script>
-
 </head>
 
 <body id="page-top">

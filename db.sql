@@ -1,17 +1,6 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Host: dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com
--- Generation Time: Sep 02, 2019 at 01:27 PM
--- Server version: 5.6.44
--- PHP Version: 7.2.19-0ubuntu0.18.04.2
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -212,7 +201,37 @@ CREATE TABLE `notifs_circus_downlds` (
 --
 
 INSERT INTO `notifs_circus_downlds` (`id`, `text`, `type`, `link`, `flag`, `last_edited_by`, `last_update`) VALUES
-(1, 'Registration Certificate', 'L', '/assets/uploads/24-08-2019-353103-A.jpg', 'new', 'superadmin', '2019-08-24 11:36:52');
+(1, 'Registration Certificate', 'L', '/assets/uploads/24-08-2019-353103-A.jpg', 'new', 'superadmin', '2019-08-24 11:36:52'),
+(2, 'Registration Certificate ', 'L', '/assets/uploads/03-09-2019-594319-AA.jpg', 'new', 'superadmin', '2019-09-03 11:03:02'),
+(3, 'Pan Card ', 'L', '/assets/uploads/03-09-2019-119408-C.jpg', 'new', 'superadmin', '2019-09-03 11:04:07'),
+(4, 'Registration Certificate ', 'L', '/assets/uploads/03-09-2019-496649-D.jpg', 'new', 'superadmin', '2019-09-03 11:05:43'),
+(5, 'Iso Certifiacate ', 'L', '/assets/uploads/03-09-2019-334250-E.jpg', 'new', 'superadmin', '2019-09-03 11:08:08'),
+(6, 'ITR  Certifiacate ', 'L', '/assets/uploads/03-09-2019-506666-B.jpg', 'new', 'superadmin', '2019-09-03 11:09:39'),
+(7, 'Logo Trademark   Certifiacate ', 'L', '/assets/uploads/03-09-2019-787381-F.jpg', 'new', 'superadmin', '2019-09-03 11:11:03'),
+(8, 'Employment  Certifiacate ', 'L', '/assets/uploads/03-09-2019-772942-H.jpg', 'new', 'superadmin', '2019-09-03 11:12:52'),
+(9, 'Rural Diksha   Certifiacate ', 'L', '/assets/uploads/03-09-2019-784688-I.jpg', 'new', 'superadmin', '2019-09-03 11:14:18'),
+(10, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-606306-Government_Oders1 copy.jpg', 'new', 'superadmin', '2019-09-03 12:01:48'),
+(11, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-303173-Government_Oders2 copy.jpg', 'new', 'superadmin', '2019-09-03 12:02:29'),
+(12, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-638208-Government_Oders3 copy.jpg', 'new', 'superadmin', '2019-09-03 12:03:43'),
+(13, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-692639-Government_Oders4 copy.jpg', 'new', 'superadmin', '2019-09-03 12:05:08'),
+(14, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-977288-Government_Oders4 copy.jpg', 'new', 'superadmin', '2019-09-03 12:05:54'),
+(15, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-850572-Government_Oders5 copy.jpg', 'new', 'superadmin', '2019-09-03 12:06:41'),
+(16, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-324015-Government_Oders5 copy.jpg', 'new', 'superadmin', '2019-09-03 12:07:16'),
+(17, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-401520-Government_Oders6 copy.jpg', 'new', 'superadmin', '2019-09-03 12:08:11'),
+(18, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-855374-Government_Oders7 copy.jpg', 'new', 'superadmin', '2019-09-03 12:09:17'),
+(19, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-679124-Government_Oders8 copy.jpg', 'new', 'superadmin', '2019-09-03 12:11:19'),
+(20, 'Goverment Resulation ', 'L', '0', 'new', 'superadmin', '2019-09-03 12:11:35'),
+(21, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-158745-Government_Oders9 copy.jpg', 'new', 'superadmin', '2019-09-03 12:12:46'),
+(22, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-808643-Government_Oders9 copy.jpg', 'new', 'superadmin', '2019-09-03 12:13:27'),
+(23, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-594006-GR FILE copy.jpg', 'new', 'superadmin', '2019-09-03 12:14:31'),
+(24, 'Goverment Resulation ', 'L', '/assets/uploads/03-09-2019-193675-JR.jpg', 'new', 'superadmin', '2019-09-03 12:15:53'),
+(25, 'Duplicate Markshit Form', 'D', '/assets/uploads/03-09-2019-371139-DUPLICATE_MARKSHEER_CERTIFICATE_FORM_Copy (3).jpg', 'new', 'superadmin', '2019-09-03 12:25:13'),
+(26, 'Exam Form ', 'D', '/assets/uploads/03-09-2019-576530-eXAM FROM.jpg', 'new', 'superadmin', '2019-09-03 12:28:05'),
+(27, 'Exam Form ', 'D', '/assets/uploads/03-09-2019-256515-eXAM FROM.jpg', 'new', 'superadmin', '2019-09-03 12:29:17'),
+(28, 'Hall Ticket  ', 'D', '/assets/uploads/03-09-2019-305892-HALL TICKET 3.jpg', 'new', 'superadmin', '2019-09-03 12:30:29'),
+(29, 'Markshit Verrification From  ', 'D', '/assets/uploads/03-09-2019-597409-marksheet-verification-form (1).jpg', 'new', 'superadmin', '2019-09-03 12:34:28'),
+(30, 'Markshit Verrification From  ', 'D', '/assets/uploads/03-09-2019-767158-marksheet-verification-form (1).jpg', 'new', 'superadmin', '2019-09-03 12:42:24'),
+(31, 'Download  ', 'D', '/assets/uploads/03-09-2019-148409-New proci 1.jpg', 'new', 'superadmin', '2019-09-03 12:52:27');
 
 -- --------------------------------------------------------
 
@@ -239,9 +258,9 @@ CREATE TABLE `results` (
 CREATE TABLE `study_center_aff_req` (
   `id` int(10) UNSIGNED NOT NULL,
   `application_date` varchar(10) DEFAULT NULL,
-  `name` varchar(256) NOT NULL,
-  `pres_name` varchar(256) NOT NULL,
-  `reg_no` varchar(128) NOT NULL,
+  `name` text NOT NULL,
+  `pres_name` text NOT NULL,
+  `reg_no` text NOT NULL,
   `reg_date` varchar(10) NOT NULL,
   `mob_1` varchar(20) NOT NULL,
   `mob_2` varchar(20) NOT NULL,
@@ -255,18 +274,19 @@ CREATE TABLE `study_center_aff_req` (
   `is_library_available` tinyint(4) NOT NULL DEFAULT '0',
   `nos_of_books_in_lib` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `other_activities` text,
-  `sal_1_officer` varchar(10) NOT NULL,
-  `name_1_officer` varchar(256) NOT NULL,
-  `sal_2_officer` varchar(10) NOT NULL,
-  `name_2_officer` varchar(256) NOT NULL,
+  `sal_1_officer` tinytext NOT NULL,
+  `name_1_officer` text NOT NULL,
+  `sal_2_officer` tinytext NOT NULL,
+  `name_2_officer` text NOT NULL,
   `is_reg_certification_attached` tinyint(4) NOT NULL DEFAULT '0',
   `is_pan_attached` tinyint(4) NOT NULL DEFAULT '0',
   `is_id_attached` tinyint(4) NOT NULL DEFAULT '0',
   `is_build_proof_attached` tinyint(4) NOT NULL DEFAULT '0',
   `is_elect_bill_attached` tinyint(4) NOT NULL DEFAULT '0',
   `is_report_attached` tinyint(4) NOT NULL DEFAULT '0',
+  `client_ip` varchar(50) DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_by` varchar(50) NOT NULL,
+  `accepted_by` varchar(50) NOT NULL,
   `is_accepted` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -393,7 +413,7 @@ ALTER TABLE `exams`
 -- AUTO_INCREMENT for table `notifs_circus_downlds`
 --
 ALTER TABLE `notifs_circus_downlds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `results`

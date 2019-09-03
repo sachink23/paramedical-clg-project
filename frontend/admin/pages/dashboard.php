@@ -563,6 +563,7 @@
                                     <small id="adminPasswordhelp" class="form-text text-muted">Password</small>
                                 </div>
                                 <div class="col-12">
+                                    <p class="text-info">A user who can manage admission requests, can also manage affiliation requests</p>
                                    <table class="table">
                                        <thead>
                                            <tr>

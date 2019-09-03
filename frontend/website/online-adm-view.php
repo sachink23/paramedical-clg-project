@@ -149,7 +149,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?= appName ?> : Download Admission Form</title>
+    <title><?= ucfirst(appName) ?> : Download Admission Form</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="<?=webCdn;?>/bootstrap/css/bootstrap.min.css">
     <style>

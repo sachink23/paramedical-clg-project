@@ -23,6 +23,8 @@
                     <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item" role="presentation" style="color: rgb(255,255,255);"><a class="nav-link"
                                 href="/admin/" style="color: rgb(255,255,255);">Dashboard</a></li>
+                        <li class="nav-item" role="presentation" style="color: rgb(255,255,255);"><a class="nav-link"
+                                href="/admin/affiliations/" style="color: rgb(255,255,255);">Manage Affiliation Requests</a></li>
                         <!--li class="dropdown nav-item" style="color: rgb(255,255,255);"><a
                                 class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"
                                 style="color: rgb(255,255,255);">Menu</a>

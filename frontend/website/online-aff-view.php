@@ -43,9 +43,9 @@
                 <script>
                     function acceptAff(acpt) {
                         if(acpt == 1)
-                            url = '/admin/affiliation/accept/?ac=yes&id=".$d['id']."';
+                            url = '/admin/affiliations/accept/?ac=yes&id=".$d['id']."';
                         else if(acpt == 0)
-                            url = '/admin/affiliation/accept/?ac=no&id=".$d['id']."';
+                            url = '/admin/affiliations/accept/?ac=no&id=".$d['id']."';
                         window.location.href=url;
                     }
                 </script>
@@ -53,7 +53,7 @@
         
         }
             else {
-                $btn = "<br>Admission Accepted by ".$d['accepted_by']."</br>";
+                $btn = "<br>Affiliation Accepted by ".$d['accepted_by']."</br>";
             }
         }
 ?>
@@ -62,7 +62,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?= appName ?> : Download Affiliation Form</title>
+    <title><?= ucfirst(appName) ?> : Download Affiliation Form</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="<?=webCdn;?>/bootstrap/css/bootstrap.min.css">
     <style>

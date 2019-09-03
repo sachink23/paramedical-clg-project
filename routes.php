@@ -54,7 +54,11 @@
 	route::set_route('/admin/admissions/', 'admin', 'admission');
 	route::set_route('/admin/admissions/accepted/', 'admin', 'admission');
 	route::set_route('/admin/admissions/accept/', 'admin', 'admission-acpt');
+	route::set_route('/admin/affiliations/accept/', 'admin', 'affiliation-acpt');
+	route::set_route('/admin/affiliations/', 'admin', 'affiliation');
+	route::set_route('/admin/affiliations/accepted/', 'admin', 'affiliation');
 
+	
 	route::set_route('/api/admin/notifications/', 'admin-api', 'admin/notifications');
 	route::set_route('/api/admin/site-basics/', 'admin-api', 'admin/site-basics');
 	route::set_route('/api/admin/results/', 'admin-api', 'admin/results');

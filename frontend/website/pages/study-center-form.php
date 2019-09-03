@@ -100,10 +100,10 @@
                       <textarea class="form-control" name="otherActivities" maxlength="200" placeholder="उपक्रम चालू असल्यास त्याबद्दल लिहावे किंवा नसल्यास रिकामे सोडा" id="otherActivities" rows="2"></textarea>
                 </div>
                 <div class="form-group col-12">
-                  <label>संस्थेच्या दोन पदाधिकाऱ्यांची माहिती</label>
+                  <label>संस्थेच्या उपाध्यक्ष व सचिवांची माहिती</label>
                 </div>
                 <div class="form-group col-4 col-xl-2 col-md-2 col-lg-2">
-                  <label for="salutation1">1)</label>
+                  <label for="salutation1">1) संस्थेचे सचिव</label>
                   <select required class="form-control" name="salutation1" id="salutation1">
                     <option value="">निवडा</option>
                     <option value="1">श्री</option>
@@ -116,7 +116,7 @@
                       class="form-control" name="name1" id="name1" placeholder="नाव" required="">
                 </div>
                 <div class="form-group col-4 col-xl-2 col-md-2 col-lg-2">
-                  <label for="salutation2">2)</label>
+                  <label for="salutation2">2) संस्थेचे उपाध्यक्ष</label>
                   <select required class="form-control" name="salutation2" id="salutation2">
                     <option value="">निवडा</option>
                     <option value="1">श्री</option>

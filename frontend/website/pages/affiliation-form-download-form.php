@@ -13,7 +13,7 @@
                 class="form-control" name="mob" id="mob" aria-describedby="mobHelp">
               <small id="mobHelp" class="form-text text-muted">Enter mobile number filled in application form</small>
             </div>
-            <div class="form-group col-12 text-right">
+            <div class="form-group col-sm-12 col-md-4"> <br/>
                 <button type="submit" class="btn btn-primary">Download Form</button>
             </div>
         </form>

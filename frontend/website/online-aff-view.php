@@ -30,7 +30,7 @@
     }
     
     $d["application_date"] = date("d-m-Y", strtotime($d["application_date"]));
-    $d["reg_date"] = date("d-m-Y", strtotime($d["dob"]));
+    $d["reg_date"] = date("d-m-Y", strtotime($d["reg_date"]));
     
     $btn = "";
     require_once contrDir.'/adminAuth.php';
@@ -70,10 +70,10 @@
            background: rgb(204,204,204); 
         }
         table.table {
-            font-size: 12.5px;
+            font-size: 14px;
         }
         .small-font-size {
-            font-size: 12.5px;
+            font-size: 14px;
         }
         page {
             background: white;
@@ -114,7 +114,7 @@
         .the-legend {    
             border-style: none;
             border-width: 0;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 20px;
             margin-bottom: 0;
             width: auto;
@@ -143,12 +143,12 @@
                 top: 0;
             }   
         }
-       /* @media print {
+       @media print {
             page {
                 margin: 0;
                 box-shadow: 0;
             }
-        } */
+        }
     </style>
 </head>
 <body>
@@ -160,13 +160,12 @@
     </div>
     <br />
     <page class="section-to-print" id="form-pg-1" size="A4">
-        
             <div class="container">
                 <img src="<?=webCdn ?>/img/header.jpg" width="100%">
             </div>
 
             <div class="container pt-0" >
-                <h3 style="font-family: arial; " class="text-center">Affiliation Form</h3>               
+                <h3 style="font-family: arial; " class="text-center">नवीन स्टडी सेंटर करीता सलंग्नता फॉर्म</h3>               
             </div>
             
             <div class="container pt-1">
@@ -180,8 +179,58 @@
                         <td width="16.66%"><?=$d["application_date"] ?></td>
                     </tr>
                     <tr>
-                        <th >Institute Details</th>
-                        <td colspan="5"><?=$d["name"] ?></td>
+                        <th >संस्थेचे नाव</th>
+                        <td colspan="2"><?=$d["name"] ?></td>
+                        <th>नोंदणी क्रमांक</th>
+                        <td colspan="2"><?=$d["reg_no"] ?></td>
+                    </tr>
+                    <tr>
+                        <th>नोंदणीची तारीख</th>
+                        <td><?=$d["reg_date"] ?></td>
+                        <th>संस्थेचे अध्यक्ष</th>
+                        <td colspan="3"><?=$d["pres_name"] ?></td>   
+                    </tr>
+                    <tr>
+                        <th>दूरध्वनी क्रमांक</th>
+                        <td colspan="2"><?=$d["mob_1"].", ". $d[mob_2]?></td>
+                        <th>ईमेल आयडी</th>
+                        <td colspan="2"><?=$d["email"] ?></td>
+                    </tr>
+                    <tr>
+                        <th>संस्थेचा पूर्ण पत्ता</th>
+                        <td colspan="3"><?=$d["address"] ?></td>
+                        <td colspan="2"><strong>संस्थेकडील इमारत </strong>- <?php if($d["is_building_owned"] == 1) echo "संस्थेच्या मालकीची"; else echo "किरायाने घेतलेली"; ?> आहे </td>
+                    </tr>
+                    <tr>
+                        <th colspan="">वेबसाईट (असल्यास)</th>
+                        <td colspan="2"><?=$d["website"] ?></td>
+                        <td colspan="3"><strong>संस्थेकडील कर्मचारी </strong> - <?php if($d["are_workers_permanent"] == 1) echo " नियमित आहेत"; else echo "कंत्राटी आहेत"; ?>&nbsp;&nbsp;&nbsp; <strong>कर्मचाऱ्यांची संख्या </strong>- <?=$d["nos_of_workers"] ?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><strong>संस्थेकडे वाचनालय सुविधा </strong> - <?php if($d["is_library_available"] == 1) echo "आहे"; else echo "नाही"; ?>&nbsp; ( एकूण <?= $d["nos_of_books_in_lib"] ?> पुस्तके उपलब्ध आहेत )</td>
+                        <td colspan="3"><strong>संस्थेकडे संगणक आणि इंटरनेट सुविधा </strong> - <?php if($d["is_comp_available"] == 1) echo "आहे"; else echo "नाही"; ?></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">संस्थचे इतर शैक्षणिक उपक्रम चालू आहते काय ?</th>
+                        <td colspan="4"><?= $d["other_activities"] ?></td>
+                    </tr>                
+                </table>
+                <table class="table table-bordered">
+                    <tr>
+                        <th colspan="2">संस्थेने सलंग्नता अर्ज सादर करताना जोडलेल्या कागदपत्रांची सुची</th>
+                    </tr>
+                    <tr>
+                        <td>संस्थेचे नोंदणी प्रमाणपत्र - <?php if($d["is_reg_certification_attached"] == 1) echo "आहे"; else echo "नाही"; ?></td>
+                    
+                        <td>संस्थचे पॅन कार्ड / टॅन कार्ड - <?php if($d["is_pan_attached"] == 1) echo "आहे"; else echo "नाही"; ?></td>
+                    </tr>
+                    <tr>
+                        <td>अध्यक्ष / सचिव यांची ओळखपत्रे आधार कार्ड / पॅन कार्ड - <?php if($d["is_id_attached"] == 1) echo "आहे"; else echo "नाही"; ?></td>
+                        <td>इमारत असल्याबाबत चे प्रमाणपत्र ८ अ / घरपट्टी पावती - <?php if($d["is_build_proof_attached"] == 1) echo "आहे"; else echo "नाही"; ?></td>
+                    </tr>
+                    <tr>    
+                        <td>24 तास वीजपुरवठा आहे काय ? वीजबिल प्रत  - <?php if($d["is_elect_bill_attached"] == 1) echo "आहे"; else echo "नाही"; ?></td>
+                        <td>संस्थेचे नियमित लेखापरीक्षण रिपोर्ट - <?php if($d["is_report_attached"] == 1) echo "आहे"; else echo "नाही"; ?></td>
                     </tr>
                 </table>
             </div>

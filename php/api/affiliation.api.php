@@ -113,7 +113,7 @@
         nos_of_emp:
         $this->badRequest("कृपया संस्थेकडे उपलब्ध कर्मचारी संख्या तपासा");
     }
-    if(!filter_vars($_POST["nos_of_emp"], FILTER_VALIDATE_INT)) {
+    if(!filter_var($_POST["nos_of_emp"], FILTER_VALIDATE_INT)) {
         goto nos_of_emp;
     }
     $data["nos_of_workers"] = $_POST["nos_of_emp"];
@@ -137,6 +137,10 @@
         $data["is_library_available"] = $_POST["is_library_available"];
         $format .= "i";
         if($_POST["is_library_available"] == 0) {
+            $data["nos_of_books_in_lib"] = 0;
+            $format .= "i";
+            
+        } else {
             if(!isset($_POST["no_of_books"])) {
                 no_of_books:
                 $this->badRequest("कृपया संस्थेकडे एकूण किती पुस्तके उपलब्ध आहेत ते भरा");
@@ -149,9 +153,6 @@
                 $data["nos_of_books_in_lib"] = $_POST["no_of_books"];
                 $format .= "i";
             }
-        } else {
-            $data["nos_of_books_in_lib"] = 0;
-            $format .= "i";
         }
     } else {
         goto is_library_available;
@@ -160,7 +161,10 @@
         $data["other_activities"] = "NA";
         $format .= "s";
     } else {
-        $data["other_activities"] = strtolower(stript_tags(trim($_POST["other_act"])));
+        if(trim($_POST["other_act"]) == "")
+            $data["other_activities"] = "NA";
+        else
+            $data["other_activities"] = strtolower(strip_tags(trim($_POST["other_act"])));
         $format .= "s";    
     }
 
@@ -267,7 +271,9 @@
         $response->code = 200;
         $response->message = "Affiliation Request Submitted Successfully With Id ".$res[2];
         $response->text="Your affiliation request Id is : ".$res[2]. ". <br><a href='/online-affiliation/download/?id=".$res[2]."&mob=".$_POST["mob1"]."'>Click here to download your prefilled form.</a>";
-        $response->func = "document.getElementById('aff_form_id').reset();";    
+        $response->func = "document.getElementById('affiliation_form_id').reset();";    
+        $response->details = $_POST;
+        $response->data = $data;
     } else {
         $response->code = 201;
         $response->message = "Server is unable to handle your response";

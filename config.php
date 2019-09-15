@@ -41,9 +41,9 @@
 	define('fileUploadDir', appRoot.'/assets/uploads/');
 
 	#db related information
-	define('dbHost','dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com');
+	define('dbHost','localhost');
 	define('dbUser', 'sachin');
-	define('dbPass', 'Escpk4739J');
+	define('dbPass', 'sachin');
 	define('dbName', 'paraclg');
 	
 

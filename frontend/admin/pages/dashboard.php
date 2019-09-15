@@ -9,7 +9,12 @@
 ?>
 <div class="features-boxed">
     <div class="container">
-
+        <!-- Button trigger modal -->
+        <button type="button" class="mt-3 btn btn-primary btn-lg" data-toggle="modal" data-target="#infoRegardingStudyCent">
+          Add Study Center
+        </button>
+        
+        
         <div class="row justify-content-center features">
             <div class="col-sm-6 col-md-5 col-lg-4 item" data-toggle="modal" data-target="#noticeManagementModal">
                 <div class="box"><i class="fa fa-retweet icon" style="color: rgb(255,15,15);"></i>
@@ -613,6 +618,30 @@
         </div>
     </div>
 </div>
+<!-- Modal for add study center button -->
+<div class="modal fade" id="infoRegardingStudyCent" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Instructions to add study center</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead">
+                            To add study centers go to <a href="/online-affiliation/">Online Affiliation</a> page, fill the form, and accept request in <a href="/admin/affiliations/">Manage Affiliation Requests</a> menu in admin panel, so that study center will be added automatically.
+                        </p>
+                        <p class="lead">
+                            This approach has been designed intentionally so that whenever new study center affiliation request is accepted, it will be automatically added to the study centers page, and additional work of the admin to add the study center to the page can be skipped.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 

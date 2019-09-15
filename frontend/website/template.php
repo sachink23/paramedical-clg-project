@@ -51,7 +51,11 @@
             $page_name = "Download Affiliation Form";
             break;
         }
-        case "default": {
+        case "study-centers": {
+            $page_name = "Study Centers";
+            break;
+        }
+        default: {
             $page_name = "Website";
             break;
         }
@@ -148,6 +152,10 @@
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/about/">About Us</a>
                     </li>
+                    
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
+                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/study-centers/">Study Centers</a>
+                    </li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                             href="/courses/">Courses</a></li>
@@ -166,16 +174,15 @@
                         <a class="dropdown-item" href="/online-affiliation/download-form/">Download Study Center Registration Form</a>
                         </div>
                     </li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="/circulars/">Circulars</a></li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="/downloads/">Downloads</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="/legal-documents/">Legal Documents</a>
+                    <li class="nav-item mx-0 mx-lg-1 dropdown" role="presentation">
+                        <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Downloads
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/circulars/"><i class="fa fa-refresh" aria-hidden="true"></i> Cirlculars</a>
+                        <a class="dropdown-item" href="/downloads/"><i class="fa fa-download" aria-hidden="true"></i> Downloads</a>
+                        <a class="dropdown-item" href="/legal-documents/"><i class="fa fa-address-book" aria-hidden="true"></i> Legal Documents</a>
+                        </div>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
                             class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/contact/">Contact Us</a>

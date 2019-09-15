@@ -42,6 +42,8 @@
 	route::set_route('/online-admissions', '301', '/online-admissions/');
 	route::set_route('/online-admissions/download/', 'page-special', 'online-adm-view');
 	route::set_route('/online-affiliation/download/', 'page-special', 'online-aff-view');
+	route::set_route('/study-centers/', 'page', 'study-centers');
+
 
 	
 	route::set_route('/downloads/', 'page', 'downloads');

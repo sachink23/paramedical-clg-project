@@ -1,6 +1,6 @@
 <?php
 	# comment below three lines when you move to production
-	/*
+	/* 
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
@@ -9,7 +9,7 @@
 	define('appName', 'ARYAWART PARA MEDICAL EDUCATION, VOCATIONAL & SELF EMPLOYMENT EDUCATION, BOARD');
 	define('appTagline', 'Clg Tagline');
 	define('appDesc', 'Description');
-	define('appDev', '');
+	define('appDev', 'Sachin Kekarjawalekar');
 	define('hostCheck', 0);
 	if(hostCheck == 0)
 		define('appHost', $_SERVER['HTTP_HOST']);
@@ -41,9 +41,9 @@
 	define('fileUploadDir', appRoot.'/assets/uploads/');
 
 	#db related information
-	define('dbHost','localhost');
+	define('dbHost','dbs1.cwsbxjeoomse.ap-south-1.rds.amazonaws.com');
 	define('dbUser', 'sachin');
-	define('dbPass', 'sachin');
+	define('dbPass', 'Escpk4739J');
 	define('dbName', 'paraclg');
 	
 

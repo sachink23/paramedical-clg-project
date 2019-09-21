@@ -107,7 +107,7 @@
                   <select required class="form-control" name="salutation1" id="salutation1">
                     <option value="">निवडा</option>
                     <option value="1">श्री</option>
-                    <option value="2">श्रीमती</option>
+                    <option value="0">श्रीमती</option>
                   </select>
                 </div> 
                 <div class="form-group col-8 col-xl-10 col-md-10 col-lg-10">
@@ -120,7 +120,7 @@
                   <select required class="form-control" name="salutation2" id="salutation2">
                     <option value="">निवडा</option>
                     <option value="1">श्री</option>
-                    <option value="2">श्रीमती</option>
+                    <option value="0">श्रीमती</option>
                   </select>
                 </div> 
                 <div class="form-group col-8 col-xl-10 col-md-10 col-lg-10">

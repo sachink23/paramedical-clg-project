@@ -6,4 +6,4 @@ The project was done using PHP and MySQL for backend technologies, and best thin
 
 It was a website for Vocational, and Self Employment Board. Website has its front view where users can know more about the organization, can apply for admissions and affiliations, and can check the status of the application. It also has an admin panel where admin can create notifications, circulars to be updated on site, add results of the students, can manage other users and their access. Admin can manage basic information on the website and he can also accept the admission and affiliation request.
 
-its running on my aws https://paraclg.kportal.in
+its running on my aws https://paramedicalboard.com
